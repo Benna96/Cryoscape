@@ -28,40 +28,22 @@ public partial class @Input: IInputActionCollection2, IDisposable
             ""id"": ""0c17639f-a376-46db-bfbf-247bc08aea23"",
             ""actions"": [
                 {
-                    ""name"": ""Look horizontal"",
-                    ""type"": ""Button"",
-                    ""id"": ""b7c003f9-8799-4f55-bb43-be161cde04a3"",
-                    ""expectedControlType"": ""Button"",
+                    ""name"": ""Move"",
+                    ""type"": ""Value"",
+                    ""id"": ""ff23ae72-8cb7-4ab3-9d33-7f5aecbc3b1c"",
+                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Look vertical"",
-                    ""type"": ""Button"",
-                    ""id"": ""bf1f3b9d-acf6-4b5e-9611-dc5c0d7f73e7"",
-                    ""expectedControlType"": ""Button"",
+                    ""name"": ""Look"",
+                    ""type"": ""Value"",
+                    ""id"": ""c4259cb6-f559-490c-8163-1e75a6825bfb"",
+                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Move lateral"",
-                    ""type"": ""Button"",
-                    ""id"": ""4451979b-aee3-45cb-bb70-69598d5671b8"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Move longitudinal"",
-                    ""type"": ""Button"",
-                    ""id"": ""6d98b990-63d0-461e-8474-7d22d208448d"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 },
                 {
                     ""name"": ""Crouch"",
@@ -84,170 +66,108 @@ public partial class @Input: IInputActionCollection2, IDisposable
             ],
             ""bindings"": [
                 {
-                    ""name"": ""WASD"",
-                    ""id"": ""4096ac0f-7271-4c10-b96f-cdb0204e479e"",
-                    ""path"": ""1DAxis"",
+                    ""name"": """",
+                    ""id"": ""7e2716e1-0d20-41a5-b3ca-553122a99f8c"",
+                    ""path"": ""<Mouse>/delta"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move lateral"",
-                    ""isComposite"": true,
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Look"",
+                    ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""150f72e1-614e-4339-befc-00735ee5fefe"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move lateral"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""153b82c3-1ca8-4471-a460-1daa3910d50c"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move lateral"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""WASD"",
-                    ""id"": ""fcc0bdc3-6993-4b69-b0da-fd296beab9dd"",
-                    ""path"": ""1DAxis"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move longitudinal"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""90817f7a-e7ba-4a2f-85a5-16fd9a0b7f81"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move longitudinal"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""df4d3469-30a2-4528-ab97-77e5b60cd40d"",
-                    ""path"": ""<Keyboard>/w"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move longitudinal"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
                 },
                 {
                     ""name"": """",
-                    ""id"": ""7d40e722-9064-48bc-957a-4896c2783094"",
+                    ""id"": ""ce3a282d-dacd-4c97-bdee-5814241fbd53"",
                     ""path"": ""<Keyboard>/ctrl"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""KeyboardMouse"",
                     ""action"": ""Crouch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""ca1840d4-863f-4e51-9faf-0256f9e25051"",
-                    ""path"": ""<Keyboard>/space"",
+                    ""id"": ""f0d5d0f6-5d99-4a30-b42e-dd9d65d0e780"",
+                    ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""KeyboardMouse"",
                     ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""Mouse"",
-                    ""id"": ""692f4dde-0ab7-4457-a3e7-35fbaee62da8"",
-                    ""path"": ""1DAxis"",
+                    ""name"": ""WASD"",
+                    ""id"": ""9fe4a40b-d115-4e41-beb5-d2a10368fbda"",
+                    ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Look horizontal"",
+                    ""action"": ""Move"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""negative"",
-                    ""id"": ""532e2d51-c346-47fc-af13-e88c81a145c6"",
-                    ""path"": ""<Mouse>/delta/left"",
+                    ""name"": ""up"",
+                    ""id"": ""16843265-3854-46cb-bc92-02a74b041f53"",
+                    ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Look horizontal"",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""positive"",
-                    ""id"": ""ccb5625e-f89d-4c10-954d-5f24ef4efdf9"",
-                    ""path"": ""<Mouse>/delta/right"",
+                    ""name"": ""down"",
+                    ""id"": ""cad91264-ba5d-481d-a443-201ce1997c57"",
+                    ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Look horizontal"",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""Mouse"",
-                    ""id"": ""016c2d4d-f5ae-4092-8b1b-61bbd2bb3094"",
-                    ""path"": ""1DAxis"",
+                    ""name"": ""left"",
+                    ""id"": ""d95dd735-bf37-47dc-a34d-0d5f44902550"",
+                    ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Look vertical"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""87720e86-c8d2-4c3a-9c6a-26067bede2b3"",
-                    ""path"": ""<Mouse>/delta/up"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Look vertical"",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""positive"",
-                    ""id"": ""f72bbd73-f13b-4d23-af94-081573ab6469"",
-                    ""path"": ""<Mouse>/delta/down"",
+                    ""name"": ""right"",
+                    ""id"": ""cc3b9830-604b-4559-b661-f023fa3f3bf8"",
+                    ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Look vertical"",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 }
             ]
         }
     ],
-    ""controlSchemes"": []
+    ""controlSchemes"": [
+        {
+            ""name"": ""KeyboardMouse"",
+            ""bindingGroup"": ""KeyboardMouse"",
+            ""devices"": []
+        }
+    ]
 }");
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
-        m_Player_Lookhorizontal = m_Player.FindAction("Look horizontal", throwIfNotFound: true);
-        m_Player_Lookvertical = m_Player.FindAction("Look vertical", throwIfNotFound: true);
-        m_Player_Movelateral = m_Player.FindAction("Move lateral", throwIfNotFound: true);
-        m_Player_Movelongitudinal = m_Player.FindAction("Move longitudinal", throwIfNotFound: true);
+        m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
+        m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
         m_Player_Crouch = m_Player.FindAction("Crouch", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
     }
@@ -311,20 +231,16 @@ public partial class @Input: IInputActionCollection2, IDisposable
     // Player
     private readonly InputActionMap m_Player;
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
-    private readonly InputAction m_Player_Lookhorizontal;
-    private readonly InputAction m_Player_Lookvertical;
-    private readonly InputAction m_Player_Movelateral;
-    private readonly InputAction m_Player_Movelongitudinal;
+    private readonly InputAction m_Player_Move;
+    private readonly InputAction m_Player_Look;
     private readonly InputAction m_Player_Crouch;
     private readonly InputAction m_Player_Interact;
     public struct PlayerActions
     {
         private @Input m_Wrapper;
         public PlayerActions(@Input wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Lookhorizontal => m_Wrapper.m_Player_Lookhorizontal;
-        public InputAction @Lookvertical => m_Wrapper.m_Player_Lookvertical;
-        public InputAction @Movelateral => m_Wrapper.m_Player_Movelateral;
-        public InputAction @Movelongitudinal => m_Wrapper.m_Player_Movelongitudinal;
+        public InputAction @Move => m_Wrapper.m_Player_Move;
+        public InputAction @Look => m_Wrapper.m_Player_Look;
         public InputAction @Crouch => m_Wrapper.m_Player_Crouch;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
@@ -336,18 +252,12 @@ public partial class @Input: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_PlayerActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_PlayerActionsCallbackInterfaces.Add(instance);
-            @Lookhorizontal.started += instance.OnLookhorizontal;
-            @Lookhorizontal.performed += instance.OnLookhorizontal;
-            @Lookhorizontal.canceled += instance.OnLookhorizontal;
-            @Lookvertical.started += instance.OnLookvertical;
-            @Lookvertical.performed += instance.OnLookvertical;
-            @Lookvertical.canceled += instance.OnLookvertical;
-            @Movelateral.started += instance.OnMovelateral;
-            @Movelateral.performed += instance.OnMovelateral;
-            @Movelateral.canceled += instance.OnMovelateral;
-            @Movelongitudinal.started += instance.OnMovelongitudinal;
-            @Movelongitudinal.performed += instance.OnMovelongitudinal;
-            @Movelongitudinal.canceled += instance.OnMovelongitudinal;
+            @Move.started += instance.OnMove;
+            @Move.performed += instance.OnMove;
+            @Move.canceled += instance.OnMove;
+            @Look.started += instance.OnLook;
+            @Look.performed += instance.OnLook;
+            @Look.canceled += instance.OnLook;
             @Crouch.started += instance.OnCrouch;
             @Crouch.performed += instance.OnCrouch;
             @Crouch.canceled += instance.OnCrouch;
@@ -358,18 +268,12 @@ public partial class @Input: IInputActionCollection2, IDisposable
 
         private void UnregisterCallbacks(IPlayerActions instance)
         {
-            @Lookhorizontal.started -= instance.OnLookhorizontal;
-            @Lookhorizontal.performed -= instance.OnLookhorizontal;
-            @Lookhorizontal.canceled -= instance.OnLookhorizontal;
-            @Lookvertical.started -= instance.OnLookvertical;
-            @Lookvertical.performed -= instance.OnLookvertical;
-            @Lookvertical.canceled -= instance.OnLookvertical;
-            @Movelateral.started -= instance.OnMovelateral;
-            @Movelateral.performed -= instance.OnMovelateral;
-            @Movelateral.canceled -= instance.OnMovelateral;
-            @Movelongitudinal.started -= instance.OnMovelongitudinal;
-            @Movelongitudinal.performed -= instance.OnMovelongitudinal;
-            @Movelongitudinal.canceled -= instance.OnMovelongitudinal;
+            @Move.started -= instance.OnMove;
+            @Move.performed -= instance.OnMove;
+            @Move.canceled -= instance.OnMove;
+            @Look.started -= instance.OnLook;
+            @Look.performed -= instance.OnLook;
+            @Look.canceled -= instance.OnLook;
             @Crouch.started -= instance.OnCrouch;
             @Crouch.performed -= instance.OnCrouch;
             @Crouch.canceled -= instance.OnCrouch;
@@ -393,12 +297,19 @@ public partial class @Input: IInputActionCollection2, IDisposable
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
+    private int m_KeyboardMouseSchemeIndex = -1;
+    public InputControlScheme KeyboardMouseScheme
+    {
+        get
+        {
+            if (m_KeyboardMouseSchemeIndex == -1) m_KeyboardMouseSchemeIndex = asset.FindControlSchemeIndex("KeyboardMouse");
+            return asset.controlSchemes[m_KeyboardMouseSchemeIndex];
+        }
+    }
     public interface IPlayerActions
     {
-        void OnLookhorizontal(InputAction.CallbackContext context);
-        void OnLookvertical(InputAction.CallbackContext context);
-        void OnMovelateral(InputAction.CallbackContext context);
-        void OnMovelongitudinal(InputAction.CallbackContext context);
+        void OnMove(InputAction.CallbackContext context);
+        void OnLook(InputAction.CallbackContext context);
         void OnCrouch(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
     }
