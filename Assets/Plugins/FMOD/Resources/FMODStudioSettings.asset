@@ -434,11 +434,11 @@ MonoBehaviour:
   RealChannelSettings: []
   Plugins: []
   MasterBanks:
-  - Master
-  - CryoScape/Build/Desktop/Master
+  - Desktop/Master
+  - Desktop/CryoScape/Build/Desktop/Master
   Banks:
-  - CryoScape/Build/Desktop/Sounds
-  - Sounds
+  - Desktop/CryoScape/Build/Desktop/Sounds
+  - Desktop/Sounds
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
