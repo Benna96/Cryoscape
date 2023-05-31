@@ -322,6 +322,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7197267976991697544, guid: 2070a2a31b97b9e4495dd7ab0bafa498, type: 3}
+      propertyPath: verticalSensitivity
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7197267976991697544, guid: 2070a2a31b97b9e4495dd7ab0bafa498, type: 3}
+      propertyPath: horizontalSensitivity
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164397659359740311, guid: 2070a2a31b97b9e4495dd7ab0bafa498, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 8507093918799121952, guid: 2070a2a31b97b9e4495dd7ab0bafa498, type: 3}
       propertyPath: m_Name
       value: Player
