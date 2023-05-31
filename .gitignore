@@ -67,9 +67,6 @@ crashlytics-build.properties
 # Packed Addressables
 /[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
 
-# Temporary auto-generated Android Assets
-/[Aa]ssets/[Ss]treamingAssets/aa.meta
-/[Aa]ssets/[Ss]treamingAssets/aa/*
 # Never ignore DLLs in the FMOD subfolder.
 !/[Aa]ssets/Plugins/FMOD/**/lib/*
 
@@ -84,10 +81,10 @@ crashlytics-build.properties
 /[Aa]ssets/StreamingAssets/**/*.bank
 /[Aa]ssets/StreamingAssets/**/*.bank.meta
                     
-# If the source bank files are kept outside of the StreamingAssets folder then these can be ignored.
-# Log files can be ignored.
-fmod_editor.log
-
 # FMOD stuff
 /[Aa]ssets/Plugins/FMOD/platforms/*
 !/[Aa]ssets/Plugins/FMOD/platforms/win
+
+# If the source bank files are kept outside of the StreamingAssets folder then these can be ignored.
+# Log files can be ignored.
+fmod_editor.log
