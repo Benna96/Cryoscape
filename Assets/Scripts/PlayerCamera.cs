@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(PlayerInput))]
 public class PlayerCamera : MonoBehaviour
 {
     [SerializeField] private Transform playerModel;
@@ -33,8 +34,8 @@ public class PlayerCamera : MonoBehaviour
         transform.localRotation = xQuat * yQuat;
     }
 
-    /// <summary>
-    /// Called by Player Input component when look direction changes
-    /// </summary>
-    public void UpdateLookDirection(InputAction.CallbackContext context) => lookInput = context.ReadValue<Vector2>();
+    public void OnLook(InputValue value)
+    {
+        lookInput = value.Get<Vector2>();
+    }
 }
