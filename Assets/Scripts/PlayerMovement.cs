@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(PlayerInput))]
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] private Transform modelTransform;
     [SerializeField] private Rigidbody rigidBody;
     [SerializeField] private float movementSpeed = 6f;
     [SerializeField] private float crouchSpeed = 3f;
@@ -15,16 +15,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start() 
     {
-        startScaleY = transform.localScale.y;
+        startScaleY = modelTransform.localScale.y;
         crouched = false;
     }
     private void FixedUpdate()
     {
         if (!crouched)
         {
-            rigidBody.velocity = movementSpeed * ((transform.forward * movementInput.y) + (transform.right * movementInput.x));
+            rigidBody.velocity = movementSpeed * ((modelTransform.forward * movementInput.y) + (modelTransform.right * movementInput.x));
         } else {
-            rigidBody.velocity = crouchSpeed * ((transform.forward * movementInput.y) + (transform.right * movementInput.x));
+            rigidBody.velocity = crouchSpeed * ((modelTransform.forward * movementInput.y) + (modelTransform.right * movementInput.x));
         }
         
     }
@@ -38,11 +38,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!crouched)
         {
-            transform.localScale = new Vector3(transform.localScale.x, crouchScaleY, transform.localScale.z);
+            modelTransform.localScale = new Vector3(modelTransform.localScale.x, crouchScaleY, modelTransform.localScale.z);
             rigidBody.AddForce(Vector3.down * 20f, ForceMode.Impulse);
             crouched = true;
         } else {
-            transform.localScale = new Vector3(transform.localScale.x, startScaleY, transform.localScale.z);
+            modelTransform.localScale = new Vector3(modelTransform.localScale.x, startScaleY, modelTransform.localScale.z);
             crouched = false;
         }
         Debug.Log("Pressed crouch button");

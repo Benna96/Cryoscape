@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(PlayerInput))]
 public class PlayerCamera : MonoBehaviour
 {
+    [SerializeField] private Transform cameraTransform;
+    [SerializeField] private Transform transformToFollow;
     [SerializeField] private Transform playerModel;
     [SerializeField] private float horizontalSensitivity = 75f;
     [SerializeField] private float verticalSensitivity = 75f;
@@ -18,7 +20,7 @@ public class PlayerCamera : MonoBehaviour
     }
     private void Update()
     {
-        transform.position = playerModel.position;
+        cameraTransform.position = transformToFollow.position;
 
         if (lookInput != Vector2.zero)
             RotatePlayerAndCamera();
@@ -36,7 +38,7 @@ public class PlayerCamera : MonoBehaviour
         var yQuat = Quaternion.AngleAxis(lookDirection.y, Vector3.left);
 
         playerModel.localRotation = xQuat;
-        transform.localRotation = xQuat * yQuat;
+        cameraTransform.localRotation = xQuat * yQuat;
     }
 
     public void OnLook(InputValue value)

@@ -1,9 +1,8 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Camera))]
 public class InteractableManager : MonoBehaviour
 {
-    private new Camera camera;
+    [SerializeField] private new Camera camera;
 
     private Interactable _currentInteractable = null;
     private Interactable currentInteractable
@@ -21,10 +20,6 @@ public class InteractableManager : MonoBehaviour
 
             _currentInteractable = value;
         }
-    }
-    private void Awake()
-    {
-        camera = GetComponent<Camera>();
     }
 
     private void FixedUpdate()
