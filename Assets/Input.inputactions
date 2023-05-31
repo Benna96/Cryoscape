@@ -15,9 +15,18 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Look",
+                    "name": "LookDelta",
                     "type": "Value",
-                    "id": "c4259cb6-f559-490c-8163-1e75a6825bfb",
+                    "id": "b4adc5dd-918d-451c-9f28-ee2d01335dc4",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "LookContinuous",
+                    "type": "Value",
+                    "id": "e33c537d-9a9d-455c-a668-79229092bf7b",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
@@ -43,28 +52,6 @@
                 }
             ],
             "bindings": [
-                {
-                    "name": "",
-                    "id": "7e2716e1-0d20-41a5-b3ca-553122a99f8c",
-                    "path": "<Mouse>/delta",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "KeyboardMouse",
-                    "action": "Look",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "153b4f1b-10fe-44b3-9f70-2a19d5aec04a",
-                    "path": "<Gamepad>/rightStick",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Look",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
                 {
                     "name": "",
                     "id": "ce3a282d-dacd-4c97-bdee-5814241fbd53",
@@ -172,6 +159,28 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "99691043-4811-46d6-8247-d69e893e8720",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardMouse",
+                    "action": "LookDelta",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d7e46347-ea18-463d-a0cc-9bf58ed0bdd8",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "LookContinuous",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
