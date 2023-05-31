@@ -46,7 +46,8 @@ namespace FMODUnity
         {
             if (target == BuildTarget.iOS)
             {
-                return PlatformIOS.StaticSupportsAdditionalCpp();
+                //return PlatformIOS.StaticSupportsAdditionalCpp();
+                return false;
             }
             else
             {

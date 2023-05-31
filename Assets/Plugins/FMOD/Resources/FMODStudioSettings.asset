@@ -90,7 +90,7 @@ MonoBehaviour:
       Value: 0
       HasValue: 0
     Overlay:
-      Value: 0
+      Value: 1
       HasValue: 1
     Logging:
       Value: 0
@@ -189,9 +189,7 @@ MonoBehaviour:
     StaticPlugins:
       Value: []
       HasValue: 0
-    CallbackHandler:
-      Value: {fileID: 0}
-      HasValue: 0
+    CallbackHandler: {Value: {fileID: 0}, HasValue: 0}
   OutputTypeName: 
   threadAffinities:
     Value: []
@@ -256,9 +254,7 @@ MonoBehaviour:
     StaticPlugins:
       Value: []
       HasValue: 0
-    CallbackHandler:
-      Value: {fileID: 0}
-      HasValue: 0
+    CallbackHandler: {Value: {fileID: 0}, HasValue: 0}
   OutputTypeName: 
   threadAffinities:
     Value: []
@@ -390,9 +386,7 @@ MonoBehaviour:
     StaticPlugins:
       Value: []
       HasValue: 0
-    CallbackHandler:
-      Value: {fileID: 0}
-      HasValue: 0
+    CallbackHandler: {Value: {fileID: 0}, HasValue: 0}
   OutputTypeName: 
   threadAffinities:
     Value: []
@@ -462,14 +456,8 @@ MonoBehaviour:
   Platforms:
   - {fileID: -8285357542962489003}
   - {fileID: -7010965663897515525}
-  - {fileID: -6663376416506234662}
-  - {fileID: -4625221249096127993}
   - {fileID: -3052891385885011213}
-  - {fileID: -3049260332890653997}
-  - {fileID: 3848305444265417246}
-  - {fileID: 4183093710415431489}
   - {fileID: 6606216066120045577}
-  - {fileID: 7432930853043137576}
   - {fileID: 7776599010897609498}
   MigratedPlatforms: 0c000000150000000b0000000a00000009000000120000000800000005000000060000000200000001000000
 --- !u!114 &3848305444265417246
@@ -527,9 +515,7 @@ MonoBehaviour:
     StaticPlugins:
       Value: []
       HasValue: 0
-    CallbackHandler:
-      Value: {fileID: 0}
-      HasValue: 0
+    CallbackHandler: {Value: {fileID: 0}, HasValue: 0}
   OutputTypeName: 
   threadAffinities:
     Value: []
@@ -594,9 +580,7 @@ MonoBehaviour:
     StaticPlugins:
       Value: []
       HasValue: 0
-    CallbackHandler:
-      Value: {fileID: 0}
-      HasValue: 0
+    CallbackHandler: {Value: {fileID: 0}, HasValue: 0}
   OutputTypeName: 
   threadAffinities:
     Value: []
@@ -671,13 +655,7 @@ MonoBehaviour:
   displaySortOrder: 0
   childIdentifiers:
   - fd7c55dab0fce234b8c25f6ffca523c1
-  - 0f8eb3f400726694eb47beb1a9f94ce8
-  - 52eb9df5db46521439908db3a29a1bbb
   - 2c5177b11d81d824dbb064f9ac8527da
-  - 2fea114e74ecf3c4f920e1d5cc1c4c40
-  - e7a046c753c3c3d4aacc91f6597f310d
-  - 46fbfdf3fc43db0458918377fd40293e
-  - b7716510a1f36934c87976f3a81dbf3d
   - c88d16e5272a4e241b0ef0ac2e53b73d
   codecChannels:
     Value: []
@@ -737,9 +715,7 @@ MonoBehaviour:
     StaticPlugins:
       Value: []
       HasValue: 0
-    CallbackHandler:
-      Value: {fileID: 0}
-      HasValue: 0
+    CallbackHandler: {Value: {fileID: 0}, HasValue: 0}
   OutputTypeName: 
   threadAffinities:
     Value: []
