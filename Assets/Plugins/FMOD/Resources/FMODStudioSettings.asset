@@ -417,8 +417,8 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: ../../Documents/FMOD Studio/CryoScape/CryoScape.fspro
-  sourceBankPath: ../../Documents/FMOD Studio/CryoScape/Build
+  sourceProjectPath: Assets/Fmod/CryoScape/CryoScape.fspro
+  sourceBankPath: Assets/Fmod/CryoScape/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -439,8 +439,10 @@ MonoBehaviour:
   VirtualChannelSettings: []
   RealChannelSettings: []
   Plugins: []
-  MasterBanks: []
-  Banks: []
+  MasterBanks:
+  - Master
+  Banks:
+  - Sounds
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
