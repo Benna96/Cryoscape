@@ -6,9 +6,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform modelTransform;
     [SerializeField] private Rigidbody rigidBody;
     [SerializeField] private float movementSpeed = 6f;
-    [SerializeField] private float crouchSpeed = 3f;
+    [SerializeField] private float crouchSpeed;
     float startScaleY;
-    float crouchScaleY = 0.5f;
+    float crouchScaleY;
     bool crouched;
 
     private Vector2 movementInput;
@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
     private void Start() 
     {
         startScaleY = modelTransform.localScale.y;
+        crouchScaleY = startScaleY / 2;
+        crouchSpeed = movementSpeed / 2;
         crouched = false;
     }
     private void FixedUpdate()
