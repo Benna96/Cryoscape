@@ -18,9 +18,9 @@ public class PlayerCamera : MonoBehaviour
 
     private void Start() 
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        LockCursor();
     }
+
     private void Update()
     {
         cameraTransform.position = transformToFollow.position;
@@ -28,6 +28,7 @@ public class PlayerCamera : MonoBehaviour
         if (deltaLookInput != Vector2.zero || continuousLookInput != Vector2.zero)
             RotatePlayerAndCamera();
     }
+
 
     private void RotatePlayerAndCamera()
     {
@@ -60,5 +61,16 @@ public class PlayerCamera : MonoBehaviour
     public void OnLookContinuous(InputValue value)
     {
         continuousLookInput = value.Get<Vector2>();
+    }
+
+    public void LockCursor()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+    public void UnlockCursor()
+    {
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
     }
 }

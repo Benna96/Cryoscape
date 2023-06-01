@@ -76,6 +76,17 @@
                 },
                 {
                     "name": "",
+                    "id": "d333a452-f105-464c-b565-93fa9bea6a55",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Crouch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "f0d5d0f6-5d99-4a30-b42e-dd9d65d0e780",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
