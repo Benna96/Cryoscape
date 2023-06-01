@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform modelTransform;
     [SerializeField] private Rigidbody rigidBody;
     [SerializeField] private float movementSpeed = 6f;
-    [SerializeField] private float crouchSpeed;
+    private float crouchSpeed;
     float startScaleY;
     float crouchScaleY;
     bool crouched;
