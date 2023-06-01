@@ -5,7 +5,8 @@ using UnityEngine;
 public class SpacesuitPod : MonoBehaviour
 {
     GameObject padBackground;
-    ButtonScript buttonTwo, buttonSeven, buttonEight, buttonNine, buttonTen, buttonEleven, buttonThirteen, buttonSixteen;
+    ButtonScript buttonTwo, buttonSeven, buttonEight, buttonNine, buttonTen, buttonEleven, buttonThirteen, buttonSixteen,
+            buttonOne, buttonThree, buttonFour, buttonFive, buttonSix, buttonTwelve, buttonFourteen, buttonFifteen;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,15 @@ public class SpacesuitPod : MonoBehaviour
         buttonEleven = padBackground.transform.GetChild(10).GetComponent<ButtonScript>();
         buttonThirteen = padBackground.transform.GetChild(12).GetComponent<ButtonScript>();
         buttonSixteen = padBackground.transform.GetChild(15).GetComponent<ButtonScript>();
+        buttonOne = padBackground.transform.GetChild(0).GetComponent<ButtonScript>();
+        buttonThree = padBackground.transform.GetChild(2).GetComponent<ButtonScript>();
+        buttonFour = padBackground.transform.GetChild(3).GetComponent<ButtonScript>();
+        buttonFive = padBackground.transform.GetChild(4).GetComponent<ButtonScript>();
+        buttonSix = padBackground.transform.GetChild(5).GetComponent<ButtonScript>();
+        buttonTwelve = padBackground.transform.GetChild(11).GetComponent<ButtonScript>();
+        buttonFourteen = padBackground.transform.GetChild(13).GetComponent<ButtonScript>();
+        buttonFifteen = padBackground.transform.GetChild(14).GetComponent<ButtonScript>();
+
 
         Debug.Log(buttonTwo.name);
         Debug.Log(buttonSeven.name);
@@ -35,7 +45,9 @@ public class SpacesuitPod : MonoBehaviour
     void Update()
     {
         if (buttonTwo.interacted && buttonSeven.interacted && buttonEight.interacted && buttonNine.interacted &&
-            buttonTen.interacted && buttonEleven.interacted && buttonThirteen.interacted && buttonSixteen.interacted)
+            buttonTen.interacted && buttonEleven.interacted && buttonThirteen.interacted && buttonSixteen.interacted &&
+            !buttonOne.interacted && !buttonThree.interacted && !buttonFour.interacted && !buttonFive.interacted && 
+            !buttonSix.interacted && !buttonTwelve.interacted && !buttonFourteen.interacted && !buttonFifteen.interacted)
             {
                 Debug.Log("Spacesuit Pod is open.");
             }
