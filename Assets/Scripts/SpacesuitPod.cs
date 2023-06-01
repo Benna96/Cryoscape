@@ -9,14 +9,23 @@ public class SpacesuitPod : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        buttonTwo = GameObject.Find("button002").GetComponent<ButtonScript>();
-        buttonSeven = GameObject.Find("button007").GetComponent<ButtonScript>();
-        buttonEight = GameObject.Find("button008").GetComponent<ButtonScript>();
-        buttonNine = GameObject.Find("button009").GetComponent<ButtonScript>();
-        buttonTen = GameObject.Find("button010").GetComponent<ButtonScript>();
-        buttonEleven = GameObject.Find("button011").GetComponent<ButtonScript>();
-        buttonThirteen = GameObject.Find("button013").GetComponent<ButtonScript>();
-        buttonSixteen = GameObject.Find("button016").GetComponent<ButtonScript>();
+        buttonTwo = GameObject.Find("SpacesuitPad").transform.GetChild(0).GetChild(1).GetComponent<ButtonScript>();
+        buttonSeven = GameObject.Find("SpacesuitPad").transform.GetChild(0).GetChild(6).GetComponent<ButtonScript>();
+        buttonEight = GameObject.Find("SpacesuitPad").transform.GetChild(0).GetChild(7).GetComponent<ButtonScript>();
+        buttonNine = GameObject.Find("SpacesuitPad").transform.GetChild(0).GetChild(8).GetComponent<ButtonScript>();
+        buttonTen = GameObject.Find("SpacesuitPad").transform.GetChild(0).GetChild(9).GetComponent<ButtonScript>();
+        buttonEleven = GameObject.Find("SpacesuitPad").transform.GetChild(0).GetChild(10).GetComponent<ButtonScript>();
+        buttonThirteen = GameObject.Find("SpacesuitPad").transform.GetChild(0).GetChild(12).GetComponent<ButtonScript>();
+        buttonSixteen = GameObject.Find("SpacesuitPad").transform.GetChild(0).GetChild(15).GetComponent<ButtonScript>();
+
+        Debug.Log(buttonTwo.name);
+        Debug.Log(buttonSeven.name);
+        Debug.Log(buttonEight.name);
+        Debug.Log(buttonNine.name);
+        Debug.Log(buttonTen.name);
+        Debug.Log(buttonEleven.name);
+        Debug.Log(buttonThirteen.name);
+        Debug.Log(buttonSixteen.name);
     }
 
     // Update is called once per frame
