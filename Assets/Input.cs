@@ -224,28 +224,10 @@ public partial class @Input: IInputActionCollection2, IDisposable
             ""id"": ""d874a05f-c93c-4906-af17-3a289caf9545"",
             ""actions"": [
                 {
-                    ""name"": ""Point"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""616f8c89-5a3b-462d-8c7e-4639ccd7e65c"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
                     ""name"": ""Click"",
                     ""type"": ""PassThrough"",
                     ""id"": ""40b60444-7e5f-454d-acfe-91fb77764023"",
                     ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Navigate"",
-                    ""type"": ""Value"",
-                    ""id"": ""5e0542e6-f19d-45c6-844b-69e9c64452f1"",
-                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
@@ -276,20 +258,90 @@ public partial class @Input: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Hotkey1"",
+                    ""type"": ""Button"",
+                    ""id"": ""6ba73428-4640-4848-bb0d-76cd98b7164e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Hotkey2"",
+                    ""type"": ""Button"",
+                    ""id"": ""4e127854-8ac0-4086-aac8-4bf64d753d40"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Hotkey3"",
+                    ""type"": ""Button"",
+                    ""id"": ""4a8063ab-9d92-40f6-b730-ebff06d8802f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Hotkey4"",
+                    ""type"": ""Button"",
+                    ""id"": ""1aa9b2c1-1a37-45e7-814f-31d35610eb48"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Hotkey5"",
+                    ""type"": ""Button"",
+                    ""id"": ""abcfdedb-9cbc-4f18-826b-ce6a2517b174"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Hotkey6"",
+                    ""type"": ""Button"",
+                    ""id"": ""bfd810c5-9c7c-4644-8e0f-bb0eb42e12aa"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Hotkey7"",
+                    ""type"": ""Button"",
+                    ""id"": ""c2093661-8bdd-4651-9db7-401ff3aadc42"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Hotkey8"",
+                    ""type"": ""Button"",
+                    ""id"": ""c3fcbc05-bf33-4f2d-86b5-3a09c8c42fab"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Hotkey9"",
+                    ""type"": ""Button"",
+                    ""id"": ""48cd04b7-00de-48f0-8c21-a33832246866"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""eab79acb-9cb5-46bb-9bb5-27f3d2481ab9"",
-                    ""path"": ""<Mouse>/position"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Point"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
                 {
                     ""name"": """",
                     ""id"": ""d8446a1f-be67-47d1-9efc-bd4fb68d6bb7"",
@@ -303,22 +355,11 @@ public partial class @Input: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""650a8b7b-2f28-4318-8348-96c46ed01e00"",
-                    ""path"": ""<Gamepad>/dpad"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Navigate"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""07697832-2d63-45fa-b196-605ab2288ea4"",
                     ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""KeyboardMouse"",
                     ""action"": ""Cancel"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -373,7 +414,7 @@ public partial class @Input: IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/dpad/left"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Gamepad"",
                     ""action"": ""ChangeItem"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -384,10 +425,208 @@ public partial class @Input: IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/dpad/right"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Gamepad"",
                     ""action"": ""ChangeItem"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d02c67e1-7853-4a06-a559-bd7fb3e02734"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Hotkey1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4d07c3e6-c8a2-4927-bacc-e5cd7eb7c1fd"",
+                    ""path"": ""<Keyboard>/numpad1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Hotkey1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""499bdfb4-d323-4074-a130-2f1d69049d64"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Hotkey2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7ccc5c6f-6fb3-42c6-b1ab-ce6454c5df9c"",
+                    ""path"": ""<Keyboard>/numpad2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Hotkey2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c896a44e-e8d5-4cdc-8c80-6da4da880660"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Hotkey3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f5e64c52-7bb8-4821-9cfb-dd3fae054c8d"",
+                    ""path"": ""<Keyboard>/numpad3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Hotkey3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a68ea89e-397d-43ad-ad1a-47c2e87fabb6"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Hotkey4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0ab147e9-a281-4559-a88f-0a976a6deb60"",
+                    ""path"": ""<Keyboard>/numpad4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Hotkey4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3da79196-0edf-4e5a-a48e-348e2a42de71"",
+                    ""path"": ""<Keyboard>/5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Hotkey5"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ac9eec3a-1967-4138-a39b-8e8e26145e58"",
+                    ""path"": ""<Keyboard>/numpad5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Hotkey5"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f5c06a4b-b270-4af7-92de-ba80e1f5a46e"",
+                    ""path"": ""<Keyboard>/6"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Hotkey6"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4c65d878-b05b-4496-b6c9-d84ab3eb1db7"",
+                    ""path"": ""<Keyboard>/numpad6"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Hotkey6"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2a0614e5-5611-496c-a474-3e7156f7b14b"",
+                    ""path"": ""<Keyboard>/7"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Hotkey7"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""35b83894-937e-4029-88fc-6b84acab44a3"",
+                    ""path"": ""<Keyboard>/numpad7"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Hotkey7"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9f86c7e0-bb24-4748-a026-fb63299bd4ff"",
+                    ""path"": ""<Keyboard>/8"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Hotkey8"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bf49b3e1-feb9-4f28-9ee1-489bb2edfd78"",
+                    ""path"": ""<Keyboard>/numpad8"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Hotkey8"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3f6a41bc-435a-4709-9e5e-aacccd16c67a"",
+                    ""path"": ""<Keyboard>/9"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Hotkey9"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""20aae077-b60c-4426-90c0-608864cbd202"",
+                    ""path"": ""<Keyboard>/numpad9"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Hotkey9"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -431,12 +670,19 @@ public partial class @Input: IInputActionCollection2, IDisposable
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
-        m_UI_Point = m_UI.FindAction("Point", throwIfNotFound: true);
         m_UI_Click = m_UI.FindAction("Click", throwIfNotFound: true);
-        m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
         m_UI_Cancel = m_UI.FindAction("Cancel", throwIfNotFound: true);
         m_UI_Submit = m_UI.FindAction("Submit", throwIfNotFound: true);
         m_UI_ChangeItem = m_UI.FindAction("ChangeItem", throwIfNotFound: true);
+        m_UI_Hotkey1 = m_UI.FindAction("Hotkey1", throwIfNotFound: true);
+        m_UI_Hotkey2 = m_UI.FindAction("Hotkey2", throwIfNotFound: true);
+        m_UI_Hotkey3 = m_UI.FindAction("Hotkey3", throwIfNotFound: true);
+        m_UI_Hotkey4 = m_UI.FindAction("Hotkey4", throwIfNotFound: true);
+        m_UI_Hotkey5 = m_UI.FindAction("Hotkey5", throwIfNotFound: true);
+        m_UI_Hotkey6 = m_UI.FindAction("Hotkey6", throwIfNotFound: true);
+        m_UI_Hotkey7 = m_UI.FindAction("Hotkey7", throwIfNotFound: true);
+        m_UI_Hotkey8 = m_UI.FindAction("Hotkey8", throwIfNotFound: true);
+        m_UI_Hotkey9 = m_UI.FindAction("Hotkey9", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -576,22 +822,36 @@ public partial class @Input: IInputActionCollection2, IDisposable
     // UI
     private readonly InputActionMap m_UI;
     private List<IUIActions> m_UIActionsCallbackInterfaces = new List<IUIActions>();
-    private readonly InputAction m_UI_Point;
     private readonly InputAction m_UI_Click;
-    private readonly InputAction m_UI_Navigate;
     private readonly InputAction m_UI_Cancel;
     private readonly InputAction m_UI_Submit;
     private readonly InputAction m_UI_ChangeItem;
+    private readonly InputAction m_UI_Hotkey1;
+    private readonly InputAction m_UI_Hotkey2;
+    private readonly InputAction m_UI_Hotkey3;
+    private readonly InputAction m_UI_Hotkey4;
+    private readonly InputAction m_UI_Hotkey5;
+    private readonly InputAction m_UI_Hotkey6;
+    private readonly InputAction m_UI_Hotkey7;
+    private readonly InputAction m_UI_Hotkey8;
+    private readonly InputAction m_UI_Hotkey9;
     public struct UIActions
     {
         private @Input m_Wrapper;
         public UIActions(@Input wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Point => m_Wrapper.m_UI_Point;
         public InputAction @Click => m_Wrapper.m_UI_Click;
-        public InputAction @Navigate => m_Wrapper.m_UI_Navigate;
         public InputAction @Cancel => m_Wrapper.m_UI_Cancel;
         public InputAction @Submit => m_Wrapper.m_UI_Submit;
         public InputAction @ChangeItem => m_Wrapper.m_UI_ChangeItem;
+        public InputAction @Hotkey1 => m_Wrapper.m_UI_Hotkey1;
+        public InputAction @Hotkey2 => m_Wrapper.m_UI_Hotkey2;
+        public InputAction @Hotkey3 => m_Wrapper.m_UI_Hotkey3;
+        public InputAction @Hotkey4 => m_Wrapper.m_UI_Hotkey4;
+        public InputAction @Hotkey5 => m_Wrapper.m_UI_Hotkey5;
+        public InputAction @Hotkey6 => m_Wrapper.m_UI_Hotkey6;
+        public InputAction @Hotkey7 => m_Wrapper.m_UI_Hotkey7;
+        public InputAction @Hotkey8 => m_Wrapper.m_UI_Hotkey8;
+        public InputAction @Hotkey9 => m_Wrapper.m_UI_Hotkey9;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -601,15 +861,9 @@ public partial class @Input: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_UIActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_UIActionsCallbackInterfaces.Add(instance);
-            @Point.started += instance.OnPoint;
-            @Point.performed += instance.OnPoint;
-            @Point.canceled += instance.OnPoint;
             @Click.started += instance.OnClick;
             @Click.performed += instance.OnClick;
             @Click.canceled += instance.OnClick;
-            @Navigate.started += instance.OnNavigate;
-            @Navigate.performed += instance.OnNavigate;
-            @Navigate.canceled += instance.OnNavigate;
             @Cancel.started += instance.OnCancel;
             @Cancel.performed += instance.OnCancel;
             @Cancel.canceled += instance.OnCancel;
@@ -619,19 +873,40 @@ public partial class @Input: IInputActionCollection2, IDisposable
             @ChangeItem.started += instance.OnChangeItem;
             @ChangeItem.performed += instance.OnChangeItem;
             @ChangeItem.canceled += instance.OnChangeItem;
+            @Hotkey1.started += instance.OnHotkey1;
+            @Hotkey1.performed += instance.OnHotkey1;
+            @Hotkey1.canceled += instance.OnHotkey1;
+            @Hotkey2.started += instance.OnHotkey2;
+            @Hotkey2.performed += instance.OnHotkey2;
+            @Hotkey2.canceled += instance.OnHotkey2;
+            @Hotkey3.started += instance.OnHotkey3;
+            @Hotkey3.performed += instance.OnHotkey3;
+            @Hotkey3.canceled += instance.OnHotkey3;
+            @Hotkey4.started += instance.OnHotkey4;
+            @Hotkey4.performed += instance.OnHotkey4;
+            @Hotkey4.canceled += instance.OnHotkey4;
+            @Hotkey5.started += instance.OnHotkey5;
+            @Hotkey5.performed += instance.OnHotkey5;
+            @Hotkey5.canceled += instance.OnHotkey5;
+            @Hotkey6.started += instance.OnHotkey6;
+            @Hotkey6.performed += instance.OnHotkey6;
+            @Hotkey6.canceled += instance.OnHotkey6;
+            @Hotkey7.started += instance.OnHotkey7;
+            @Hotkey7.performed += instance.OnHotkey7;
+            @Hotkey7.canceled += instance.OnHotkey7;
+            @Hotkey8.started += instance.OnHotkey8;
+            @Hotkey8.performed += instance.OnHotkey8;
+            @Hotkey8.canceled += instance.OnHotkey8;
+            @Hotkey9.started += instance.OnHotkey9;
+            @Hotkey9.performed += instance.OnHotkey9;
+            @Hotkey9.canceled += instance.OnHotkey9;
         }
 
         private void UnregisterCallbacks(IUIActions instance)
         {
-            @Point.started -= instance.OnPoint;
-            @Point.performed -= instance.OnPoint;
-            @Point.canceled -= instance.OnPoint;
             @Click.started -= instance.OnClick;
             @Click.performed -= instance.OnClick;
             @Click.canceled -= instance.OnClick;
-            @Navigate.started -= instance.OnNavigate;
-            @Navigate.performed -= instance.OnNavigate;
-            @Navigate.canceled -= instance.OnNavigate;
             @Cancel.started -= instance.OnCancel;
             @Cancel.performed -= instance.OnCancel;
             @Cancel.canceled -= instance.OnCancel;
@@ -641,6 +916,33 @@ public partial class @Input: IInputActionCollection2, IDisposable
             @ChangeItem.started -= instance.OnChangeItem;
             @ChangeItem.performed -= instance.OnChangeItem;
             @ChangeItem.canceled -= instance.OnChangeItem;
+            @Hotkey1.started -= instance.OnHotkey1;
+            @Hotkey1.performed -= instance.OnHotkey1;
+            @Hotkey1.canceled -= instance.OnHotkey1;
+            @Hotkey2.started -= instance.OnHotkey2;
+            @Hotkey2.performed -= instance.OnHotkey2;
+            @Hotkey2.canceled -= instance.OnHotkey2;
+            @Hotkey3.started -= instance.OnHotkey3;
+            @Hotkey3.performed -= instance.OnHotkey3;
+            @Hotkey3.canceled -= instance.OnHotkey3;
+            @Hotkey4.started -= instance.OnHotkey4;
+            @Hotkey4.performed -= instance.OnHotkey4;
+            @Hotkey4.canceled -= instance.OnHotkey4;
+            @Hotkey5.started -= instance.OnHotkey5;
+            @Hotkey5.performed -= instance.OnHotkey5;
+            @Hotkey5.canceled -= instance.OnHotkey5;
+            @Hotkey6.started -= instance.OnHotkey6;
+            @Hotkey6.performed -= instance.OnHotkey6;
+            @Hotkey6.canceled -= instance.OnHotkey6;
+            @Hotkey7.started -= instance.OnHotkey7;
+            @Hotkey7.performed -= instance.OnHotkey7;
+            @Hotkey7.canceled -= instance.OnHotkey7;
+            @Hotkey8.started -= instance.OnHotkey8;
+            @Hotkey8.performed -= instance.OnHotkey8;
+            @Hotkey8.canceled -= instance.OnHotkey8;
+            @Hotkey9.started -= instance.OnHotkey9;
+            @Hotkey9.performed -= instance.OnHotkey9;
+            @Hotkey9.canceled -= instance.OnHotkey9;
         }
 
         public void RemoveCallbacks(IUIActions instance)
@@ -686,11 +988,18 @@ public partial class @Input: IInputActionCollection2, IDisposable
     }
     public interface IUIActions
     {
-        void OnPoint(InputAction.CallbackContext context);
         void OnClick(InputAction.CallbackContext context);
-        void OnNavigate(InputAction.CallbackContext context);
         void OnCancel(InputAction.CallbackContext context);
         void OnSubmit(InputAction.CallbackContext context);
         void OnChangeItem(InputAction.CallbackContext context);
+        void OnHotkey1(InputAction.CallbackContext context);
+        void OnHotkey2(InputAction.CallbackContext context);
+        void OnHotkey3(InputAction.CallbackContext context);
+        void OnHotkey4(InputAction.CallbackContext context);
+        void OnHotkey5(InputAction.CallbackContext context);
+        void OnHotkey6(InputAction.CallbackContext context);
+        void OnHotkey7(InputAction.CallbackContext context);
+        void OnHotkey8(InputAction.CallbackContext context);
+        void OnHotkey9(InputAction.CallbackContext context);
     }
 }

@@ -34,7 +34,7 @@ public class InteractableManager : MonoBehaviour
             currentInteractable = null;
     }
 
-    public void InteractWithCurrent()
+    public void OnInteract()
     {
         if (currentInteractable != null)
             currentInteractable.Interact();
