@@ -10,7 +10,7 @@ public class ButtonScript : Interactable
     void Start()
     {
         interacted = false;
-        name = gameObject.name;
+        buttonName = gameObject.name;
     }
 
     // Update is called once per frame

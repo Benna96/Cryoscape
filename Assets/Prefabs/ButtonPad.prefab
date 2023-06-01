@@ -257,6 +257,19 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!65 &1035551895
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737716592043590940}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.7, y: 1, z: 2.7}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1855623543522183918
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -363,6 +376,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interacted: 0
   buttonName: 
+--- !u!65 &884515798
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1513515250168690623}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.7, y: 1, z: 2.7}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &2182775452165254405 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9d1820c5cd8ba964b91c3bf278a5d6c5, type: 3}
@@ -474,6 +500,19 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!65 &2013763138
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324572726887662048}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.7, y: 1, z: 2.7}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1813265425123711834 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9d1820c5cd8ba964b91c3bf278a5d6c5, type: 3}
@@ -590,6 +629,19 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!65 &565741102
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2945121759593529766}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.7, y: 1, z: 2.7}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2614021689998264049
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -701,6 +753,19 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!65 &1552576602
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2920504306594380704}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.7, y: 1, z: 2.7}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &3132075846212535960
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -807,6 +872,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interacted: 0
   buttonName: 
+--- !u!65 &87426501
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2861535854560115657}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.7, y: 1, z: 2.7}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &3242001423913263475 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9d1820c5cd8ba964b91c3bf278a5d6c5, type: 3}
@@ -877,7 +955,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9d1820c5cd8ba964b91c3bf278a5d6c5, type: 3}
       propertyPath: m_Name
-      value: button011
+      value: button010
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d1820c5cd8ba964b91c3bf278a5d6c5, type: 3}
@@ -918,6 +996,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interacted: 0
   buttonName: 
+--- !u!65 &1186490487
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3568157694731865827}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.7, y: 1, z: 2.7}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &4237733490124231769 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9d1820c5cd8ba964b91c3bf278a5d6c5, type: 3}
@@ -1034,6 +1125,19 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!65 &912032454
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6836265351920231214}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.7, y: 1, z: 2.7}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &7290831741356812001
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1145,6 +1249,19 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!65 &50867382
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7633413381847391152}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.7, y: 1, z: 2.7}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &7485296112880085988
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1256,6 +1373,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interacted: 0
   buttonName: 
+--- !u!65 &1857689360
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7719298361271604917}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.7, y: 1, z: 2.7}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &7712137170832618595
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1321,7 +1451,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9d1820c5cd8ba964b91c3bf278a5d6c5, type: 3}
       propertyPath: m_Name
-      value: button012
+      value: button009
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d1820c5cd8ba964b91c3bf278a5d6c5, type: 3}
@@ -1362,6 +1492,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interacted: 0
   buttonName: 
+--- !u!65 &206909286
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7477781005191694642}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.7, y: 1, z: 2.7}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &7822113290081604488 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9d1820c5cd8ba964b91c3bf278a5d6c5, type: 3}
@@ -1473,6 +1616,19 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!65 &544612105
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7056129788622184921}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.7, y: 1, z: 2.7}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &7685313620633254755 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9d1820c5cd8ba964b91c3bf278a5d6c5, type: 3}
@@ -1584,6 +1740,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interacted: 0
   buttonName: 
+--- !u!65 &1986963211
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7167200917863221929}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.7, y: 1, z: 2.7}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &7511111299810922515 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9d1820c5cd8ba964b91c3bf278a5d6c5, type: 3}
@@ -1654,7 +1823,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9d1820c5cd8ba964b91c3bf278a5d6c5, type: 3}
       propertyPath: m_Name
-      value: button010
+      value: button011
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d1820c5cd8ba964b91c3bf278a5d6c5, type: 3}
@@ -1700,6 +1869,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interacted: 0
   buttonName: 
+--- !u!65 &713188024
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8672014732025902543}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.7, y: 1, z: 2.7}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &9019640784052801269
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1806,6 +1988,19 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!65 &1386658037
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8209316998146618276}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.7, y: 1, z: 2.7}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &8837904134665054494 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9d1820c5cd8ba964b91c3bf278a5d6c5, type: 3}
@@ -1876,7 +2071,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9d1820c5cd8ba964b91c3bf278a5d6c5, type: 3}
       propertyPath: m_Name
-      value: button009
+      value: button012
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d1820c5cd8ba964b91c3bf278a5d6c5, type: 3}
@@ -1917,6 +2112,19 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!65 &193586010
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8214387517834810766}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.7, y: 1, z: 2.7}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &8841847276151377716 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9d1820c5cd8ba964b91c3bf278a5d6c5, type: 3}
