@@ -200,7 +200,7 @@ Transform:
   m_GameObject: {fileID: 7344325525461113005}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 2.905799, z: 1.5335}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3689605980742332552}
@@ -283,7 +283,7 @@ Transform:
   m_GameObject: {fileID: 8507093918799121952}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3005, y: 1.3005, z: 1.3005}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7114966995313417185}
@@ -399,7 +399,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   modelTransform: {fileID: 7114966995313417185}
   rigidBody: {fileID: 6092245240278425628}
-  movementSpeed: 6
+  movementSpeed: 15
   crouchSpeed: 3
 --- !u!114 &2328289769892208461
 MonoBehaviour:
