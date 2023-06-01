@@ -1,0 +1,39 @@
+VisualElement {	color: rgb(255, 255, 255); }
+.dontshow { display: none; }
+
+#ItemWrapper
+{
+    width: 100px;
+	height: 100px;
+	margin: 0px 15px;
+}
+
+#ItemWrapper > Label
+{
+	position: absolute;
+	margin: 0px;
+	padding: 0px 0px 0px 5px;
+	font-size: 27px;
+}
+
+#ItemWrapper > #Background
+{
+    width: 100%;
+	height: 100%;
+
+	background-color: rgba(0, 0, 0, 0.1);
+	/* background-color: rgba(255, 255, 255, 0.05); */
+	border-width: 3px;
+	border-color: rgba(255, 255, 255, 0.05);
+	opacity: 0.33;
+}
+#ItemWrapper:focus > #Background
+{
+    border-color: rgba(255, 255, 255, 0.2);
+	opacity: 1;
+}
+#ItemWrapper > #Background > #Icon
+{
+    width: 100%;
+    height: 100%;
+}
