@@ -17,7 +17,6 @@ public class InventoryUI : MonoBehaviour
     {
         FetchElements();
         SetLabels();
-        RegisterEventsAndRunRelatedInitFuncs();
 
         void FetchElements()
         {
@@ -34,9 +33,16 @@ public class InventoryUI : MonoBehaviour
             foreach (var (label, index) in itemLabels.Select((x, i) => (x, i)))
                 label.text = (index + 1).ToString();
         }
+    }
+
+    private void Start()
+    {
+        // InventoryManager.instance may not exist OnEnable, so use it in Start instead
+        RegisterEventsAndRunRelatedInitFuncs();
 
         void RegisterEventsAndRunRelatedInitFuncs()
         {
+            Debug.Log(InventoryManager.instance);
             (InventoryManager.instance.items as INotifyCollectionChanged).CollectionChanged += (_, _) => UpdateIcons();
             UpdateIcons();
 
