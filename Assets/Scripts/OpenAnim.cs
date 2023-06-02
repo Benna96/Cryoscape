@@ -12,6 +12,10 @@ public abstract class OpenAnim : MonoBehaviour
     [Tooltip("Leave empty to use Open Curve")]
     [SerializeField] protected AnimationCurve closeCurve;
 
+    [Header("Sounds")]
+    [SerializeField] protected AudioSource openAudio;
+    [SerializeField] protected AudioSource closeAudio;
+
     [Header("Debug")]
     [Tooltip("Toggle this on to automatically play the animation back and forth when entering play mode.")]
     [SerializeField] protected bool debugAutoPlay = false;
@@ -41,11 +45,18 @@ public abstract class OpenAnim : MonoBehaviour
 
     public IEnumerator Open()
     {
+        if (openAudio != null)
+            openAudio.Play();
+
         yield return StartCoroutine(AnimateEachFrame(true));
     }
 
     public IEnumerator Close()
     {
+        if (closeAudio != null)
+            closeAudio.Play();
+
+
         yield return StartCoroutine(AnimateEachFrame(false));
     }
 
