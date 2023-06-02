@@ -3,7 +3,6 @@ using System.Linq;
 using System.Text.RegularExpressions;
 
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 
@@ -42,7 +41,6 @@ public class InventoryUI : MonoBehaviour
 
         void RegisterEventsAndRunRelatedInitFuncs()
         {
-            Debug.Log(InventoryManager.instance);
             (InventoryManager.instance.items as INotifyCollectionChanged).CollectionChanged += (_, _) => UpdateIcons();
             UpdateIcons();
 
