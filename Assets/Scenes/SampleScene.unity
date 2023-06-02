@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 814e4384c95177349a08cc7f51b20146, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openAnimDuration: 1
+  openAnimDuration: 2
   openAnimCurve:
     serializedVersion: 2
     m_Curve: []
@@ -212,6 +212,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9b8732f7dd5c8134ab39228c8c0d7544, type: 3}
       propertyPath: m_Name
       value: armorstand001
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9b8732f7dd5c8134ab39228c8c0d7544, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b8732f7dd5c8134ab39228c8c0d7544, type: 3}
@@ -390,6 +394,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 744663897351373961, guid: da489fb25a57d024eb93b88dffe05bd0, type: 3}
+      propertyPath: debugAutoPlay
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 744663897351373961, guid: da489fb25a57d024eb93b88dffe05bd0, type: 3}
+      propertyPath: openAnimDuration
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1677093642266970095, guid: da489fb25a57d024eb93b88dffe05bd0, type: 3}
       propertyPath: m_Name
       value: SpacesuitPad
