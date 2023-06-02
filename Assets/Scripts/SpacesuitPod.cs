@@ -8,11 +8,12 @@ public class SpacesuitPod : MonoBehaviour
     GameObject padBackground;
     ButtonScript buttonTwo, buttonSeven, buttonEight, buttonNine, buttonTen, buttonEleven, buttonThirteen, buttonSixteen,
             buttonOne, buttonThree, buttonFour, buttonFive, buttonSix, buttonTwelve, buttonFourteen, buttonFifteen;
+    bool podIsOpen = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        podOpening = gameObject.transform.GetChild(0).GetComponent<OpenAnim>();
+        podOpening = gameObject.transform.GetChild(0).gameObject.GetComponent<OpenAnim>();
         padBackground = GameObject.Find("SpacesuitPad").transform.GetChild(0).gameObject;
 
         buttonTwo = padBackground.transform.GetChild(1).GetComponent<ButtonScript>();
@@ -31,16 +32,6 @@ public class SpacesuitPod : MonoBehaviour
         buttonTwelve = padBackground.transform.GetChild(11).GetComponent<ButtonScript>();
         buttonFourteen = padBackground.transform.GetChild(13).GetComponent<ButtonScript>();
         buttonFifteen = padBackground.transform.GetChild(14).GetComponent<ButtonScript>();
-
-
-        Debug.Log(buttonTwo.name);
-        Debug.Log(buttonSeven.name);
-        Debug.Log(buttonEight.name);
-        Debug.Log(buttonNine.name);
-        Debug.Log(buttonTen.name);
-        Debug.Log(buttonEleven.name);
-        Debug.Log(buttonThirteen.name);
-        Debug.Log(buttonSixteen.name);
     }
 
     // Update is called once per frame
@@ -51,8 +42,11 @@ public class SpacesuitPod : MonoBehaviour
             !buttonOne.interacted && !buttonThree.interacted && !buttonFour.interacted && !buttonFive.interacted && 
             !buttonSix.interacted && !buttonTwelve.interacted && !buttonFourteen.interacted && !buttonFifteen.interacted)
             {
-                podOpening.Open();
-                Debug.Log("Spacesuit Pod is open.");
+                if (!podIsOpen)
+                {
+                    StartCoroutine(podOpening.Open());
+                    podIsOpen = true;
+                }
             }
     }
 }
