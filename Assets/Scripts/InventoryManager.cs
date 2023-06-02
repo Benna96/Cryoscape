@@ -10,7 +10,7 @@ public class InventoryManager : Singleton<InventoryManager>, INotifyPropertyChan
 {
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public readonly ReadOnlyObservableCollection<InventoryItem> items;
+    public ReadOnlyObservableCollection<InventoryItem> items { get; private set; }
     private ObservableCollection<InventoryItem> _items = new();
 
     private int _currentIndex = -1;
@@ -24,10 +24,11 @@ public class InventoryManager : Singleton<InventoryManager>, INotifyPropertyChan
         }
     }
 
-    public InventoryManager() : base()
+    protected override void Awake()
     {
-        items = new(_items);
+        base.Awake();
 
+        items = new(_items);
         (items as INotifyCollectionChanged).CollectionChanged += InventoryManager_CollectionChanged;
     }
 
@@ -49,9 +50,4 @@ public class InventoryManager : Singleton<InventoryManager>, INotifyPropertyChan
     }
     public void SelectNextItem() { }
     public void SelectPreviousItem() { }
-
-    public void Foo()
-    {
-        //((INotifyCollectionChanged)inventoryItems).CollectionChanged += ;
-    }
 }
