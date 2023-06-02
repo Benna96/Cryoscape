@@ -6,10 +6,10 @@ using UnityEngine;
 /// Base Interactable class.
 /// Inherit from this class & override Interact function to implement some kind of interaction.
 /// </summary>
-[RequireComponent(typeof(Outline))]
 public class Interactable : MonoBehaviour
 {
     protected Outline outline;
+    [field: SerializeField] public bool isInteractable { get; protected set; } = true;
 
     protected virtual void Awake()
     {

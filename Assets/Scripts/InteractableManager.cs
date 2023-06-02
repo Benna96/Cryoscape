@@ -28,7 +28,9 @@ public class InteractableManager : MonoBehaviour
         var ray = camera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, camera.nearClipPlane));
         Debug.DrawRay(ray.origin, ray.direction * 1000, Color.yellow);
 
-        if (Physics.Raycast(ray, out var hit) && hit.collider.gameObject.TryGetComponent<Interactable>(out var interactable))
+        if (Physics.Raycast(ray, out var hit, 4f)
+            && hit.collider.gameObject.TryGetComponent<Interactable>(out var interactable)
+            && interactable.isInteractable)
             currentInteractable = interactable;
         else
             currentInteractable = null;
