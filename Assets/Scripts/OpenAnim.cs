@@ -90,10 +90,6 @@ public abstract class OpenAnim : MonoBehaviour
         var durationToUse = openAnimDuration - alreadyElapsedTime;
         elapsedTime = 0f;
 
-        Debug.Log($"Already eval progress: {amountToAnimateThisFrame}");
-        var alreadyCurveEvaluated = amountToAnimateThisFrame;
-        amountToAnimateThisFrame = 0f;
-
         while (elapsedTime < durationToUse)
         {
             Animate(elapsedTime);
