@@ -10,6 +10,7 @@ Material:
   m_Name: filthy-space-panels_preview
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ValidKeywords:
+  - _DETAIL_MULX2
   - _METALLICGLOSSMAP
   - _NORMALMAP
   - _PARALLAXMAP
@@ -29,23 +30,23 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
+        m_Scale: {x: 3, y: 20}
         m_Offset: {x: 0, y: 0}
     - _DetailMask:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailNormalMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: dc35a34e6545e2c4cae60740c58f3295, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 3.01, y: 19.82}
+        m_Scale: {x: 3, y: 20}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: d4800521f1d070a418a37ae991feebdb, type: 3}
-        m_Scale: {x: 3.01, y: 19.82}
+        m_Scale: {x: 3, y: 20}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 2800000, guid: 6378c374b5368204f9ffef560596ede7, type: 3}
