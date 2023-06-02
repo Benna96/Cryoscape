@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class OpenAnim : MonoBehaviour
@@ -27,8 +26,6 @@ public abstract class OpenAnim : MonoBehaviour
 #if UNITY_EDITOR
     private void Start()
     {
-        Time.timeScale = 0.3f;
-
         if (openAnimCurve.length < 2)
             openAnimCurve = new AnimationCurve(new(0f, 0f, 1f, 1f), new(1f, 1f, 1f, 1f));
         if (closeAnimCurve.length < 2)

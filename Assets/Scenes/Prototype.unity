@@ -2426,11 +2426,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!4 &1233025206 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 49a6e43fd0b668a40bb16469cc5d5272, type: 3}
-  m_PrefabInstance: {fileID: 709708896}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1233032938
 GameObject:
   m_ObjectHideFlags: 0
