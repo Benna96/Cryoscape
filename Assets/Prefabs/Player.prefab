@@ -398,9 +398,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   modelTransform: {fileID: 7114966995313417185}
+  actualModel: {fileID: 3689605980742332552}
   rigidBody: {fileID: 6092245240278425628}
   movementSpeed: 15
-  crouchSpeed: 3
 --- !u!114 &2328289769892208461
 MonoBehaviour:
   m_ObjectHideFlags: 0
