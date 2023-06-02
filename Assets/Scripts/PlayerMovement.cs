@@ -61,9 +61,4 @@ public class PlayerMovement : MonoBehaviour
         }
         Debug.Log("Pressed crouch button");
     }
-    void Update() 
-    {
-        Vector3 Upwards = modelTransform.TransformDirection(Vector3.up) * 8f;
-        Debug.DrawRay(modelTransform.position, Upwards, Color.green);
-    }
 }
