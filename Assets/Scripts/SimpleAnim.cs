@@ -67,7 +67,7 @@ public abstract class SimpleAnim : MonoBehaviour
         if (elapsedTime > 0f && elapsedTime < animDuration)
             StopCoroutine(activeAnimCoroutine);
 
-        activeAnimCoroutine = StartCoroutine(AnimateEachFrame(true));
+        activeAnimCoroutine = StartCoroutine(AnimateEachFrame(false));
         yield return activeAnimCoroutine;
     }
 
@@ -84,7 +84,7 @@ public abstract class SimpleAnim : MonoBehaviour
         if (elapsedTime > 0f && elapsedTime < animDuration)
             StopCoroutine(activeAnimCoroutine);
 
-        activeAnimCoroutine = StartCoroutine(AnimateEachFrame(false));
+        activeAnimCoroutine = StartCoroutine(AnimateEachFrame(true));
         yield return activeAnimCoroutine;
     }
 
