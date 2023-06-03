@@ -1,19 +1,28 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public abstract class OpenAnim : MonoBehaviour
+public abstract class SimpleAnim : MonoBehaviour
 {
-    [SerializeField] protected float openAnimDuration;
+    [FormerlySerializedAs("openAnimDuration")]
+    [SerializeField] protected float animDuration;
 
     [Header("Animation curves")]
-    [SerializeField] protected AnimationCurve openAnimCurve;
 
-    [Tooltip("Leave empty to use Open Curve")]
-    [SerializeField] protected AnimationCurve closeAnimCurve;
+    [FormerlySerializedAs("openAnimCurve")]
+    [SerializeField] protected AnimationCurve normalAnimCurve;
+
+    [Tooltip("Leave empty to use Normal Curve")]
+    [FormerlySerializedAs("closeAnimCurve")]
+    [SerializeField] protected AnimationCurve reversedAnimCurve;
 
     [Header("Sounds")]
-    [SerializeField] protected AudioSource openAudio;
-    [SerializeField] protected AudioSource closeAudio;
+
+    [FormerlySerializedAs("openAudio")]
+    [SerializeField] protected AudioSource normalAnimAudio;
+
+    [FormerlySerializedAs("closeAudio")]
+    [SerializeField] protected AudioSource reversedAnimAudio;
 
     [Header("Debug")]
     [Tooltip("Toggle this on to automatically play the animation back and forth when entering play mode.")]
@@ -26,10 +35,10 @@ public abstract class OpenAnim : MonoBehaviour
 #if UNITY_EDITOR
     private void Start()
     {
-        if (openAnimCurve.length < 2)
-            openAnimCurve = new AnimationCurve(new(0f, 0f, 1f, 1f), new(1f, 1f, 1f, 1f));
-        if (closeAnimCurve.length < 2)
-            closeAnimCurve = openAnimCurve;
+        if (normalAnimCurve.length < 2)
+            normalAnimCurve = new AnimationCurve(new(0f, 0f, 1f, 1f), new(1f, 1f, 1f, 1f));
+        if (reversedAnimCurve.length < 2)
+            reversedAnimCurve = normalAnimCurve;
 
         StartCoroutine(AutoPlay());
     }
@@ -38,40 +47,40 @@ public abstract class OpenAnim : MonoBehaviour
     {
         while (debugAutoPlay)
         {
-            yield return Open();
+            yield return AnimateNormal();
             yield return new WaitForSeconds(1f);
-            yield return Close();
+            yield return AnimateReversed();
             yield return new WaitForSeconds(1f);
         }
     }
 #endif
 
-    public IEnumerator Open()
+    public IEnumerator AnimateNormal()
     {
-        if (openAudio != null)
-            openAudio.Play();
+        if (normalAnimAudio != null)
+            normalAnimAudio.Play();
 
-        if (elapsedTime > 0f && elapsedTime < openAnimDuration)
+        if (elapsedTime > 0f && elapsedTime < animDuration)
             StopCoroutine(activeAnimCoroutine);
 
         activeAnimCoroutine = StartCoroutine(AnimateEachFrame(true));
         yield return activeAnimCoroutine;
     }
 
-    public IEnumerator Close()
+    public IEnumerator AnimateReversed()
     {
-        if (closeAudio != null)
-            closeAudio.Play();
+        if (reversedAnimAudio != null)
+            reversedAnimAudio.Play();
 
 
-        if (elapsedTime > 0f && elapsedTime < openAnimDuration)
+        if (elapsedTime > 0f && elapsedTime < animDuration)
             StopCoroutine(activeAnimCoroutine);
 
         activeAnimCoroutine = StartCoroutine(AnimateEachFrame(false));
         yield return activeAnimCoroutine;
     }
 
-    private IEnumerator AnimateEachFrame(bool doOpen)
+    private IEnumerator AnimateEachFrame(bool reversed)
     {
         // Take into account the amount animated in previous, now closed coroutine
         // For example: Previous coroutine got to point 0.5 on the animation curve, which evaluated to 0.3.
@@ -79,12 +88,12 @@ public abstract class OpenAnim : MonoBehaviour
         // 0.3 to 1: 0.3 + (0.7 * progress). 0.7 being (1 - 0.3).
         // 0.3 to 0: 0.3 - (0.3 * progress). - (0.3 * progress) can be expressed as ((0 - 0.3) * progress).
         // These two can be simplified to 0.3 + (((1 or 0) - 0.3) * progress).
-        var curveToUse = doOpen ? openAnimCurve : closeAnimCurve;
+        var curveToUse = reversed ? reversedAnimCurve : normalAnimCurve;
         var amountAlreadyAnimated = amountToAnimateThisFrame;
-        var amountToAnimateThisCoroutine = (doOpen ? 1 : 0) - amountAlreadyAnimated;
+        var amountToAnimateThisCoroutine = (reversed ? 0 : 1) - amountAlreadyAnimated;
 
         var alreadyElapsedTime = elapsedTime;
-        var durationToUse = openAnimDuration - alreadyElapsedTime;
+        var durationToUse = animDuration - alreadyElapsedTime;
         elapsedTime = 0f;
 
         while (elapsedTime < durationToUse)

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpacesuitPod : MonoBehaviour
 {
-    OpenAnim podOpening;
+    SimpleAnim podOpening;
     GameObject padBackground;
     ButtonScript buttonTwo, buttonSeven, buttonEight, buttonNine, buttonTen, buttonEleven, buttonThirteen, buttonSixteen,
             buttonOne, buttonThree, buttonFour, buttonFive, buttonSix, buttonTwelve, buttonFourteen, buttonFifteen;
@@ -13,7 +13,7 @@ public class SpacesuitPod : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        podOpening = gameObject.transform.GetChild(0).gameObject.GetComponent<OpenAnim>();
+        podOpening = gameObject.transform.GetChild(0).gameObject.GetComponent<SimpleAnim>();
         padBackground = GameObject.Find("SpacesuitPad").transform.GetChild(0).gameObject;
 
         buttonTwo = padBackground.transform.GetChild(1).GetComponent<ButtonScript>();
@@ -44,7 +44,7 @@ public class SpacesuitPod : MonoBehaviour
             {
                 if (!podIsOpen)
                 {
-                    StartCoroutine(podOpening.Open());
+                    StartCoroutine(podOpening.AnimateNormal());
                     podIsOpen = true;
                 }
             }

@@ -4,24 +4,24 @@ using UnityEngine;
 
 public class InteractableDoor : Interactable
 {
-    [SerializeField] private OpenAnim[] openableDoors;
+    [SerializeField] private SimpleAnim[] openableDoors;
     private bool isOpen;
 
     protected override void Awake()
     {
         base.Awake();
         if (openableDoors.Length == 0)
-            openableDoors = new OpenAnim[] { GetComponent<OpenAnim>() };
+            openableDoors = new SimpleAnim[] { GetComponent<SimpleAnim>() };
     }
 
     public override void Interact()
     {
         if (!isOpen)
             foreach (var door in openableDoors)
-                StartCoroutine(door.Open());
+                StartCoroutine(door.AnimateNormal());
         else
             foreach (var door in openableDoors)
-                StartCoroutine(door.Close());
+                StartCoroutine(door.AnimateReversed());
 
         isOpen = !isOpen;
     }

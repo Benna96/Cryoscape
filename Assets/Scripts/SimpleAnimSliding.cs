@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class OpenAnimSliding : OpenAnim
+public class SimpleAnimSliding : SimpleAnim
 {
     [SerializeField] private AxisHelper.Axis axis;
     [SerializeField] private float distance;

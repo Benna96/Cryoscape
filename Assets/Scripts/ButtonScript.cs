@@ -6,13 +6,13 @@ public class ButtonScript : Interactable
 {
     public bool interacted;
     public string buttonName;
-    OpenAnim buttonPress;
+    SimpleAnim buttonPress;
     // Start is called before the first frame update
     void Start()
     {
         interacted = false;
         buttonName = gameObject.name;
-        buttonPress = transform.GetChild(0).GetComponent<OpenAnim>();
+        buttonPress = transform.GetChild(0).GetComponent<SimpleAnim>();
     }
 
     // Update is called once per frame
@@ -26,12 +26,12 @@ public class ButtonScript : Interactable
         if (interacted)
         {
             interacted = false;
-            StartCoroutine(buttonPress.Close());
+            StartCoroutine(buttonPress.AnimateReversed());
             Debug.Log($"{name} unpressed");
         } else if (!interacted)
         {
             interacted = true;
-            StartCoroutine(buttonPress.Open());
+            StartCoroutine(buttonPress.AnimateNormal());
             Debug.Log($"{name} pressed");
         }
     }

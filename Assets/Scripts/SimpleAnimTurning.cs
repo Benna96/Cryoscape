@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class OpenAnimTurning : OpenAnim
+public class SimpleAnimTurning : SimpleAnim
 {
 
     [Header("Turning specific")]
