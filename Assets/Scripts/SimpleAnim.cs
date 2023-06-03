@@ -55,6 +55,10 @@ public abstract class SimpleAnim : MonoBehaviour
     }
 #endif
 
+    /// <summary>
+    /// Remember to call with StartCoroutine!
+    /// </summary>
+    /// <returns></returns>
     public IEnumerator AnimateNormal()
     {
         if (normalAnimAudio != null)
@@ -67,6 +71,10 @@ public abstract class SimpleAnim : MonoBehaviour
         yield return activeAnimCoroutine;
     }
 
+    /// <summary>
+    /// Remember to call with StartCoroutine!
+    /// </summary>
+    /// <returns></returns>
     public IEnumerator AnimateReversed()
     {
         if (reversedAnimAudio != null)
