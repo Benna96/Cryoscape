@@ -101,7 +101,7 @@ public abstract class SimpleAnim : MonoBehaviour
         var amountToAnimateThisCoroutine = (reversed ? 0 : 1) - amountAlreadyAnimated;
 
         var alreadyElapsedTime = elapsedTime;
-        var durationToUse = animDuration - alreadyElapsedTime;
+        var durationToUse = alreadyElapsedTime > 0f ? alreadyElapsedTime : animDuration;
         elapsedTime = 0f;
 
         while (elapsedTime < durationToUse)
