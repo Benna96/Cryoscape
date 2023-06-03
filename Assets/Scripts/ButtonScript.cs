@@ -18,7 +18,7 @@ public class ButtonScript : Interactable
     {
         interacted = false;
         buttonName = gameObject.name;
-        buttonPressAnims = transform.GetChild(1).GetComponents<SimpleAnim>();
+        buttonPressAnims = transform.GetChild(0).GetComponents<SimpleAnim>();
         buttonPressDuration = buttonPressAnims.Select(x => x.AnimDuration).Max();
     }
 

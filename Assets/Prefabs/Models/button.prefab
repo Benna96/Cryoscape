@@ -55,10 +55,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: button
       objectReference: {fileID: 0}
-    - target: {fileID: 1796543979408991628, guid: 9d1820c5cd8ba964b91c3bf278a5d6c5, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7202271454713460447, guid: 9d1820c5cd8ba964b91c3bf278a5d6c5, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -83,7 +79,7 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: -3838915367269032889, guid: 9d1820c5cd8ba964b91c3bf278a5d6c5, type: 3}
+  m_Mesh: {fileID: -3838915367269032889, guid: a39f0db9945f9f84ab743575c136842e, type: 3}
 --- !u!114 &275456989539164588
 MonoBehaviour:
   m_ObjectHideFlags: 0
