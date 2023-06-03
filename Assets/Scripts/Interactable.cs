@@ -6,6 +6,8 @@ using UnityEngine;
 /// Base Interactable class.
 /// Inherit from this class & override Interact function to implement some kind of interaction.
 /// </summary>
+[RequireComponent(typeof(Collider))]
+[RequireComponent(typeof(Outline))]
 public class Interactable : MonoBehaviour
 {
     protected Outline outline;
