@@ -33,7 +33,6 @@ public abstract class SimpleAnim : MonoBehaviour
     private float elapsedTime = 0f;
     private float amountToAnimateThisFrame = 0f;
 
-#if UNITY_EDITOR
     private void Start()
     {
         if (normalAnimCurve.length < 2)
@@ -41,7 +40,9 @@ public abstract class SimpleAnim : MonoBehaviour
         if (reversedAnimCurve.length < 2)
             reversedAnimCurve = normalAnimCurve;
 
+#if UNITY_EDITOR
         StartCoroutine(AutoPlay());
+#endif
     }
 
     private IEnumerator AutoPlay()
@@ -54,7 +55,6 @@ public abstract class SimpleAnim : MonoBehaviour
             yield return new WaitForSeconds(1f);
         }
     }
-#endif
 
     /// <summary>
     /// Remember to call with StartCoroutine!
