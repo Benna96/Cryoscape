@@ -6,6 +6,7 @@ public abstract class SimpleAnim : MonoBehaviour
 {
     [FormerlySerializedAs("openAnimDuration")]
     [SerializeField] protected float animDuration;
+    public float AnimDuration { get => animDuration; }
 
     [Header("Animation curves")]
 
