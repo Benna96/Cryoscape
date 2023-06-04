@@ -8,11 +8,11 @@ PrefabInstance:
     m_TransformParent: {fileID: 5656314682146784554}
     m_Modifications:
     - target: {fileID: 275456989539164588, guid: a13643ba7db065e478b655c6572539cd, type: 3}
-      propertyPath: pressTriggeredAnims.Array.size
+      propertyPath: activateCompletedAnims.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 275456989539164588, guid: a13643ba7db065e478b655c6572539cd, type: 3}
-      propertyPath: pressTriggeredAnims.Array.data[0]
+      propertyPath: activateCompletedAnims.Array.data[0]
       value: 
       objectReference: {fileID: 6824911971380471020}
     - target: {fileID: 1867999942113517416, guid: a13643ba7db065e478b655c6572539cd, type: 3}
