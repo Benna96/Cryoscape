@@ -24,6 +24,10 @@ public class InventoryManager : Singleton<InventoryManager>, INotifyPropertyChan
         }
     }
 
+    public InventoryItem currentItem => currentIndex >= 0 && currentIndex < items.Count
+        ? items[currentIndex]
+        : null;
+
     protected override void Awake()
     {
         base.Awake();

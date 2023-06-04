@@ -38,7 +38,18 @@ public class InteractableManager : MonoBehaviour
 
     public void OnInteract()
     {
-        if (currentInteractable != null)
+        if (currentInteractable != null && RequiredItemIsSelected())
             currentInteractable.Interact();
+
+        bool RequiredItemIsSelected()
+        {
+            if (currentInteractable.requiredItem == null)
+                return true;
+
+            else if (InventoryManager.instance.currentItem == null)
+                return false;
+
+            else return InventoryManager.instance.currentItem.item.id == currentInteractable.requiredItem.id;
+        }
     }
 }

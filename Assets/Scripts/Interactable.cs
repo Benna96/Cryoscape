@@ -12,6 +12,7 @@ public class Interactable : MonoBehaviour
 {
     protected Outline outline;
     [field: SerializeField] public bool isInteractable { get; protected set; } = true;
+    [field: SerializeField] public Item requiredItem { get; protected set; } = null;
 
     protected virtual void Awake()
     {
