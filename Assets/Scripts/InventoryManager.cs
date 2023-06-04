@@ -1,8 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
+using System.Linq;
 
 using UnityEngine;
 
@@ -12,6 +12,10 @@ public class InventoryManager : Singleton<InventoryManager>, INotifyPropertyChan
 
     public ReadOnlyObservableCollection<InventoryItem> items { get; private set; }
     private ObservableCollection<InventoryItem> _items = new();
+
+    public Item.Category currentCategory { get; private set; }
+
+    private List<InventoryItem> currentCategoryItems => GetItemsOfType(currentCategory);
 
     private int _currentIndex = -1;
     public int currentIndex
@@ -24,8 +28,8 @@ public class InventoryManager : Singleton<InventoryManager>, INotifyPropertyChan
         }
     }
 
-    public InventoryItem currentItem => currentIndex >= 0 && currentIndex < items.Count
-        ? items[currentIndex]
+    public InventoryItem currentItem => currentIndex >= 0 && currentIndex < currentCategoryItems.Count
+        ? currentCategoryItems[currentIndex]
         : null;
 
     protected override void Awake()
@@ -41,15 +45,20 @@ public class InventoryManager : Singleton<InventoryManager>, INotifyPropertyChan
         Debug.Log($"Collection changed! Action: {e.Action}");
     }
 
+    public List<InventoryItem> GetItemsOfType(Item.Category type) => items.Where(x => x.item.category == type).ToList();
+
     public void AddItem(InventoryItem item) => _items.Add(item);
     public void RemoveItem(InventoryItem item) => _items.Remove(item);
 
-    public void SelectItem(int index)
+    public void SelectItem(Item.Category type, int index)
     {
-        Debug.Log($"Selecting item {index}");
-        if (index >= _items.Count)
-            index = _items.Count - 1;
+        Debug.Log($"Selecting item of type {type} at {index}");
 
+        var itemsOfType = GetItemsOfType(type);
+        if (index >= itemsOfType.Count)
+            index = itemsOfType.Count - 1;
+
+        currentCategory = type;
         currentIndex = index;
     }
     public void SelectNextItem() { }

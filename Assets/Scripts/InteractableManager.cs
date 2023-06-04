@@ -46,10 +46,7 @@ public class InteractableManager : MonoBehaviour
             if (currentInteractable.requiredItem == null)
                 return true;
 
-            else if (InventoryManager.instance.currentItem == null)
-                return false;
-
-            else return InventoryManager.instance.currentItem.item.id == currentInteractable.requiredItem.id;
+            else return InventoryManager.instance.currentItem?.item.id == currentInteractable.requiredItem.id;
         }
     }
 }

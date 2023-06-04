@@ -47,9 +47,9 @@ public class InventoryUI : MonoBehaviour
             InventoryManager.instance.PropertyChanged += (sender, e) =>
             {
                 if (e.PropertyName == nameof(InventoryManager.instance.currentIndex))
-                    FocusItem(InventoryManager.instance.currentIndex);
+                    FocusItem(InventoryManager.instance.currentCategory, InventoryManager.instance.currentIndex);
             };
-            FocusItem(InventoryManager.instance.currentIndex);
+            FocusItem(InventoryManager.instance.currentCategory, InventoryManager.instance.currentIndex);
         }
     }
 
@@ -71,12 +71,12 @@ public class InventoryUI : MonoBehaviour
             return;
 
         int index = int.Parse(Regex.Match(context.action.name, @"\d+$").Value) - 1;
-        InventoryManager.instance.SelectItem(index);
+        InventoryManager.instance.SelectItem(Item.Category.Normal, index);
     }
 
     private void UpdateIcons()
     {
-        var inventoryItems = InventoryManager.instance.items;
+        var inventoryItems = InventoryManager.instance.GetItemsOfType(Item.Category.Normal);
 
         for (int i = 0; i < items.Length; i++)
         {
@@ -98,9 +98,9 @@ public class InventoryUI : MonoBehaviour
             itemsContainer.AddToClassList("dontshow");
     }
 
-    private void FocusItem(int index)
+    private void FocusItem(Item.Category type, int index)
     {
-        if (index > -1)
+        if (type == Item.Category.Normal && index > -1)
             items[index].Focus();
     }
 }
