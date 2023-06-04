@@ -93,14 +93,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <isInteractable>k__BackingField: 1
-  _isActivated: 0
-  disableInteractionOnActivated: 0
+  <isActivated>k__BackingField: 0
+  toggleable: 1
   activateAnims:
   - {fileID: 2228971735198330237}
   - {fileID: 4185582678650328966}
   activateCompletedAnims: []
   pressTriggeredAnims: []
-  interacted: 0
   buttonName: 
 --- !u!114 &8889168789024849459
 MonoBehaviour:

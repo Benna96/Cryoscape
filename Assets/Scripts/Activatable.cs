@@ -8,18 +8,10 @@ using UnityEngine;
 
 public class Activatable : Interactable
 {
-    [SerializeField] private bool _isActivated;
-    public bool isActivated
-    {
-        get => _isActivated;
-        protected set
-        {
-            _isActivated = value;
-            MaybeDisableInteractionOnActivated();
-        }
-    }
+    [field: SerializeField] public bool isActivated { get; protected set; } = false;
 
-    [SerializeField] protected bool disableInteractionOnActivated = false;
+    [Tooltip("If this is false, the object can only be activated once")]
+    [SerializeField] protected bool toggleable = false;
 
     [SerializeField] protected SimpleAnim[] activateAnims;
 
@@ -37,17 +29,6 @@ public class Activatable : Interactable
             : activateAnims.Select(x => x.AnimDuration).Max();
     }
 
-    private void Activatable_PropertyChanged(object sender, PropertyChangedEventArgs e)
-    {
-        if (isInteractable
-            && disableInteractionOnActivated
-            && e.PropertyName == nameof(isActivated)
-            && isActivated)
-        {
-            isInteractable = false;
-        }
-    }
-
     public override void Interact()
     {
         if (!isActivated)
@@ -56,11 +37,7 @@ public class Activatable : Interactable
             StartCoroutine(Deactivate());
 
         isActivated = !isActivated;
-    }
-
-    private void MaybeDisableInteractionOnActivated()
-    {
-        if (isInteractable && disableInteractionOnActivated && isActivated)
+        if (isActivated && !toggleable)
             isInteractable = false;
     }
 
