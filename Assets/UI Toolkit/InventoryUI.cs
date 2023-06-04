@@ -82,7 +82,7 @@ public class InventoryUI : MonoBehaviour
         {
             if (i < inventoryItems.Count)
             {
-                itemIcons[i].style.backgroundImage = inventoryItems[i].inventoryIcon;
+                itemIcons[i].style.backgroundImage = inventoryItems[i].item.inventoryIcon;
                 items[i].RemoveFromClassList("dontshow");
             }
             else
