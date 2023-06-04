@@ -37,10 +37,10 @@ public class SpacesuitPod : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (buttonTwo.interacted && buttonSeven.interacted && buttonEight.interacted && buttonNine.interacted &&
-            buttonTen.interacted && buttonEleven.interacted && buttonThirteen.interacted && buttonSixteen.interacted &&
-            !buttonOne.interacted && !buttonThree.interacted && !buttonFour.interacted && !buttonFive.interacted && 
-            !buttonSix.interacted && !buttonTwelve.interacted && !buttonFourteen.interacted && !buttonFifteen.interacted)
+        if (buttonTwo.isActivated && buttonSeven.isActivated && buttonEight.isActivated && buttonNine.isActivated &&
+            buttonTen.isActivated && buttonEleven.isActivated && buttonThirteen.isActivated && buttonSixteen.isActivated &&
+            !buttonOne.isActivated && !buttonThree.isActivated && !buttonFour.isActivated && !buttonFive.isActivated && 
+            !buttonSix.isActivated && !buttonTwelve.isActivated && !buttonFourteen.isActivated && !buttonFifteen.isActivated)
             {
                 if (!podIsOpen)
                 {
