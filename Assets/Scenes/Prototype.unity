@@ -588,6 +588,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <isInteractable>k__BackingField: 1
+  <requiredItem>k__BackingField: {fileID: 11400000, guid: eab9cc3c5a756584d8bff6b0699ead14, type: 2}
   <isActivated>k__BackingField: 0
   toggleable: 0
   activateAnims:
