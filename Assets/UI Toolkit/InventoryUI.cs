@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Specialized;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -100,7 +101,13 @@ public class InventoryUI : MonoBehaviour
 
     private void FocusItem(Item.Category type, int index)
     {
-        if (type == Item.Category.Normal && index > -1)
-            items[index].Focus();
+        StartCoroutine(FocusAtEndOfFrame());
+
+        IEnumerator FocusAtEndOfFrame()
+        {
+            yield return new WaitForEndOfFrame();
+            if (type == Item.Category.Normal && index > -1)
+                items[index].Focus();
+        }
     }
 }
