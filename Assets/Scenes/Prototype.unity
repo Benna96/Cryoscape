@@ -2909,6 +2909,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e96106cee44ae47498212b63a8a1c7b6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 55f0e87cd26e7844794299a4d1e5b49f, type: 2}
     - target: {fileID: 919132149155446097, guid: e96106cee44ae47498212b63a8a1c7b6, type: 3}
       propertyPath: m_Name
       value: spacesuit_arm
@@ -4601,6 +4605,10 @@ PrefabInstance:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6667894703834976852, guid: 6d7aeba79ae8e7f4e9e83d8dbbac7c41, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 55f0e87cd26e7844794299a4d1e5b49f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d7aeba79ae8e7f4e9e83d8dbbac7c41, type: 3}
 --- !u!1001 &8507093918945900448
