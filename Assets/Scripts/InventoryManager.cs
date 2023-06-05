@@ -42,13 +42,7 @@ public class InventoryManager : Singleton<InventoryManager>, INotifyPropertyChan
 
     private void InventoryManager_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
     {
-        if (currentIndex == -1
-            && e.Action == NotifyCollectionChangedAction.Add
-            && e.NewItems.Count == items.Count)
-        {
-            InventoryItem addedItem = e.NewItems[0] as InventoryItem;
-            SelectItem(addedItem.item.category, 0);
-        }
+        
     }
 
     public List<InventoryItem> GetItemsOfType(Item.Category type) => items.Where(x => x.item.category == type).ToList();
@@ -58,6 +52,7 @@ public class InventoryManager : Singleton<InventoryManager>, INotifyPropertyChan
 
     public void SelectItem(Item.Category type, int index)
     {
+        Debug.Log($"Selectin item {type} {index}");
         var itemsOfType = GetItemsOfType(type);
         if (index >= itemsOfType.Count)
             index = itemsOfType.Count - 1;

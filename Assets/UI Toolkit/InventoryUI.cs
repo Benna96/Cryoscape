@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Specialized;
 using System.Linq;
@@ -78,6 +79,7 @@ public class InventoryUI : MonoBehaviour
     private void UpdateIcons()
     {
         var inventoryItems = InventoryManager.instance.GetItemsOfType(Item.Category.Normal);
+        bool alreadyHadHotbarItems = !items[0].ClassListContains("dontshow");
 
         for (int i = 0; i < items.Length; i++)
         {
@@ -94,11 +96,20 @@ public class InventoryUI : MonoBehaviour
         }
 
         if (inventoryItems.Count > 0)
+        {
             itemsContainer.RemoveFromClassList("dontshow");
+            if (!alreadyHadHotbarItems)
+                InventoryManager.instance.SelectItem(Item.Category.Normal, 0);
+        }
         else if (inventoryItems.Count == 0)
             itemsContainer.AddToClassList("dontshow");
     }
 
+    /// <summary>
+    /// Only call in relation to current index changing!
+    /// </summary>
+    /// <param name="type"></param>
+    /// <param name="index"></param>
     private void FocusItem(Item.Category type, int index)
     {
         StartCoroutine(FocusAtEndOfFrame());
