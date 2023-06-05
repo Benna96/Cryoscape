@@ -52,7 +52,6 @@ public class InventoryManager : Singleton<InventoryManager>, INotifyPropertyChan
 
     public void SelectItem(Item.Category type, int index)
     {
-        Debug.Log($"Selectin item {type} {index}");
         var itemsOfType = GetItemsOfType(type);
         if (index >= itemsOfType.Count)
             index = itemsOfType.Count - 1;
