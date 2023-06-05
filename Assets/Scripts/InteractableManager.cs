@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class InteractableManager : MonoBehaviour
 {
@@ -36,8 +37,14 @@ public class InteractableManager : MonoBehaviour
             currentInteractable = null;
     }
 
-    public void OnInteract()
+    /// <summary>
+    /// Called by Player Input
+    /// </summary>
+    public void Interact(InputAction.CallbackContext context)
     {
+        if (context.phase != InputActionPhase.Performed)
+            return;
+
         if (currentInteractable != null && RequiredItemIsSelected())
             currentInteractable.Interact();
 

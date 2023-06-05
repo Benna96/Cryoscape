@@ -329,6 +329,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8972291481214600112, guid: e879ebf609b1f3a49acb87089a2b5463, type: 3}
   m_PrefabInstance: {fileID: 1104019341}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &234691225 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6569632557301092029, guid: 46d2944ac6326ca429e32493aa6b4b6f, type: 3}
+  m_PrefabInstance: {fileID: 72794573}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d5a66245413ad44c90123b0c744200a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &235557074
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3683,6 +3694,320 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1475928270
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1475928272}
+  - component: {fileID: 1475928271}
+  m_Layer: 0
+  m_Name: InputManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1475928271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475928270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 1754829dbb873304a9c48ccf16fb713c, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 72794574}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1670395037}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: Move
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+    m_ActionId: ff23ae72-8cb7-4ab3-9d33-7f5aecbc3b1c
+    m_ActionName: Player/Move[/Keyboard/w,/Keyboard/a,/Keyboard/s,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1670395037}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: Crouch
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+    m_ActionId: 64d58cff-4c75-4e06-9d7e-2f48f277d9d2
+    m_ActionName: Player/Crouch[/Keyboard/ctrl]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1670395035}
+        m_TargetAssemblyTypeName: InteractableManager, Assembly-CSharp
+        m_MethodName: Interact
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+    m_ActionId: 667a53ea-e93b-4a20-8d30-6b02f3e55884
+    m_ActionName: Player/Interact[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1670395036}
+        m_TargetAssemblyTypeName: PlayerCamera, Assembly-CSharp
+        m_MethodName: LookDelta
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+    m_ActionId: b4adc5dd-918d-451c-9f28-ee2d01335dc4
+    m_ActionName: Player/CameraTurnDelta[/Mouse/delta]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1670395036}
+        m_TargetAssemblyTypeName: PlayerCamera, Assembly-CSharp
+        m_MethodName: LookContinuous
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e33c537d-9a9d-455c-a668-79229092bf7b
+    m_ActionName: Player/CameraTurnContinuous
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 26a727f6-052e-4315-b0cc-cb8b162f2316
+    m_ActionName: Player/Click[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fabe214c-67fb-41ae-b343-f5678508dbdb
+    m_ActionName: Player/Submit
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d7e6bbd4-0a0e-41b9-8601-70786e3069d2
+    m_ActionName: Player/Cancel[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 234691225}
+        m_TargetAssemblyTypeName: InventoryUI, Assembly-CSharp
+        m_MethodName: SelectItem
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+    m_ActionId: 1dadd39a-809e-47f0-87ec-785900a3471a
+    m_ActionName: Player/Hotkey1[/Keyboard/1,/Keyboard/numpad1]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 234691225}
+        m_TargetAssemblyTypeName: InventoryUI, Assembly-CSharp
+        m_MethodName: SelectItem
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+    m_ActionId: 57e1b567-fa8b-4732-9574-f61d9b9491d0
+    m_ActionName: Player/Hotkey2[/Keyboard/2,/Keyboard/numpad2]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 234691225}
+        m_TargetAssemblyTypeName: InventoryUI, Assembly-CSharp
+        m_MethodName: SelectItem
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+    m_ActionId: c3d250db-c19f-4967-924c-487d0ac27910
+    m_ActionName: Player/Hotkey3[/Keyboard/3,/Keyboard/numpad3]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 234691225}
+        m_TargetAssemblyTypeName: InventoryUI, Assembly-CSharp
+        m_MethodName: SelectItem
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+    m_ActionId: fdf30e7b-ef86-45b8-a5f9-a1f56f995328
+    m_ActionName: Player/Hotkey4[/Keyboard/4,/Keyboard/numpad4]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 234691225}
+        m_TargetAssemblyTypeName: InventoryUI, Assembly-CSharp
+        m_MethodName: SelectItem
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+    m_ActionId: 0c1a57e5-27e6-4188-81fc-2ffe80ff5c5c
+    m_ActionName: Player/Hotkey5[/Keyboard/5,/Keyboard/numpad5]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 234691225}
+        m_TargetAssemblyTypeName: InventoryUI, Assembly-CSharp
+        m_MethodName: SelectItem
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+    m_ActionId: c535003b-8a91-47e1-942f-6a0c28fc9b65
+    m_ActionName: Player/Hotkey6[/Keyboard/6,/Keyboard/numpad6]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 234691225}
+        m_TargetAssemblyTypeName: InventoryUI, Assembly-CSharp
+        m_MethodName: SelectItem
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+    m_ActionId: 39cf4ac2-fc42-4efa-a2a0-bb91b40ac5cd
+    m_ActionName: Player/Hotkey7[/Keyboard/7,/Keyboard/numpad7]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 234691225}
+        m_TargetAssemblyTypeName: InventoryUI, Assembly-CSharp
+        m_MethodName: SelectItem
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+    m_ActionId: 6c630b49-800d-4220-b802-41bc208c2f09
+    m_ActionName: Player/Hotkey8[/Keyboard/8,/Keyboard/numpad8]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 234691225}
+        m_TargetAssemblyTypeName: InventoryUI, Assembly-CSharp
+        m_MethodName: SelectItem
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+    m_ActionId: 66fc8e29-1383-4301-91bd-d6076ada1d9a
+    m_ActionName: Player/Hotkey9[/Keyboard/9,/Keyboard/numpad9]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 234691225}
+        m_TargetAssemblyTypeName: InventoryUI, Assembly-CSharp
+        m_MethodName: ChangeItem
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 528c7b6f-b660-4132-bbe2-ca2c71d03af9
+    m_ActionName: Player/ChangeItem[/Mouse/scroll/y]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!4 &1475928272
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475928270}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1506745795
 GameObject:
   m_ObjectHideFlags: 0
@@ -3974,6 +4299,39 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8507093918799121952, guid: 2070a2a31b97b9e4495dd7ab0bafa498, type: 3}
   m_PrefabInstance: {fileID: 8507093918945900448}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1670395035 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 934568951163078043, guid: 2070a2a31b97b9e4495dd7ab0bafa498, type: 3}
+  m_PrefabInstance: {fileID: 8507093918945900448}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670395034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d755bca8242d4b64eb9c563c1e401993, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1670395036 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2328289769892208461, guid: 2070a2a31b97b9e4495dd7ab0bafa498, type: 3}
+  m_PrefabInstance: {fileID: 8507093918945900448}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670395034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b2c864222c316945bf92075a725106b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1670395037 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9022380089558690353, guid: 2070a2a31b97b9e4495dd7ab0bafa498, type: 3}
+  m_PrefabInstance: {fileID: 8507093918945900448}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670395034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0446e804d5188f3438136a789f5bb8ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1683659697
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5997,10 +6355,6 @@ PrefabInstance:
       propertyPath: attenuationObject
       value: 
       objectReference: {fileID: 1670395034}
-    - target: {fileID: 4387619818209383905, guid: 2070a2a31b97b9e4495dd7ab0bafa498, type: 3}
-      propertyPath: m_UIInputModule
-      value: 
-      objectReference: {fileID: 72794574}
     - target: {fileID: 7114966995313417185, guid: 2070a2a31b97b9e4495dd7ab0bafa498, type: 3}
       propertyPath: m_LocalScale.y
       value: 2.905799
@@ -6057,6 +6411,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 0}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2070a2a31b97b9e4495dd7ab0bafa498, type: 3}

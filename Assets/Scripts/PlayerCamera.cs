@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(PlayerInput))]
 public class PlayerCamera : MonoBehaviour
 {
     [SerializeField] private Transform cameraTransform;
@@ -53,14 +52,22 @@ public class PlayerCamera : MonoBehaviour
         cameraTransform.localRotation = xQuat * yQuat;
     }
 
-    public void OnLookDelta(InputValue value)
+    /// <summary>
+    /// Called by Player Input
+    /// </summary>
+    /// <param name="context"></param>
+    public void LookDelta(InputAction.CallbackContext context)
     {
-        deltaLookInput = value.Get<Vector2>();
+        deltaLookInput = context.ReadValue<Vector2>();
     }
 
-    public void OnLookContinuous(InputValue value)
+    /// <summary>
+    /// Called by Player Input
+    /// </summary>
+    /// <param name="context"></param>
+    public void LookContinuous(InputAction.CallbackContext context)
     {
-        continuousLookInput = value.Get<Vector2>();
+        continuousLookInput = context.ReadValue<Vector2>();
     }
 
     public void LockCursor()

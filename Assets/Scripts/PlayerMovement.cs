@@ -31,12 +31,19 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void OnMove(InputValue value)
+    /// <summary>
+    /// Called by Player Input
+    /// </summary>
+    /// <param name="context"></param>
+    public void Move(InputAction.CallbackContext context)
     {
-        movementInput = value.Get<Vector2>();
+        movementInput = context.ReadValue<Vector2>();
     }
 
-    public void OnCrouch()
+    /// <summary>
+    /// Called by Player Input
+    /// </summary>
+    public void Crouch()
     {
         if (!crouched)
         {

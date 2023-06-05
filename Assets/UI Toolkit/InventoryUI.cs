@@ -55,6 +55,10 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Called by Player Input
+    /// </summary>
+    /// <param name="context"></param>
     public void ChangeItem(InputAction.CallbackContext context)
     {
         if (context.phase != InputActionPhase.Performed)
@@ -67,6 +71,10 @@ public class InventoryUI : MonoBehaviour
             InventoryManager.instance.SelectPreviousItem();
     }
 
+    /// <summary>
+    /// Called by Player Input
+    /// </summary>
+    /// <param name="context"></param>
     public void SelectItem(InputAction.CallbackContext context)
     {
         if (context.phase != InputActionPhase.Performed)
