@@ -330,8 +330,8 @@ MonoBehaviour:
   cameraTransform: {fileID: 8164397659359740311}
   transformToFollow: {fileID: 6402336921903108393}
   playerModel: {fileID: 7114966995313417185}
-  deltaHorizontalSensitivity: 75
-  deltaVerticalSensitivity: 75
+  deltaHorizontalSensitivity: 0.35
+  deltaVerticalSensitivity: 0.35
   continuousHorizontalSensitivity: 300
   continuousVerticalSensitivity: 300
 --- !u!114 &934568951163078043
