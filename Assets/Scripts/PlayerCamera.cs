@@ -36,8 +36,8 @@ public class PlayerCamera : MonoBehaviour
 
         if (deltaLookInput != Vector2.zero)
         {
-            lookDirection.x += deltaLookInput.x * deltaHorizontalSensitivity * Time.deltaTime;
-            lookDirection.y += deltaLookInput.y * deltaVerticalSensitivity * Time.deltaTime;
+            lookDirection.x += deltaLookInput.x * deltaHorizontalSensitivity;
+            lookDirection.y += deltaLookInput.y * deltaVerticalSensitivity;
         }
         if (continuousLookInput != Vector2.zero)
         {
