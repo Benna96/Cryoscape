@@ -3583,6 +3583,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: cryopod
       objectReference: {fileID: 0}
+    - target: {fileID: 6824911971380471020, guid: 05e5c2083be8c704e927e1cd25622132, type: 3}
+      propertyPath: normalAnimAudio
+      value: 
+      objectReference: {fileID: 1732300884}
+    - target: {fileID: 6824911971380471020, guid: 05e5c2083be8c704e927e1cd25622132, type: 3}
+      propertyPath: reversedAnimAudio
+      value: 
+      objectReference: {fileID: 492203967}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05e5c2083be8c704e927e1cd25622132, type: 3}
 --- !u!4 &1382532955 stripped
