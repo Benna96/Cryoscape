@@ -763,6 +763,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: flask (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5285936746976566178, guid: e30e1a919d8d89345a98d0cbe12dc133, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 86e9021f14b840a4b8e364a0cbc66e58, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e30e1a919d8d89345a98d0cbe12dc133, type: 3}
 --- !u!4 &373238125 stripped
@@ -1560,6 +1564,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pencil (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5285936746976566178, guid: 91d1be0ce72cbf241b76aa9d51672115, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 86e9021f14b840a4b8e364a0cbc66e58, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91d1be0ce72cbf241b76aa9d51672115, type: 3}
 --- !u!4 &524879468 stripped
@@ -2398,6 +2406,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pencil (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5285936746976566178, guid: 91d1be0ce72cbf241b76aa9d51672115, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 86e9021f14b840a4b8e364a0cbc66e58, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91d1be0ce72cbf241b76aa9d51672115, type: 3}
 --- !u!4 &709248538 stripped
@@ -3175,6 +3187,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pencil (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5285936746976566178, guid: 91d1be0ce72cbf241b76aa9d51672115, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 86e9021f14b840a4b8e364a0cbc66e58, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91d1be0ce72cbf241b76aa9d51672115, type: 3}
 --- !u!4 &871757448 stripped
@@ -3253,6 +3269,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: penholder
       objectReference: {fileID: 0}
+    - target: {fileID: 5285936746976566178, guid: 87833eeba5228a748b7a977597315661, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 86e9021f14b840a4b8e364a0cbc66e58, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87833eeba5228a748b7a977597315661, type: 3}
 --- !u!1 &965481986
@@ -3688,6 +3708,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: flask
       objectReference: {fileID: 0}
+    - target: {fileID: 5285936746976566178, guid: e30e1a919d8d89345a98d0cbe12dc133, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 86e9021f14b840a4b8e364a0cbc66e58, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e30e1a919d8d89345a98d0cbe12dc133, type: 3}
 --- !u!4 &1066715098 stripped
@@ -5270,6 +5294,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: flask (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5285936746976566178, guid: e30e1a919d8d89345a98d0cbe12dc133, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 86e9021f14b840a4b8e364a0cbc66e58, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e30e1a919d8d89345a98d0cbe12dc133, type: 3}
 --- !u!4 &1668719170 stripped
@@ -5533,6 +5561,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: flask (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5285936746976566178, guid: e30e1a919d8d89345a98d0cbe12dc133, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 86e9021f14b840a4b8e364a0cbc66e58, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e30e1a919d8d89345a98d0cbe12dc133, type: 3}
 --- !u!4 &1695042355 stripped
@@ -6728,6 +6760,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pencil
       objectReference: {fileID: 0}
+    - target: {fileID: 5285936746976566178, guid: 91d1be0ce72cbf241b76aa9d51672115, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 86e9021f14b840a4b8e364a0cbc66e58, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91d1be0ce72cbf241b76aa9d51672115, type: 3}
 --- !u!4 &1918512559 stripped
@@ -7140,6 +7176,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: penholder (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5285936746976566178, guid: 87833eeba5228a748b7a977597315661, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 86e9021f14b840a4b8e364a0cbc66e58, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87833eeba5228a748b7a977597315661, type: 3}
 --- !u!4 &2073576870 stripped
@@ -7233,6 +7273,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: flask (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5285936746976566178, guid: e30e1a919d8d89345a98d0cbe12dc133, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 86e9021f14b840a4b8e364a0cbc66e58, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e30e1a919d8d89345a98d0cbe12dc133, type: 3}
 --- !u!4 &2133533031 stripped
