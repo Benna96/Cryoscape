@@ -51,6 +51,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: cb345b7891266e84798c8592d5d98fc3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b89b6086abb2c0240a65e7068238773d, type: 2}
     - target: {fileID: 919132149155446097, guid: cb345b7891266e84798c8592d5d98fc3, type: 3}
       propertyPath: m_Name
       value: iceblock
@@ -73,5 +77,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.3765502, y: 1.6077166, z: 5.756922}
-  m_Center: {x: 0.0760355, y: -0.10800666, z: 0.08645678}
+  m_Size: {x: 2.3765502, y: 2.1717017, z: 5.756922}
+  m_Center: {x: 0.0760355, y: 0.013328613, z: 0.08645678}
