@@ -1,3 +1,5 @@
+using System.Linq;
+
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -45,15 +47,20 @@ public class InteractableManager : MonoBehaviour
         if (context.phase != InputActionPhase.Performed)
             return;
 
-        if (currentInteractable != null && RequiredItemIsSelected())
+        if (currentInteractable != null && RequiredNormalItemIsSelectedOrSpecialExists())
             currentInteractable.Interact();
 
-        bool RequiredItemIsSelected()
+        bool RequiredNormalItemIsSelectedOrSpecialExists()
         {
             if (currentInteractable.requiredItem == null)
                 return true;
 
-            else return InventoryManager.instance.currentItem?.item.id == currentInteractable.requiredItem.id;
+            if (currentInteractable.requiredItem.category == Item.Category.Normal)
+                return InventoryManager.instance.currentItem?.item.id == currentInteractable.requiredItem.id;
+            else if (currentInteractable.requiredItem.category == Item.Category.Special)
+                return InventoryManager.instance.items.Where(inventoryItem => inventoryItem.item.id == currentInteractable.requiredItem.id).Any();
+
+            else return false;
         }
     }
 }
