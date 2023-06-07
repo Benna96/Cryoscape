@@ -8,7 +8,7 @@ using UnityEngine;
 /// </summary>
 [RequireComponent(typeof(Collider))]
 [RequireComponent(typeof(Outline))]
-public class Interactable : MonoBehaviour
+public abstract class Interactable : MonoBehaviour
 {
     protected Outline outline;
     [field: SerializeField] public bool isInteractable { get; protected set; } = true;
@@ -24,5 +24,5 @@ public class Interactable : MonoBehaviour
 
     public virtual void DisableOutline() => outline.enabled = false;
 
-    public virtual void Interact() => Debug.Log($"Interacted with {name}");
+    public abstract void Interact();
 }
