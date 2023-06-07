@@ -173,6 +173,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: cryopod
       objectReference: {fileID: 0}
+    - target: {fileID: 7071182760956848314, guid: 49a6e43fd0b668a40bb16469cc5d5272, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 672c60c80b8e67942a838b7cfb4fc2f1, type: 2}
+    - target: {fileID: 7202271454713460447, guid: 49a6e43fd0b668a40bb16469cc5d5272, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1cbcb128b1263c143ab8f40b2e6fd537, type: 2}
     - target: {fileID: 8513859187771203891, guid: 49a6e43fd0b668a40bb16469cc5d5272, type: 3}
       propertyPath: m_Name
       value: Top & bottom
