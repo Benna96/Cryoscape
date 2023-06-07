@@ -1038,10 +1038,10 @@ AudioSource:
   m_GameObject: {fileID: 492203965}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: 596f69e566e710547a9ae0261d43b49c, type: 2}
+  OutputAudioMixerGroup: {fileID: 7174693041569527270, guid: 596f69e566e710547a9ae0261d43b49c, type: 2}
   m_audioClip: {fileID: 8300000, guid: 5e314ce5208436a4aaee9e416f239172, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.414
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1192,6 +1192,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: cryopod (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6824911971380471020, guid: 05e5c2083be8c704e927e1cd25622132, type: 3}
+      propertyPath: normalAnimAudio
+      value: 
+      objectReference: {fileID: 1732300884}
+    - target: {fileID: 6824911971380471020, guid: 05e5c2083be8c704e927e1cd25622132, type: 3}
+      propertyPath: reversedAnimAudio
+      value: 
+      objectReference: {fileID: 492203967}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05e5c2083be8c704e927e1cd25622132, type: 3}
 --- !u!4 &507248884 stripped
@@ -1460,7 +1468,7 @@ AudioSource:
   m_GameObject: {fileID: 645030215}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: 596f69e566e710547a9ae0261d43b49c, type: 2}
+  OutputAudioMixerGroup: {fileID: 7174693041569527270, guid: 596f69e566e710547a9ae0261d43b49c, type: 2}
   m_audioClip: {fileID: 8300000, guid: 0163b3a18d63b7d4baa3760e67c04fb0, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -2152,6 +2160,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: cryopod w/ arm
       objectReference: {fileID: 0}
+    - target: {fileID: 6824911971380471020, guid: 05e5c2083be8c704e927e1cd25622132, type: 3}
+      propertyPath: normalAnimAudio
+      value: 
+      objectReference: {fileID: 1732300884}
+    - target: {fileID: 6824911971380471020, guid: 05e5c2083be8c704e927e1cd25622132, type: 3}
+      propertyPath: reversedAnimAudio
+      value: 
+      objectReference: {fileID: 492203967}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05e5c2083be8c704e927e1cd25622132, type: 3}
 --- !u!4 &748839334 stripped
@@ -2673,6 +2689,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: cryopod (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6824911971380471020, guid: 05e5c2083be8c704e927e1cd25622132, type: 3}
+      propertyPath: normalAnimAudio
+      value: 
+      objectReference: {fileID: 1732300884}
+    - target: {fileID: 6824911971380471020, guid: 05e5c2083be8c704e927e1cd25622132, type: 3}
+      propertyPath: reversedAnimAudio
+      value: 
+      objectReference: {fileID: 492203967}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05e5c2083be8c704e927e1cd25622132, type: 3}
 --- !u!4 &990078837 stripped
@@ -3559,6 +3583,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: cryopod
       objectReference: {fileID: 0}
+    - target: {fileID: 6824911971380471020, guid: 05e5c2083be8c704e927e1cd25622132, type: 3}
+      propertyPath: normalAnimAudio
+      value: 
+      objectReference: {fileID: 1732300884}
+    - target: {fileID: 6824911971380471020, guid: 05e5c2083be8c704e927e1cd25622132, type: 3}
+      propertyPath: reversedAnimAudio
+      value: 
+      objectReference: {fileID: 492203967}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05e5c2083be8c704e927e1cd25622132, type: 3}
 --- !u!4 &1382532955 stripped
@@ -4287,6 +4319,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: cryopod (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 6824911971380471020, guid: 05e5c2083be8c704e927e1cd25622132, type: 3}
+      propertyPath: normalAnimAudio
+      value: 
+      objectReference: {fileID: 1732300884}
+    - target: {fileID: 6824911971380471020, guid: 05e5c2083be8c704e927e1cd25622132, type: 3}
+      propertyPath: reversedAnimAudio
+      value: 
+      objectReference: {fileID: 492203967}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05e5c2083be8c704e927e1cd25622132, type: 3}
 --- !u!4 &1670285063 stripped
@@ -4512,7 +4552,7 @@ AudioSource:
   m_GameObject: {fileID: 1712162165}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: 596f69e566e710547a9ae0261d43b49c, type: 2}
+  OutputAudioMixerGroup: {fileID: 7174693041569527270, guid: 596f69e566e710547a9ae0261d43b49c, type: 2}
   m_audioClip: {fileID: 8300000, guid: a28de3b7795ef8a48871a7f5a5856d0e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -4701,7 +4741,7 @@ AudioSource:
   m_GameObject: {fileID: 1732300882}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: 596f69e566e710547a9ae0261d43b49c, type: 2}
+  OutputAudioMixerGroup: {fileID: 7174693041569527270, guid: 596f69e566e710547a9ae0261d43b49c, type: 2}
   m_audioClip: {fileID: 8300000, guid: 5ecb59dde80add947996e2078b0416e9, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -4799,6 +4839,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6324497014461926463, guid: 6940dc7ca54af6c4a93b3ece9b707b80, type: 3}
+      propertyPath: normalAnimAudio
+      value: 
+      objectReference: {fileID: 1732300884}
+    - target: {fileID: 6324497014461926463, guid: 6940dc7ca54af6c4a93b3ece9b707b80, type: 3}
+      propertyPath: reversedAnimAudio
+      value: 
+      objectReference: {fileID: 492203967}
     - target: {fileID: 7153316451746168187, guid: 6940dc7ca54af6c4a93b3ece9b707b80, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -5844,10 +5892,10 @@ AudioSource:
   m_GameObject: {fileID: 2011197891}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -7353252312162410541, guid: 596f69e566e710547a9ae0261d43b49c, type: 2}
   m_audioClip: {fileID: 8300000, guid: c3e0af71126d1c0438eb8aeda559bb24, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.402
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -6225,6 +6273,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 354824843}
     m_Modifications:
+    - target: {fileID: 205724351007057222, guid: 9dc68d48ab973ce43bd3e4629d8a3d60, type: 3}
+      propertyPath: normalAnimAudio
+      value: 
+      objectReference: {fileID: 1732300884}
+    - target: {fileID: 205724351007057222, guid: 9dc68d48ab973ce43bd3e4629d8a3d60, type: 3}
+      propertyPath: reversedAnimAudio
+      value: 
+      objectReference: {fileID: 492203967}
     - target: {fileID: 2889452427588491761, guid: 9dc68d48ab973ce43bd3e4629d8a3d60, type: 3}
       propertyPath: m_Name
       value: SlidingDoor
@@ -6273,6 +6329,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8770149852485506833, guid: 9dc68d48ab973ce43bd3e4629d8a3d60, type: 3}
+      propertyPath: normalAnimAudio
+      value: 
+      objectReference: {fileID: 1732300884}
+    - target: {fileID: 8770149852485506833, guid: 9dc68d48ab973ce43bd3e4629d8a3d60, type: 3}
+      propertyPath: reversedAnimAudio
+      value: 
+      objectReference: {fileID: 492203967}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9dc68d48ab973ce43bd3e4629d8a3d60, type: 3}
 --- !u!1001 &5424738884151549185
