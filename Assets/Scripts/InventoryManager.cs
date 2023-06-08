@@ -3,6 +3,7 @@ using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Linq;
+using System;
 
 using UnityEngine;
 
@@ -25,12 +26,24 @@ public class InventoryManager : Singleton<InventoryManager>, INotifyPropertyChan
         {
             _currentIndex = value;
             ObservableHelper.OnPropertyChanged(PropertyChanged);
+
+            UpdateCurrentItem();
         }
     }
 
-    public InventoryItem currentItem => currentIndex >= 0 && currentIndex < currentCategoryItems.Count
-        ? currentCategoryItems[currentIndex]
-        : null;
+    private InventoryItem _currentItem;
+    public InventoryItem currentItem
+    {
+        get => _currentItem;
+        private set
+        {
+            if (value == _currentItem)
+                return;
+
+            _currentItem = value;
+            ObservableHelper.OnPropertyChanged(PropertyChanged);
+        }
+    }
 
     protected override void Awake()
     {
@@ -42,7 +55,13 @@ public class InventoryManager : Singleton<InventoryManager>, INotifyPropertyChan
 
     private void InventoryManager_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
     {
-        
+        if (e.Action == NotifyCollectionChangedAction.Remove && e.OldItems.Contains(currentItem))
+        {
+            if (currentIndex == currentCategoryItems.Count)
+                currentIndex -= 1;
+            else
+                UpdateCurrentItem();
+        }
     }
 
     public List<InventoryItem> GetItemsOfType(Item.Category type) => items.Where(x => x.item.category == type).ToList();
@@ -61,4 +80,15 @@ public class InventoryManager : Singleton<InventoryManager>, INotifyPropertyChan
     }
     public void SelectNextItem() { }
     public void SelectPreviousItem() { }
+
+    private void UpdateCurrentItem()
+    {
+        if (currentIndex < 0)
+            currentItem = null;
+        else if (currentIndex >= currentCategoryItems.Count)
+            throw new IndexOutOfRangeException("Current index higher than current category item count!");
+
+        else
+            currentItem = currentCategoryItems[currentIndex];
+    }
 }

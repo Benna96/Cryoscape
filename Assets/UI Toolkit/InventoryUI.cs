@@ -10,9 +10,15 @@ using UnityEngine.UIElements;
 
 public class InventoryUI : MonoBehaviour
 {
+    private VisualElement hotbarContainer;
+
     private VisualElement itemsContainer;
     private VisualElement[] items = new VisualElement[9];
     private VisualElement[] itemIcons = new VisualElement[9];
+    private string[] itemNames = new string[9];
+
+    private VisualElement itemNameContainer;
+    private Label itemName;
 
     private void OnEnable()
     {
@@ -22,6 +28,12 @@ public class InventoryUI : MonoBehaviour
         void FetchElements()
         {
             var ui = GetComponent<UIDocument>();
+
+            hotbarContainer = ui.rootVisualElement.Q("HotbarContainer");
+
+            itemNameContainer = ui.rootVisualElement.Q("ItemNameContainer");
+            itemName = itemNameContainer.Q<Label>();
+
             itemsContainer = ui.rootVisualElement.Q("ItemsContainer");
             items = itemsContainer.Children().Select(x => x.Q("ItemWrapper")).ToArray();
             itemIcons = items.Select(x => x.Q("Icon")).ToArray();
@@ -44,7 +56,7 @@ public class InventoryUI : MonoBehaviour
         void RegisterEventsAndRunRelatedInitFuncs()
         {
             (InventoryManager.instance.items as INotifyCollectionChanged).CollectionChanged += (_, _) => UpdateIcons();
-            UpdateIcons();
+            UpdateIcons(true);
 
             InventoryManager.instance.PropertyChanged += (sender, e) =>
             {
@@ -84,7 +96,7 @@ public class InventoryUI : MonoBehaviour
         InventoryManager.instance.SelectItem(Item.Category.Normal, index);
     }
 
-    private void UpdateIcons()
+    private void UpdateIcons(bool firstRun = false)
     {
         var inventoryItems = InventoryManager.instance.GetItemsOfType(Item.Category.Normal);
         bool alreadyHadHotbarItems = !items[0].ClassListContains("dontshow");
@@ -95,22 +107,26 @@ public class InventoryUI : MonoBehaviour
             {
                 itemIcons[i].style.backgroundImage = inventoryItems[i].item.inventoryIcon;
                 items[i].RemoveFromClassList("dontshow");
+                itemNames[i] = inventoryItems[i].item.name;
             }
             else
             {
                 items[i].AddToClassList("dontshow");
                 itemIcons[i].style.backgroundImage = null;
+                itemNames[i] = null;
             }
         }
 
         if (inventoryItems.Count > 0)
         {
-            itemsContainer.RemoveFromClassList("dontshow");
-            if (!alreadyHadHotbarItems)
+            hotbarContainer.RemoveFromClassList("dontshow");
+            if (!alreadyHadHotbarItems || firstRun)
                 InventoryManager.instance.SelectItem(Item.Category.Normal, 0);
         }
         else if (inventoryItems.Count == 0)
-            itemsContainer.AddToClassList("dontshow");
+        {
+            hotbarContainer.AddToClassList("dontshow");
+        }
     }
 
     /// <summary>
@@ -125,8 +141,14 @@ public class InventoryUI : MonoBehaviour
         IEnumerator FocusAtEndOfFrame()
         {
             yield return new WaitForEndOfFrame();
-            if (type == Item.Category.Normal && index > -1)
+            if (type != Item.Category.Normal)
+                yield break;
+
+            if (index >= 0)
+            {
                 items[index].Focus();
+                itemName.text = itemNames[index];
+            }
         }
     }
 }

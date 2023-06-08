@@ -1,15 +1,49 @@
 VisualElement.dontshow { display: none; }
 
-#ItemsContainer
+#HotbarContainer
 {
 	position: absolute;
+	margin: 5px;
 	bottom: 0;
-	margin: 10px;
+	flex-direction: column-reverse;
+	align-items: flex-start;
+}
+
+#HotbarContainer > VisualElement
+{
+	margin: 5px;
+}
+
+#ItemsContainer
+{
 	padding: 30px 20px;
 	background-color: rgba(0, 0, 0, 0.2);
+	border-width: 2px;
+	border-color: rgba(255, 255, 255, 0.05);
 
 	flex-direction: row;
 	align-items: center;
+}
+
+#ItemNameContainer
+{
+	width: 400px;
+	height: 70px;
+	background-color: rgba(0, 0, 0, 0.2);
+	border-width: 2px;
+	border-color: rgba(255, 255, 255, 0.05);
+	border-radius: 5px;
+	padding-left: 10px;
+
+	/* align-items: center; */
+	justify-content: center;
+}
+
+#ItemNameContainer > Label
+{
+	/* color: rgba(255, 255, 255, 1); */
+	color: white;
+	font-size: 30px;
 }
 
 /* #ItemsContainer > VisualElement
