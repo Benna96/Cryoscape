@@ -1,8 +1,22 @@
+using System.ComponentModel;
+
 using UnityEngine;
 
-public class InventoryItem : Interactable
+public class InventoryItem : Interactable, INotifyPropertyChanged
 {
-    [field: SerializeField] public Item item { get; private set; }
+
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    [SerializeField] private Item _item;
+     public Item item
+    {
+        get => _item;
+        set
+        {
+            _item = value;
+            ObservableHelper.OnPropertyChanged(PropertyChanged);
+        }
+    }
 
     public override void Interact()
     {
