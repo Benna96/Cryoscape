@@ -4186,6 +4186,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: b89b6086abb2c0240a65e7068238773d, type: 2}
     - target: {fileID: 1369110763187249748, guid: 05e5c2083be8c704e927e1cd25622132, type: 3}
+      propertyPath: toggleable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1369110763187249748, guid: 05e5c2083be8c704e927e1cd25622132, type: 3}
       propertyPath: <isActivated>k__BackingField
       value: 0
       objectReference: {fileID: 0}
@@ -6293,6 +6297,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: b89b6086abb2c0240a65e7068238773d, type: 2}
+    - target: {fileID: 1369110763187249748, guid: 05e5c2083be8c704e927e1cd25622132, type: 3}
+      propertyPath: toggleable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4977540913207345095, guid: 05e5c2083be8c704e927e1cd25622132, type: 3}
       propertyPath: m_RootOrder
       value: 12

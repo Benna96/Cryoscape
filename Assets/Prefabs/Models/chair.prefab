@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8413910297565387595}
   - component: {fileID: 3143500045634329461}
   - component: {fileID: 6848715714710556358}
+  - component: {fileID: 2925519528984878826}
   m_Layer: 0
   m_Name: chairBack
   m_TagString: Untagged
@@ -83,6 +84,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2925519528984878826
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407556988031785964}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2.8203788, z: 3.8566008}
+  m_Center: {x: 0.0000009545628, y: 0.41018716, z: 0.9282996}
 --- !u!1 &5136693317980871779
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,6 +108,7 @@ GameObject:
   - component: {fileID: 7300269615135696784}
   - component: {fileID: 7428293361337120515}
   - component: {fileID: 3724807125411654849}
+  - component: {fileID: 8501391377934796992}
   m_Layer: 0
   m_Name: chairfoot
   m_TagString: Untagged
@@ -166,6 +181,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8501391377934796992
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5136693317980871779}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.233712, y: 2.855275, z: 1.6857909}
+  m_Center: {x: 0.3009232, y: 0.20837028, z: -0.15710367}
 --- !u!1 &7998620419531556291
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,7 +203,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7226903321731997561}
-  - component: {fileID: 1471546463446018353}
   m_Layer: 0
   m_Name: chair
   m_TagString: Untagged
@@ -200,16 +227,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1471546463446018353
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7998620419531556291}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.1837683, y: 1.4836621, z: 2.2218854}
-  m_Center: {x: 0.049430273, y: 0.17746255, z: -0.807851}
