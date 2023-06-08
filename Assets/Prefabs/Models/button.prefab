@@ -84,7 +84,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -3838915367269032889, guid: a39f0db9945f9f84ab743575c136842e, type: 3}
---- !u!114 &275456989539164588
+--- !u!114 &-6246688384476823245
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,7 +93,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5266858983627061256}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df41a4e14226bae4e8e6c3c3c8b488df, type: 3}
+  m_Script: {fileID: 11500000, guid: b1b37fe3ce6daac4fbe05dbcca15a9da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   <isInteractable>k__BackingField: 1
@@ -103,8 +103,8 @@ MonoBehaviour:
   activateAnims:
   - {fileID: 2228971735198330237}
   - {fileID: 4185582678650328966}
-  activateCompletedAnims: []
-  buttonName: 
+  activateCompletedAnims:
+  - {fileID: 2228971735198330237}
 --- !u!114 &8889168789024849459
 MonoBehaviour:
   m_ObjectHideFlags: 0

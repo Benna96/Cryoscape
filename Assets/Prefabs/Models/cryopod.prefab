@@ -7,6 +7,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5656314682146784554}
     m_Modifications:
+    - target: {fileID: -6246688384476823245, guid: a13643ba7db065e478b655c6572539cd, type: 3}
+      propertyPath: activateAnims.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -6246688384476823245, guid: a13643ba7db065e478b655c6572539cd, type: 3}
+      propertyPath: activateAnims.Array.data[2]
+      value: 
+      objectReference: {fileID: 6824911971380471020}
+    - target: {fileID: -6246688384476823245, guid: a13643ba7db065e478b655c6572539cd, type: 3}
+      propertyPath: activateAnims.Array.data[3]
+      value: 
+      objectReference: {fileID: 6824911971380471020}
+    - target: {fileID: -6246688384476823245, guid: a13643ba7db065e478b655c6572539cd, type: 3}
+      propertyPath: activateCompletedAnims.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6246688384476823245, guid: a13643ba7db065e478b655c6572539cd, type: 3}
+      propertyPath: activateCompletedAnims.Array.data[1]
+      value: 
+      objectReference: {fileID: 6824911971380471020}
     - target: {fileID: 275456989539164588, guid: a13643ba7db065e478b655c6572539cd, type: 3}
       propertyPath: activateCompletedAnims.Array.size
       value: 1
