@@ -5,10 +5,25 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public class Activatable : Interactable
+public class Activatable : Interactable, INotifyPropertyChanged
 {
-    [field: SerializeField] public bool isActivated { get; protected set; } = false;
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    [FormerlySerializedAs("isActivated")]
+    [SerializeField] private bool _isActivated = false;
+    public bool isActivated
+    {
+        get => _isActivated;
+        protected set
+        {
+            _isActivated = value;
+            ObservableHelper.OnPropertyChanged(PropertyChanged);
+        }
+    }
+
+    public bool shouldFail = false;
 
     [Tooltip("If this is false, the object can only be activated once")]
     [SerializeField] protected bool toggleable = false;
@@ -23,20 +38,28 @@ public class Activatable : Interactable
     [Tooltip("Animations to play after activateAnims have completed")]
     [SerializeField] protected SimpleAnim[] activateCompletedAnims;
 
+    [Tooltip("Animations to play upon failed interact (not having required item or such)")]
+    [SerializeField] protected SimpleAnim[] failedActivateAnims;
+
     protected float activateDuration;
     protected float activateCompletedDuration;
+    protected float failedActivateDuration;
 
     protected override void Awake()
     {
         base.Awake();
 
-        activateDuration = activateAnims == null
+        activateDuration = activateAnims.Length == 0
             ? 0f
             : activateAnims.Select(x => x.AnimDuration).Max();
 
-        activateCompletedDuration = activateCompletedAnims == null
+        activateCompletedDuration = activateCompletedAnims.Length == 0
             ? 0f
             : activateCompletedAnims.Select(x => x.AnimDuration).Max();
+
+        failedActivateDuration = failedActivateAnims.Length == 0
+            ? 0f
+            : failedActivateAnims.Select(x => x.AnimDuration).Max();
     }
 
     public override void Interact()
@@ -45,6 +68,9 @@ public class Activatable : Interactable
             StartCoroutine(Activate());
         else
             StartCoroutine(Deactivate());
+
+        if (shouldFail)
+            return;
 
         isActivated = !isActivated;
         if (isActivated && !toggleable)
@@ -67,16 +93,23 @@ public class Activatable : Interactable
 
     protected virtual IEnumerator Activate()
     {
-        Array.ForEach(activateAnims, Animate);
-        yield return new WaitForSeconds(activateDuration);
-
-        Array.ForEach(activateCompletedAnims, Animate);
-
-        if (autoDeactivateTime >= 0)
+        if (!shouldFail)
         {
-            yield return new WaitForSeconds(activateCompletedDuration);
-            yield return new WaitForSeconds(autoDeactivateTime);
-            Interact();
+            Array.ForEach(activateAnims, Animate);
+            yield return new WaitForSeconds(activateDuration);
+
+            Array.ForEach(activateCompletedAnims, Animate);
+
+            if (autoDeactivateTime >= 0)
+            {
+                yield return new WaitForSeconds(activateCompletedDuration);
+                yield return new WaitForSeconds(autoDeactivateTime);
+                Interact();
+            }
+        }
+        else
+        {
+            Array.ForEach(failedActivateAnims, Animate);
         }
 
         void Animate(SimpleAnim anim) => StartCoroutine(anim.AnimateNormal());
