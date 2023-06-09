@@ -1,9 +1,17 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+
+using UnityEngine;
 
 public class UIManager : Singleton<UIManager>
 {
-    [SerializeField] private EffectOverlayUI effectOverlaysUI;
+    [SerializeField] private EffectOverlaysUI effectOverlaysUI;
 
-    public void OverlayEffectForDuration    (EffectOverlayUI.Overlay overlay, float seconds)
+    /// <summary>
+    /// Remember to call with StartCoroutine
+    /// </summary>
+    /// <param name="overlay"></param>
+    /// <param name="seconds"></param>
+    /// <returns></returns>
+    public IEnumerator OverlayEffectForDuration (EffectOverlaysUI.Overlay overlay, float seconds)
         => effectOverlaysUI.EnableForDuration(overlay, seconds);
 }
