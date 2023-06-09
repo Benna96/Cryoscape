@@ -12,7 +12,6 @@ Material:
   m_ValidKeywords:
   - _NORMALMAP
   - _PARALLAXMAP
-  - _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -56,23 +55,23 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
-        m_Texture: {fileID: 2800000, guid: 253feb4a43940ec4790bfb7cdc7fb8c5, type: 3}
+        m_Texture: {fileID: 2800000, guid: 4a5636f9c5858c74db73f82cdb0df9ae, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BumpScale: 1
+    - _BumpScale: 2
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _GlossMapScale: 1
-    - _Glossiness: 0.395
+    - _GlossMapScale: 0.834
+    - _Glossiness: 0.689
     - _GlossyReflections: 1
-    - _Metallic: 0.119
+    - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _Parallax: 0.0449
-    - _SmoothnessTextureChannel: 1
+    - _Parallax: 0.0161
+    - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
