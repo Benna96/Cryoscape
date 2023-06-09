@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9b0f9ad0d8ce494f8a65dc9a5e1fe15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectOverlayUI: {fileID: 5098749224609062565}
+  effectOverlaysUI: {fileID: 5098749224609062565}
 --- !u!1 &6569632557301092024
 GameObject:
   m_ObjectHideFlags: 0

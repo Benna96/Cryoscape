@@ -5,20 +5,7 @@
     height: 100%;
 }
 
-#Container > VisualElement
-{
-    transition-duration: 1s;
-}
-
-#Container > VisualElement:enabled
-{
-    opacity: 1;
-    transition-timing-function: ease-in-cubic;
-}
-#Container > VisualElement:disabled
-{
-    opacity: 0;
-    transition-timing-function: ease-out-cubic;
-}
+ /* Change opacity from code as needed */
+#Container > VisualElement { opacity: 0; }
 
 #Frost { background-image: url("project:/Assets/Textures/UIfrost.png"); }

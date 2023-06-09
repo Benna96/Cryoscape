@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 [RequireComponent(typeof(UIDocument))]
-public class EffectOverlayUI : MonoBehaviour
+public class EffectOverlaysUI : MonoBehaviour
 {
     public enum Overlay
     {
@@ -22,12 +22,6 @@ public class EffectOverlayUI : MonoBehaviour
             value.SetEnabled(false);
     }
 
-    public IEnumerator EnableForDuration(Overlay overlay, float seconds)
-    {
-        var overlayElement = overlayElements[overlay];
-
-        overlayElement.SetEnabled(true);
-        yield return new WaitForSeconds(seconds);
-        overlayElement.SetEnabled(false);
-    }
+    public void SetOverlayOpacity(Overlay overlay, float opacity)
+        => overlayElements[overlay].style.opacity = opacity;
 }
