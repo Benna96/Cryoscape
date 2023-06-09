@@ -368,37 +368,15 @@ public partial class @Input: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""D-Pad"",
-                    ""id"": ""914bb5b4-dbc6-48ca-ba7f-7cc19e6ab000"",
-                    ""path"": ""1DAxis"",
-                    ""interactions"": ""Hold"",
+                    ""name"": """",
+                    ""id"": ""4ebd0ed9-ad4a-4a11-8cce-e122905618ae"",
+                    ""path"": ""<Gamepad>/dpad/x"",
+                    ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""ChangeItem"",
-                    ""isComposite"": true,
+                    ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""c8b55e47-5981-46b6-8c4f-19f047a7843e"",
-                    ""path"": ""<Gamepad>/dpad/left"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""ChangeItem"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""4ec41461-1fb0-4318-a94c-b94782720c1a"",
-                    ""path"": ""<Gamepad>/dpad/right"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""ChangeItem"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
                 },
                 {
                     ""name"": """",
