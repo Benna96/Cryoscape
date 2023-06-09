@@ -57,8 +57,8 @@ public class InventoryManager : Singleton<InventoryManager>, INotifyPropertyChan
     {
         if (e.Action == NotifyCollectionChangedAction.Remove && e.OldItems.Contains(currentItem))
         {
-            if (currentIndex == currentCategoryItems.Count)
-                currentIndex -= 1;
+            if (currentIndex >= currentCategoryItems.Count)
+                currentIndex = currentCategoryItems.Count - 1;
             else
                 UpdateCurrentItem();
         }
@@ -71,15 +71,11 @@ public class InventoryManager : Singleton<InventoryManager>, INotifyPropertyChan
 
     public void SelectItem(Item.Category type, int index)
     {
-        var itemsOfType = GetItemsOfType(type);
-        if (index >= itemsOfType.Count)
-            index = itemsOfType.Count - 1;
-
         currentCategory = type;
-        currentIndex = index;
+        currentIndex = Mathf.Clamp(index, 0, currentCategoryItems.Count - 1);
     }
-    public void SelectNextItem() { }
-    public void SelectPreviousItem() { }
+    public void SelectNextItem() => currentIndex = Mathf.Clamp(currentIndex + 1, 0, currentCategoryItems.Count - 1);
+    public void SelectPreviousItem() => currentIndex = Mathf.Clamp(currentIndex - 1, 0, currentCategoryItems.Count - 1);
 
     private void UpdateCurrentItem()
     {
