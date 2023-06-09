@@ -1,3 +1,4 @@
+using System.Collections;
 using System.ComponentModel;
 
 using UnityEngine;
@@ -20,11 +21,9 @@ public class InventoryItem : Interactable, INotifyPropertyChanged
         }
     }
 
-    public override void Interact()
+    protected override IEnumerator DoInteract()
     {
-        if (shouldFail)
-            return;
-
+        yield return StartCoroutine(base.DoInteract());
         InventoryManager.instance.AddItem(this);
         this.gameObject.SetActive(false);
     }

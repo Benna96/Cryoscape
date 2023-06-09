@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.Linq;
 
 ﻿using QuickOutline;
 
 using UnityEngine;
+using UnityEngine.Serialization;
 
 /// <summary>
 /// Base Interactable class.
@@ -23,12 +24,31 @@ public abstract class Interactable : MonoBehaviour
 
     [field: SerializeField] public Item requiredItem { get; protected set; } = null;
 
+    [Header("Animations")]
+    [SerializeField] protected bool disableInteractionWhileAnimating = false;
+
+    [FormerlySerializedAs("activateAnims")]
+    [Tooltip("Anims to play when interacting")]
+    [SerializeField] protected SimpleAnim[] interactAnims;
+
+    [FormerlySerializedAs("failedActivateAnims")]
+    [Tooltip("Animations to play upon failed interact (not having required item or such)")]
+    [SerializeField] protected SimpleAnim[] failedInteractAnims;
+
+    protected float interactDuration;
+    protected float failedInteractDuration;
+    protected virtual float applicableInteractDuration => shouldFail ? failedInteractDuration
+        : interactDuration;
+
     protected virtual void Awake()
     {
         outline = GetComponent<Outline>();
         DisableOutline();
 
         successConditions.Add(RequiredItemCondition);
+
+        interactDuration = GetMaxAnimDuration(interactAnims);
+        failedInteractDuration = GetMaxAnimDuration(failedInteractAnims);
 
         bool RequiredItemCondition(Interactable dummy)
         {
@@ -42,6 +62,9 @@ public abstract class Interactable : MonoBehaviour
                 _ => false
             };
         }
+
+        static float GetMaxAnimDuration(SimpleAnim[] anims)
+            => anims.Length == 0 ? 0f : anims.Select(x => x.AnimDuration).Max();
     }
 
     public virtual void EnableOutline() => outline.enabled = true;
@@ -53,5 +76,29 @@ public abstract class Interactable : MonoBehaviour
     /// If there should be a failed interaction, handle it by checking for shouldFail.
     /// shouldFail is set to false if required item is missing.
     /// </summary>
-    public abstract void Interact();
+    public virtual void Interact()
+    {
+        if (!shouldFail)
+            StartCoroutine(DoInteract());
+        else
+            StartCoroutine(DoFailedInteract());
+
+        if (isInteractable && disableInteractionWhileAnimating)
+            StartCoroutine(CoroutineHelper.StartWaitEnd(
+                () => isInteractable = false,
+                () => isInteractable = true,
+                applicableInteractDuration));
+    }
+
+    protected virtual IEnumerator DoInteract()
+    {
+        Array.ForEach(interactAnims, anim => StartCoroutine(anim.AnimateNormal()));
+        yield return new WaitForSeconds(interactDuration);
+    }
+
+    protected virtual IEnumerator DoFailedInteract()
+    {
+        Array.ForEach(failedInteractAnims, anim => StartCoroutine(anim.AnimateNormal()));
+        yield return new WaitForSeconds(failedInteractDuration);
+    }
 }
