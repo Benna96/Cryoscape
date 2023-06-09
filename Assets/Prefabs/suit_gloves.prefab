@@ -81,7 +81,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <isInteractable>k__BackingField: 1
   <requiredItem>k__BackingField: {fileID: 0}
-  <item>k__BackingField: {fileID: 11400000, guid: 0cd5a1c3cfb3948478a834de430af59a, type: 2}
+  _item: {fileID: 11400000, guid: 0cd5a1c3cfb3948478a834de430af59a, type: 2}
 --- !u!1 &4080994542277092800
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,7 +143,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 55f0e87cd26e7844794299a4d1e5b49f, type: 2}
+  - {fileID: 2100000, guid: 2f2a56cacd38359488b11c1569b07fe4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
