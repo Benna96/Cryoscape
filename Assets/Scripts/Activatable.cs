@@ -23,8 +23,6 @@ public class Activatable : Interactable, INotifyPropertyChanged
         }
     }
 
-    public bool shouldFail = false;
-
     [Tooltip("If this is false, the object can only be activated once")]
     [SerializeField] protected bool toggleable = false;
 
@@ -64,37 +62,35 @@ public class Activatable : Interactable, INotifyPropertyChanged
 
     public override void Interact()
     {
-        if (!isActivated)
-            StartCoroutine(Activate());
-        else
-            StartCoroutine(Deactivate());
-
-        if (shouldFail)
-            return;
-
+        if (!shouldFail)
+        {
+            StartCoroutine(!isActivated ? Activate() : Deactivate());
         isActivated = !isActivated;
         if (isActivated && !toggleable)
             isInteractable = false;
+        }
+
+        else if (shouldFail)
+        {
+            StartCoroutine(!isActivated ? FailedActivate() : FailedDeactivate());
+        }
 
         if (isInteractable && disableInteractionWhileAnimating)
         {
-            if (autoDeactivateTime < 0f)
+            float animDuration = shouldFail ? failedActivateDuration
+                : autoDeactivateTime < 0f ? activateDuration + activateCompletedDuration
+                : isActivated ? 2f * activateDuration + 2f * activateCompletedDuration + autoDeactivateTime
+                : 0f;
+
                 StartCoroutine(CoroutineHelper.StartWaitEnd(
                     () => isInteractable = false,
                     () => isInteractable = true,
-                    activateDuration + activateCompletedDuration));
-            else if (isActivated)
-                StartCoroutine(CoroutineHelper.StartWaitEnd(
-                    () => isInteractable = false,
-                    () => isInteractable = true,
-                    2f * activateDuration + 2f * activateCompletedDuration + autoDeactivateTime));
+                animDuration));
         }
     }
 
     protected virtual IEnumerator Activate()
     {
-        if (!shouldFail)
-        {
             Array.ForEach(activateAnims, Animate);
             yield return new WaitForSeconds(activateDuration);
 
@@ -106,11 +102,6 @@ public class Activatable : Interactable, INotifyPropertyChanged
                 yield return new WaitForSeconds(autoDeactivateTime);
                 Interact();
             }
-        }
-        else
-        {
-            Array.ForEach(failedActivateAnims, Animate);
-        }
 
         void Animate(SimpleAnim anim) => StartCoroutine(anim.AnimateNormal());
     }
@@ -120,6 +111,22 @@ public class Activatable : Interactable, INotifyPropertyChanged
         Array.ForEach(activateAnims, Animate);
         Array.ForEach(activateCompletedAnims, Animate);
         yield return new WaitForSeconds(activateDuration);
+
+        void Animate(SimpleAnim anim) => StartCoroutine(anim.AnimateReversed());
+    }
+
+    protected virtual IEnumerator FailedActivate()
+    {
+        Array.ForEach(failedActivateAnims, Animate);
+        yield break;
+
+        void Animate(SimpleAnim anim) => StartCoroutine(anim.AnimateNormal());
+    }
+
+    protected virtual IEnumerator FailedDeactivate()
+    {
+        Array.ForEach(failedActivateAnims, Animate);
+        yield break;
 
         void Animate(SimpleAnim anim) => StartCoroutine(anim.AnimateReversed());
     }

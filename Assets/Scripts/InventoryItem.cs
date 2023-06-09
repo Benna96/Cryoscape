@@ -22,6 +22,9 @@ public class InventoryItem : Interactable, INotifyPropertyChanged
 
     public override void Interact()
     {
+        if (shouldFail)
+            return;
+
         InventoryManager.instance.AddItem(this);
         this.gameObject.SetActive(false);
     }

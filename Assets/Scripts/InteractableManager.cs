@@ -47,20 +47,9 @@ public class InteractableManager : MonoBehaviour
         if (context.phase != InputActionPhase.Performed)
             return;
 
-        if (currentInteractable != null && RequiredNormalItemIsSelectedOrSpecialExists())
-            currentInteractable.Interact();
+        if (currentInteractable == null)
+            return;
 
-        bool RequiredNormalItemIsSelectedOrSpecialExists()
-        {
-            if (currentInteractable.requiredItem == null)
-                return true;
-
-            if (currentInteractable.requiredItem.category == Item.Category.Normal)
-                return InventoryManager.instance.currentItem?.item.id == currentInteractable.requiredItem.id;
-            else if (currentInteractable.requiredItem.category == Item.Category.Special)
-                return InventoryManager.instance.items.Where(inventoryItem => inventoryItem.item.id == currentInteractable.requiredItem.id).Any();
-
-            else return false;
-        }
+        currentInteractable.Interact();
     }
 }
