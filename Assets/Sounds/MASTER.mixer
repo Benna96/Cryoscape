@@ -33,6 +33,20 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!245 &-1961829120340041002
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: fadeOutSnapshotName
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: c0d3fad1f3d6160468f50e7b73454d76
+  m_FloatValues:
+    3a96e9d1979915a4598828327ca9bf83: -20.098167
+    aae4ac95822faf444a51cdbc73a8d98f: 4.047783
+    cab406bd4dfa69b419aeec38e4b8829d: -80
+  m_TransitionOverrides: {}
 --- !u!244 &-1489168597502109682
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -58,7 +72,9 @@ AudioMixerController:
   m_MasterGroup: {fileID: 24300002}
   m_Snapshots:
   - {fileID: 24500006}
-  m_StartSnapshot: {fileID: 24500006}
+  - {fileID: 2473211059116437213}
+  - {fileID: -1961829120340041002}
+  m_StartSnapshot: {fileID: 2473211059116437213}
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
   m_UpdateMode: 0
@@ -70,7 +86,7 @@ AudioMixerController:
     - 3739b5a28ffb89647a78173a46bcded4
     name: View
   m_CurrentViewIndex: 0
-  m_TargetSnapshot: {fileID: 24500006}
+  m_TargetSnapshot: {fileID: 2473211059116437213}
 --- !u!243 &24300002
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -115,6 +131,20 @@ AudioMixerSnapshotController:
   m_Name: Snapshot
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 5a7bd2e143b17c14293474bb77a55cbe
+  m_FloatValues:
+    3a96e9d1979915a4598828327ca9bf83: -20.098167
+    aae4ac95822faf444a51cdbc73a8d98f: 4.047783
+    cab406bd4dfa69b419aeec38e4b8829d: 6.6486683
+  m_TransitionOverrides: {}
+--- !u!245 &2473211059116437213
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: fadeInSnapshotName
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: b055bd0ca75be78409f4d283caf684ca
   m_FloatValues:
     3a96e9d1979915a4598828327ca9bf83: -20.098167
     aae4ac95822faf444a51cdbc73a8d98f: 4.047783
