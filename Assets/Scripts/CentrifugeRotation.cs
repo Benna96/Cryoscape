@@ -6,7 +6,7 @@ public class CentrifugeRotation : MonoBehaviour
 
     private void Update()
     {
-        // Rotate the object around the Y-axis
-        transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
+        // Rotate the object around the X-axis
+        transform.Rotate(Vector3.right, rotationSpeed * Time.deltaTime);
     }
 }
