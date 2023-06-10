@@ -140,7 +140,7 @@ public class InventoryUI : MonoBehaviour
                 {
                     itemIcons[i].style.backgroundImage = inventoryItems[i].item.inventoryIcon;
                     items[i].RemoveFromClassList("dontshow");
-                    itemNames[i] = inventoryItems[i].item.name;
+                    itemNames[i] = item.displayName;
                 }
                 else
                 {
