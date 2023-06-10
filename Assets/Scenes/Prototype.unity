@@ -1231,17 +1231,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <isInteractable>k__BackingField: 1
   <requiredItem>k__BackingField: {fileID: 11400000, guid: eab9cc3c5a756584d8bff6b0699ead14, type: 2}
-  _isActivated: 0
-  shouldFail: 0
-  toggleable: 0
   disableInteractionWhileAnimating: 0
-  autoDeactivateTime: -1
-  activateAnims:
+  interactAnims:
   - {fileID: 264861578}
-  activateCompletedAnims:
+  failedInteractAnims: []
+  _isActivated: 0
+  toggleable: 0
+  autoDeactivateTime: -1
+  interactCompletedAnims:
   - {fileID: 3081452365349235564}
   - {fileID: 5885273974431422779}
-  failedActivateAnims: []
 --- !u!114 &264861578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5608,14 +5607,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <isInteractable>k__BackingField: 1
   <requiredItem>k__BackingField: {fileID: 0}
-  _isActivated: 0
-  shouldFail: 0
-  toggleable: 0
   disableInteractionWhileAnimating: 0
+  interactAnims: []
+  failedInteractAnims: []
+  _isActivated: 0
+  toggleable: 0
   autoDeactivateTime: -1
-  activateAnims: []
-  activateCompletedAnims: []
-  failedActivateAnims: []
+  interactCompletedAnims: []
 --- !u!1001 &954823820
 PrefabInstance:
   m_ObjectHideFlags: 0
