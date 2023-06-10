@@ -14,7 +14,7 @@ public class InventoryUI : MonoBehaviour
 
     private VisualElement itemsContainer;
     private VisualElement[] items = new VisualElement[9];
-    private VisualElement[] itemIcons = new VisualElement[9];
+    private (VisualElement icon, VisualElement coloredIcon)[] itemIcons = new (VisualElement, VisualElement)[9];
     private string[] itemNames = new string[9];
 
     private VisualElement itemNameContainer;
@@ -40,7 +40,7 @@ public class InventoryUI : MonoBehaviour
 
             itemsContainer = root.Q("ItemsContainer");
             items = itemsContainer.Children().Select(x => x.Q("ItemWrapper")).ToArray();
-            itemIcons = items.Select(x => x.Q("Icon")).ToArray();
+            itemIcons = items.Select(x => x.Q("Icon")).Select(x => (x, x[0])).ToArray();
 
             specialItemElements = root.Q("Special").Query(className: "item").ToList();
         }
@@ -138,14 +138,20 @@ public class InventoryUI : MonoBehaviour
             {
                 if (i < inventoryItems.Count)
                 {
-                    itemIcons[i].style.backgroundImage = inventoryItems[i].item.inventoryIcon;
+                    var item = inventoryItems[i].item;
+                    var coloredItem = item as IColoredItem;
+                    itemIcons[i].icon.style.backgroundImage = item.inventoryIcon;
+                    itemIcons[i].coloredIcon.style.backgroundImage = coloredItem?.coloredInventoryIcon ?? null;
+                    itemIcons[i].coloredIcon.style.unityBackgroundImageTintColor = coloredItem?.color ?? default;
                     items[i].RemoveFromClassList("dontshow");
                     itemNames[i] = item.displayName;
                 }
                 else
                 {
                     items[i].AddToClassList("dontshow");
-                    itemIcons[i].style.backgroundImage = null;
+                    itemIcons[i].icon.style.backgroundImage = null;
+                    itemIcons[i].coloredIcon.style.backgroundImage = null;
+                    itemIcons[i].coloredIcon.style.unityBackgroundImageTintColor = default;
                     itemNames[i] = null;
                 }
             }

@@ -32,7 +32,7 @@ VisualElement {	color: rgb(255, 255, 255); }
     border-color: rgba(255, 255, 255, 0.2);
 	opacity: 1;
 }
-#ItemWrapper > #Background > #Icon
+#ItemWrapper > #Background > #Icon, #ItemWrapper > #Background > #Icon > #ColoredIcon
 {
     width: 100%;
     height: 100%;

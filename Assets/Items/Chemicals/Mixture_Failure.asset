@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dd8e3b48ea8d044a91493409c83c790, type: 3}
   m_Name: Mixture_Failure
   m_EditorClassIdentifier: 
-  displayName: 
+  displayName: Sus mixture
   category: 0
   inventoryIcon: {fileID: 0}
   color: {r: 0.6415094, g: 0.36009255, b: 0.36009255, a: 1}
