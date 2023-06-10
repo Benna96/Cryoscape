@@ -70,6 +70,7 @@ public class InventoryManager : Singleton<InventoryManager>, INotifyPropertyChan
 
     public void AddItem(InventoryItem item) => _items.Add(item);
     public void RemoveItem(InventoryItem item) => _items.Remove(item);
+    public void RemoveItem(Item item) => _items.Remove(_items.Where(x => x.item == item).FirstOrDefault());
 
     public void SelectItem(Item.Category type, int index)
     {

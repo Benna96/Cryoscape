@@ -1237,6 +1237,7 @@ MonoBehaviour:
   failedInteractAnims: []
   _isActivated: 0
   toggleable: 0
+  activationConsumesRequiredItem: 1
   autoDeactivateTime: -1
   interactCompletedAnims:
   - {fileID: 3081452365349235564}

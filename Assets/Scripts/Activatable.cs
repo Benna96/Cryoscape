@@ -26,6 +26,8 @@ public class Activatable : Interactable, INotifyPropertyChanged
     [Tooltip("If this is false, the object can only be activated once")]
     [SerializeField] protected bool toggleable = false;
 
+    [SerializeField] protected bool activationConsumesRequiredItem = false;
+
     [Tooltip("Delay after activate anims have finished to automatically deactivate.\nLeave as -1 to not auto deactivate.")]
     [SerializeField] protected float autoDeactivateTime = -1;
 
@@ -65,6 +67,8 @@ public class Activatable : Interactable, INotifyPropertyChanged
     protected virtual IEnumerator Activate()
     {
         Array.ForEach(interactAnims, Animate);
+        if (activationConsumesRequiredItem && requiredItem != null)
+            InventoryManager.instance.RemoveItem(requiredItem);
         yield return new WaitForSeconds(interactDuration);
 
         Array.ForEach(interactCompletedAnims, Animate);
