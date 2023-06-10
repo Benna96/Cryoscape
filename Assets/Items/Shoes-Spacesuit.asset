@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3fe1bea7548d3343883c8d1c0014eea, type: 3}
   m_Name: Shoes-Spacesuit
   m_EditorClassIdentifier: 
-  displayName: 
+  internalName: Spacesuit_shoes
+  displayName: Spacesuit boots
   category: 1
-  inventoryIcon: {fileID: 0}
+  inventoryIcon: {fileID: 2800000, guid: d1975101130b58245848ba3f5f6701d0, type: 3}

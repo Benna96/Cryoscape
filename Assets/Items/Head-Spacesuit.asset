@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f3fe1bea7548d3343883c8d1c0014eea, type: 3}
-  m_Name: Gloves-Spacesuit
+  m_Name: Head-Spacesuit
   m_EditorClassIdentifier: 
-  internalName: Spacesuit_gloves
-  displayName: Spacesuit gloves
+  internalName: Spacesuit_head
+  displayName: Spacesuit helmet
   category: 1
-  inventoryIcon: {fileID: 2800000, guid: ecc3371869f62db4488c68bd5365d013, type: 3}
+  inventoryIcon: {fileID: 2800000, guid: bf049bfe6f55fdb42bb1f1642f2107c1, type: 3}

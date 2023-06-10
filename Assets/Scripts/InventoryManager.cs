@@ -11,6 +11,8 @@ public class InventoryManager : Singleton<InventoryManager>, INotifyPropertyChan
 {
     public event PropertyChangedEventHandler PropertyChanged;
 
+    [field: SerializeField] public Item[] specialItemRefs { get; private set; }
+
     public ReadOnlyObservableCollection<InventoryItem> items { get; private set; }
     private ObservableCollection<InventoryItem> _items = new();
 

@@ -1,5 +1,5 @@
-using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -20,23 +20,29 @@ public class InventoryUI : MonoBehaviour
     private VisualElement itemNameContainer;
     private Label itemName;
 
+    private Dictionary<Item, VisualElement> specialItemIcons = new();
+    private bool setSpecialIconsFinished = false;
+
     private void OnEnable()
     {
-        FetchElements();
+        FetchElements(out var specialItemElements);
         SetLabels();
+        SetSpecialIcons(specialItemElements);
 
-        void FetchElements()
+        void FetchElements(out List<VisualElement> specialItemElements)
         {
-            var ui = GetComponent<UIDocument>();
+            var root = GetComponent<UIDocument>().rootVisualElement;
 
-            hotbarContainer = ui.rootVisualElement.Q("HotbarContainer");
+            hotbarContainer = root.Q("HotbarContainer");
 
-            itemNameContainer = ui.rootVisualElement.Q("ItemNameContainer");
+            itemNameContainer = root.Q("ItemNameContainer");
             itemName = itemNameContainer.Q<Label>();
 
-            itemsContainer = ui.rootVisualElement.Q("ItemsContainer");
+            itemsContainer = root.Q("ItemsContainer");
             items = itemsContainer.Children().Select(x => x.Q("ItemWrapper")).ToArray();
             itemIcons = items.Select(x => x.Q("Icon")).ToArray();
+
+            specialItemElements = root.Q("Special").Query(className: "item").ToList();
         }
 
         void SetLabels()
@@ -45,6 +51,28 @@ public class InventoryUI : MonoBehaviour
 
             foreach (var (label, index) in itemLabels.Select((x, i) => (x, i)))
                 label.text = (index + 1).ToString();
+        }
+
+        void SetSpecialIcons(List<VisualElement> specialItemElements)
+        {
+            StartCoroutine(Inner(specialItemElements));
+            IEnumerator Inner(List<VisualElement> specialItemElements)
+            {
+                specialItemElements.ForEach(x => x.SetEnabled(false));
+                yield return new WaitUntil(() => InventoryManager.instance != null);
+
+                foreach (var specialItemElement in specialItemElements)
+                {
+                    var correspondingItem = InventoryManager.instance.specialItemRefs.Where(itemRef => specialItemElement.name == itemRef.internalName).FirstOrDefault();
+                    if (correspondingItem == null)
+                        continue;
+
+                    specialItemIcons.Add(correspondingItem, specialItemElement);
+                    specialItemElement.style.backgroundImage = correspondingItem.inventoryIcon;
+    }
+
+                setSpecialIconsFinished = true;
+            }
         }
     }
 
@@ -55,8 +83,8 @@ public class InventoryUI : MonoBehaviour
 
         void RegisterEventsAndRunRelatedInitFuncs()
         {
-            (InventoryManager.instance.items as INotifyCollectionChanged).CollectionChanged += (_, _) => UpdateIcons();
-            UpdateIcons(true);
+            (InventoryManager.instance.items as INotifyCollectionChanged).CollectionChanged += (_, e) => UpdateIcons(e);
+            UpdateIcons();
 
             InventoryManager.instance.PropertyChanged += (sender, e) =>
             {
@@ -96,36 +124,76 @@ public class InventoryUI : MonoBehaviour
         InventoryManager.instance.SelectItem(Item.Category.Normal, index);
     }
 
-    private void UpdateIcons(bool firstRun = false)
+    private void UpdateIcons(NotifyCollectionChangedEventArgs e = null)
     {
-        var inventoryItems = InventoryManager.instance.GetItemsOfType(Item.Category.Normal);
-        bool alreadyHadHotbarItems = !items[0].ClassListContains("dontshow");
+        UpdateHotbar();
+        UpdateSpecials();
 
-        for (int i = 0; i < items.Length; i++)
+        void UpdateHotbar()
         {
-            if (i < inventoryItems.Count)
+            var inventoryItems = InventoryManager.instance.GetItemsOfType(Item.Category.Normal);
+            bool alreadyHadHotbarItems = !items[0].ClassListContains("dontshow");
+
+            for (int i = 0; i < items.Length; i++)
             {
-                itemIcons[i].style.backgroundImage = inventoryItems[i].item.inventoryIcon;
-                items[i].RemoveFromClassList("dontshow");
-                itemNames[i] = inventoryItems[i].item.name;
+                if (i < inventoryItems.Count)
+                {
+                    itemIcons[i].style.backgroundImage = inventoryItems[i].item.inventoryIcon;
+                    items[i].RemoveFromClassList("dontshow");
+                    itemNames[i] = inventoryItems[i].item.name;
+                }
+                else
+                {
+                    items[i].AddToClassList("dontshow");
+                    itemIcons[i].style.backgroundImage = null;
+                    itemNames[i] = null;
+                }
             }
+
+            if (inventoryItems.Count > 0)
+            {
+                hotbarContainer.RemoveFromClassList("dontshow");
+                if (!alreadyHadHotbarItems || e == null)
+                    InventoryManager.instance.SelectItem(Item.Category.Normal, 0);
+            }
+            else if (inventoryItems.Count == 0)
+            {
+                hotbarContainer.AddToClassList("dontshow");
+            }
+        }
+
+        void UpdateSpecials()
+        {
+            if (e == null)
+                StartCoroutine(SetAllEnabledStates());
             else
-            {
-                items[i].AddToClassList("dontshow");
-                itemIcons[i].style.backgroundImage = null;
-                itemNames[i] = null;
-            }
-        }
+                SetEnabledStatesDependingOnChange();
 
-        if (inventoryItems.Count > 0)
-        {
-            hotbarContainer.RemoveFromClassList("dontshow");
-            if (!alreadyHadHotbarItems || firstRun)
-                InventoryManager.instance.SelectItem(Item.Category.Normal, 0);
-        }
-        else if (inventoryItems.Count == 0)
-        {
-            hotbarContainer.AddToClassList("dontshow");
+            IEnumerator SetAllEnabledStates()
+            {
+                yield return new WaitUntil(() => setSpecialIconsFinished);
+
+                var inventoryItems = InventoryManager.instance.GetItemsOfType(Item.Category.Special);
+                foreach (var (item, element) in specialItemIcons)
+                    element.SetEnabled(inventoryItems.Where(inventoryItem => inventoryItem.item == item).Any());
+            }
+
+            void SetEnabledStatesDependingOnChange()
+            {
+                if (e.Action == NotifyCollectionChangedAction.Add)
+                {
+                    foreach (InventoryItem addedItem in e.NewItems)
+                        if (addedItem.item.category == Item.Category.Special && specialItemIcons.TryGetValue(addedItem.item, out var element))
+                            element.SetEnabled(true);
+                }
+
+                else if (e.Action == NotifyCollectionChangedAction.Remove)
+                {
+                    foreach (InventoryItem removedItem in e.OldItems)
+                        if (removedItem.item.category == Item.Category.Special && specialItemIcons.TryGetValue(removedItem.item, out var element))
+                            element.SetEnabled(false);
+                }
+            }
         }
     }
 
