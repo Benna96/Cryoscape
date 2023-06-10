@@ -11,7 +11,8 @@ public class ChemicalColorController : MonoBehaviour
 
     private void OnValidate()
     {
-        if (GetComponent<InventoryItem>().item is not Item_Chemical)
+        Item item = GetComponent<InventoryItem>().item;
+        if (item != null && item is not Item_Chemical)
             Debug.LogWarning($"Component {nameof(ChemicalColorController)} requires InventoryItem's item to be a chemical item");
     }
 
@@ -33,7 +34,11 @@ public class ChemicalColorController : MonoBehaviour
 
     private void UpdateColor()
     {
-        var color = (GetComponent<InventoryItem>().item as Item_Chemical).color;
+        var chemicalItem = GetComponent<InventoryItem>().item as Item_Chemical;
+        if (chemicalItem == null)
+            return;
+
+        var color = chemicalItem.color;
         liquidRenderer.material.color = color;
     }
 }

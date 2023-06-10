@@ -13,12 +13,12 @@ public class InventoryManager : Singleton<InventoryManager>, INotifyPropertyChan
 
     [field: SerializeField] public Item[] specialItemRefs { get; private set; }
 
-    public ReadOnlyObservableCollection<InventoryItem> items { get; private set; }
-    private ObservableCollection<InventoryItem> _items = new();
+    public ReadOnlyObservableCollection<Item> items { get; private set; }
+    private ObservableCollection<Item> _items = new();
 
     public Item.Category currentCategory { get; private set; }
 
-    private List<InventoryItem> currentCategoryItems => GetItemsOfType(currentCategory);
+    private List<Item> currentCategoryItems => GetItemsOfType(currentCategory);
 
     private int _currentIndex = -1;
     public int currentIndex
@@ -33,8 +33,8 @@ public class InventoryManager : Singleton<InventoryManager>, INotifyPropertyChan
         }
     }
 
-    private InventoryItem _currentItem;
-    public InventoryItem currentItem
+    private Item _currentItem;
+    public Item currentItem
     {
         get => _currentItem;
         private set
@@ -66,11 +66,10 @@ public class InventoryManager : Singleton<InventoryManager>, INotifyPropertyChan
         }
     }
 
-    public List<InventoryItem> GetItemsOfType(Item.Category type) => items.Where(x => x.item.category == type).ToList();
+    public List<Item> GetItemsOfType(Item.Category type) => items.Where(item => item.category == type).ToList();
 
-    public void AddItem(InventoryItem item) => _items.Add(item);
-    public void RemoveItem(InventoryItem item) => _items.Remove(item);
-    public void RemoveItem(Item item) => _items.Remove(_items.Where(x => x.item == item).FirstOrDefault());
+    public void AddItem(Item item) => _items.Add(item);
+    public void RemoveItem(Item item) => _items.Remove(item);
 
     public void SelectItem(Item.Category type, int index)
     {

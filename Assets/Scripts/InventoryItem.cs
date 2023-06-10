@@ -24,7 +24,7 @@ public class InventoryItem : Interactable, INotifyPropertyChanged
     protected override IEnumerator DoInteract()
     {
         yield return StartCoroutine(base.DoInteract());
-        InventoryManager.instance.AddItem(this);
+        InventoryManager.instance.AddItem(item);
         this.gameObject.SetActive(false);
     }
 }

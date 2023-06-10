@@ -14,8 +14,8 @@ public class DisableOnItemAcquired : MonoBehaviour
     private void InventoryItemsChanged(object sender, NotifyCollectionChangedEventArgs e)
     {
         if (e.Action == NotifyCollectionChangedAction.Add)
-            foreach (InventoryItem newItem in e.NewItems)
-                if (newItem.item.id == itemToDisableOn.id)
+            foreach (Item newItem in e.NewItems)
+                if (newItem.id == itemToDisableOn.id)
                 {
                     (InventoryManager.instance.items as INotifyCollectionChanged).CollectionChanged -= InventoryItemsChanged;
                     gameObject.SetActive(false);

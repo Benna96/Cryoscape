@@ -138,7 +138,7 @@ public class InventoryUI : MonoBehaviour
             {
                 if (i < inventoryItems.Count)
                 {
-                    var item = inventoryItems[i].item;
+                    var item = inventoryItems[i];
                     var coloredItem = item as IColoredItem;
                     itemIcons[i].icon.style.backgroundImage = item.inventoryIcon;
                     itemIcons[i].coloredIcon.style.backgroundImage = coloredItem?.coloredInventoryIcon ?? null;
@@ -181,22 +181,22 @@ public class InventoryUI : MonoBehaviour
 
                 var inventoryItems = InventoryManager.instance.GetItemsOfType(Item.Category.Special);
                 foreach (var (item, element) in specialItemIcons)
-                    element.SetEnabled(inventoryItems.Where(inventoryItem => inventoryItem.item == item).Any());
+                    element.SetEnabled(inventoryItems.Where(inventoryItem => inventoryItem == item).Any());
             }
 
             void SetEnabledStatesDependingOnChange()
             {
                 if (e.Action == NotifyCollectionChangedAction.Add)
                 {
-                    foreach (InventoryItem addedItem in e.NewItems)
-                        if (addedItem.item.category == Item.Category.Special && specialItemIcons.TryGetValue(addedItem.item, out var element))
+                    foreach (Item addedItem in e.NewItems)
+                        if (addedItem.category == Item.Category.Special && specialItemIcons.TryGetValue(addedItem, out var element))
                             element.SetEnabled(true);
                 }
 
                 else if (e.Action == NotifyCollectionChangedAction.Remove)
                 {
-                    foreach (InventoryItem removedItem in e.OldItems)
-                        if (removedItem.item.category == Item.Category.Special && specialItemIcons.TryGetValue(removedItem.item, out var element))
+                    foreach (Item removedItem in e.OldItems)
+                        if (removedItem.category == Item.Category.Special && specialItemIcons.TryGetValue(removedItem, out var element))
                             element.SetEnabled(false);
                 }
             }

@@ -53,16 +53,20 @@ public class Activatable : Interactable, INotifyPropertyChanged
 
     protected override IEnumerator DoInteract()
     {
-        yield return StartCoroutine(!isActivated ? Activate() : Deactivate());
         isActivated = !isActivated;
-        if (isActivated && !toggleable)
-            isInteractable = false;
-        }
+        UpdateIsInteractable();
+
+        yield return StartCoroutine(isActivated ? Activate() : Deactivate());
+    }
 
     protected override IEnumerator DoFailedInteract()
-        {
+    {
         yield return StartCoroutine(!isActivated ? FailedActivate() : FailedDeactivate());
-        }
+    }
+
+    protected override bool ShouldBeInteractable()
+        => base.ShouldBeInteractable()
+        && !(isActivated && !toggleable);
 
     protected virtual IEnumerator Activate()
     {

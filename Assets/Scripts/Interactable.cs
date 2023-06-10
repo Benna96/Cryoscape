@@ -40,6 +40,8 @@ public abstract class Interactable : MonoBehaviour
     protected virtual float applicableInteractDuration => shouldFail ? failedInteractDuration
         : interactDuration;
 
+    private bool interactBlockedByAnimation;
+
     protected virtual void Awake()
     {
         outline = GetComponent<Outline>();
@@ -57,8 +59,8 @@ public abstract class Interactable : MonoBehaviour
 
             return requiredItem.category switch
             {
-                Item.Category.Normal => InventoryManager.instance.currentItem?.item.id == requiredItem.id,
-                Item.Category.Special => InventoryManager.instance.items.Where(inventoryItem => inventoryItem.item.id == requiredItem.id).Any(),
+                Item.Category.Normal => InventoryManager.instance.currentItem?.id == requiredItem.id,
+                Item.Category.Special => InventoryManager.instance.items.Where(inventoryItem => inventoryItem.id == requiredItem.id).Any(),
                 _ => false
             };
         }
@@ -85,8 +87,8 @@ public abstract class Interactable : MonoBehaviour
 
         if (isInteractable && disableInteractionWhileAnimating)
             StartCoroutine(CoroutineHelper.StartWaitEnd(
-                () => isInteractable = false,
-                () => isInteractable = true,
+                () => { interactBlockedByAnimation = true; UpdateIsInteractable(); },
+                () => { interactBlockedByAnimation = false; UpdateIsInteractable(); },
                 applicableInteractDuration));
     }
 
@@ -101,4 +103,7 @@ public abstract class Interactable : MonoBehaviour
         Array.ForEach(failedInteractAnims, anim => StartCoroutine(anim.AnimateNormal()));
         yield return new WaitForSeconds(failedInteractDuration);
     }
+
+    protected void UpdateIsInteractable() => isInteractable = ShouldBeInteractable();
+    protected virtual bool ShouldBeInteractable() => !interactBlockedByAnimation;
 }
