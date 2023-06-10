@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dd8e3b48ea8d044a91493409c83c790, type: 3}
   m_Name: Chemical4
   m_EditorClassIdentifier: 
+  internalName: 
   displayName: Chemical 4
   category: 0
-  inventoryIcon: {fileID: 2800000, guid: 10d56a58e3838c9469cf3cca6afe30cc, type: 3}
-  color: {r: 0.75, g: 0.75, b: 0.75, a: 1}
+  inventoryIcon: {fileID: 2800000, guid: c11c8cc7e5d9eec45a534f2fa831ceb7, type: 3}
+  <color>k__BackingField: {r: 0.75, g: 0.75, b: 0.75, a: 1}
+  <coloredInventoryIcon>k__BackingField: {fileID: 2800000, guid: 0fd6cd2c820df754db979ab33dea985e, type: 3}
