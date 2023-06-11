@@ -33,6 +33,7 @@ public class ChemicalStand : Interactable
         IEnumerator AddInventoryEventHandlers()
         {
             yield return new WaitUntil(() => InventoryManager.instance != null);
+            UpdateIsInteractable();
 
             InventoryManager.instance.PropertyChanged += (_, e) =>
             {
@@ -44,10 +45,7 @@ public class ChemicalStand : Interactable
 
     protected override IEnumerator DoInteract()
     {
-        Item playerHeldItem = InventoryManager.instance.currentItem;
-        InventoryManager.instance.RemoveItem(playerHeldItem);
-
-        chemical.item = playerHeldItem;
+        chemical.item = InventoryManager.instance.RemoveCurrentItem();
 
         yield return base.DoInteract();
     }
@@ -55,6 +53,7 @@ public class ChemicalStand : Interactable
     protected override bool ShouldBeInteractable()
         => base.ShouldBeInteractable()
         && chemical.item == null
+        && InventoryManager.instance != null
         && (requiredItem != null
             ? InventoryManager.instance.currentItem.id == requiredItem.id
             : InventoryManager.instance.currentItem is Item_Chemical);

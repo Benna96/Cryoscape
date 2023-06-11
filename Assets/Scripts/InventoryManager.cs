@@ -33,6 +33,17 @@ public class InventoryManager : Singleton<InventoryManager>, INotifyPropertyChan
         }
     }
 
+    private int currentIndexWithinWholeCollection
+    {
+        get
+        {
+            int nthInstance = currentCategoryItems.IndicesOf(currentItem)
+                .ToList()
+                .IndexOf(currentIndex);
+            return _items.IndicesOf(currentItem).ElementAt(nthInstance);
+        }
+    }
+
     private Item _currentItem;
     public Item currentItem
     {
@@ -69,7 +80,29 @@ public class InventoryManager : Singleton<InventoryManager>, INotifyPropertyChan
     public List<Item> GetItemsOfType(Item.Category type) => items.Where(item => item.category == type).ToList();
 
     public void AddItem(Item item) => _items.Add(item);
-    public void RemoveItem(Item item) => _items.Remove(item);
+
+    public Item RemoveItem(Item item)
+    {
+        if (item == currentItem)
+            RemoveCurrentItem();
+        else
+            _items.Remove(item);
+
+        return item;
+    }
+
+    public Item RemoveCurrentItem()
+    {
+        var oldItem = currentItem;
+        _items.RemoveAt(currentIndexWithinWholeCollection);
+        return oldItem;
+    }
+
+    public void ReplaceCurrentItemWith(Item newItem)
+    {
+        _items[currentIndexWithinWholeCollection] = newItem;
+        currentItem = newItem;
+    }
 
     public void SelectItem(Item.Category type, int index)
     {

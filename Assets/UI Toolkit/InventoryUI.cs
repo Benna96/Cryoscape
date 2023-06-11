@@ -88,7 +88,7 @@ public class InventoryUI : MonoBehaviour
 
             InventoryManager.instance.PropertyChanged += (sender, e) =>
             {
-                if (e.PropertyName == nameof(InventoryManager.instance.currentIndex))
+                if (e.PropertyName == nameof(InventoryManager.currentIndex))
                     FocusItem(InventoryManager.instance.currentCategory, InventoryManager.instance.currentIndex);
             };
             FocusItem(InventoryManager.instance.currentCategory, InventoryManager.instance.currentIndex);
@@ -166,6 +166,8 @@ public class InventoryUI : MonoBehaviour
             {
                 hotbarContainer.AddToClassList("dontshow");
             }
+
+            UpdateName();
         }
 
         void UpdateSpecials()
@@ -221,8 +223,10 @@ public class InventoryUI : MonoBehaviour
             if (index >= 0)
             {
                 items[index].Focus();
-                itemName.text = itemNames[index];
+                UpdateName();
             }
         }
     }
+
+    private void UpdateName() => itemName.text = itemNames[InventoryManager.instance.currentIndex];
 }

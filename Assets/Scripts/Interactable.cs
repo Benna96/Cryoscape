@@ -55,6 +55,8 @@ public abstract class Interactable : MonoBehaviour
         interactDuration = GetMaxAnimDuration(interactAnims);
         failedInteractDuration = GetMaxAnimDuration(failedInteractAnims);
 
+        UpdateIsInteractable();
+
         bool RequiredItemCondition(Interactable dummy)
         {
             if (requiredItem == null)
