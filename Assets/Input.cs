@@ -361,7 +361,7 @@ public partial class @Input: IInputActionCollection2, IDisposable
                     ""id"": ""12588828-4cea-4e23-b56d-32aa1e7eead5"",
                     ""path"": ""<Mouse>/scroll/y"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""Invert"",
                     ""groups"": ""KeyboardMouse"",
                     ""action"": ""ChangeItem"",
                     ""isComposite"": false,
