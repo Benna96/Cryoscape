@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class InteractableManager : MonoBehaviour
 {
     [SerializeField] private new Camera camera;
+    [SerializeField] private float maxInteractDistance;
 
     private Interactable _currentInteractable = null;
     private Interactable currentInteractable
@@ -31,7 +32,7 @@ public class InteractableManager : MonoBehaviour
         var ray = camera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, camera.nearClipPlane));
         Debug.DrawRay(ray.origin, ray.direction * 1000, Color.yellow);
 
-        if (Physics.Raycast(ray, out var hit, 4f)
+        if (Physics.Raycast(ray, out var hit, maxInteractDistance)
             && hit.collider.gameObject.TryGetComponent<Interactable>(out var interactable)
             && interactable.isInteractable)
             currentInteractable = interactable;

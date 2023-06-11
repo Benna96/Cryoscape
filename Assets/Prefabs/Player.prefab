@@ -347,3 +347,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 5493020072448069482}
+  maxInteractDistance: 5
