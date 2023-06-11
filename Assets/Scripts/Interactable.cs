@@ -16,6 +16,9 @@ using UnityEngine.Serialization;
 [RequireComponent(typeof(Outline))]
 public abstract class Interactable : MonoBehaviour
 {
+    public delegate void InteractCompletedHandler(Interactable sender, InteractEventArgs e);
+    public event InteractCompletedHandler OnInteractCompleted;
+
     protected Outline outline;
     [field: SerializeField] public bool isInteractable { get; protected set; } = true;
 
@@ -80,16 +83,27 @@ public abstract class Interactable : MonoBehaviour
     /// </summary>
     public virtual void Interact()
     {
-        if (!shouldFail)
-            StartCoroutine(DoInteract());
-        else
-            StartCoroutine(DoFailedInteract());
+        StartCoroutine(InteractThenRaiseEvent());
 
         if (isInteractable && disableInteractionWhileAnimating)
             StartCoroutine(CoroutineHelper.StartWaitEnd(
                 () => { interactBlockedByAnimation = true; UpdateIsInteractable(); },
                 () => { interactBlockedByAnimation = false; UpdateIsInteractable(); },
                 applicableInteractDuration));
+
+        IEnumerator InteractThenRaiseEvent()
+        {
+            if (!shouldFail)
+            {
+                yield return StartCoroutine(DoInteract());
+                OnInteractCompleted(this, new(true));
+            }
+            else
+            {
+                yield return StartCoroutine(DoFailedInteract());
+                OnInteractCompleted(this, new(false));
+            }
+        }
     }
 
     protected virtual IEnumerator DoInteract()
@@ -106,4 +120,14 @@ public abstract class Interactable : MonoBehaviour
 
     protected void UpdateIsInteractable() => isInteractable = ShouldBeInteractable();
     protected virtual bool ShouldBeInteractable() => !interactBlockedByAnimation;
+}
+
+public class InteractEventArgs : EventArgs
+{
+    public bool successfulInteract { get; private set; }
+
+    public InteractEventArgs(bool success)
+    {
+        this.successfulInteract = success;
+    }
 }
