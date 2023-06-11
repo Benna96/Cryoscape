@@ -21,10 +21,21 @@ public class InventoryItem : Interactable, INotifyPropertyChanged
         }
     }
 
+    protected override void Awake()
+    {
+        base.Awake();
+        this.OnInteractCompleted += DisableOnPickup;
+
+        void DisableOnPickup(Interactable sender, InteractEventArgs e)
+        {
+            if (e.successfulInteract)
+                this.gameObject.SetActive(false);
+        }
+    }
+
     protected override IEnumerator DoInteract()
     {
         yield return StartCoroutine(base.DoInteract());
         InventoryManager.instance.AddItem(item);
-        this.gameObject.SetActive(false);
     }
 }

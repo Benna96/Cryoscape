@@ -96,12 +96,12 @@ public abstract class Interactable : MonoBehaviour
             if (!shouldFail)
             {
                 yield return StartCoroutine(DoInteract());
-                OnInteractCompleted(this, new(true));
+                OnInteractCompleted?.Invoke(this, new(true));
             }
             else
             {
                 yield return StartCoroutine(DoFailedInteract());
-                OnInteractCompleted(this, new(false));
+                OnInteractCompleted?.Invoke(this, new(false));
             }
         }
     }
