@@ -53,7 +53,68 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b0c4fcd0c7a312f469e508badd092914, type: 3}
       propertyPath: m_Name
-      value: trashcan001
+      value: chemwasteBin
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0c4fcd0c7a312f469e508badd092914, type: 3}
+--- !u!1 &1460920669084749586 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b0c4fcd0c7a312f469e508badd092914, type: 3}
+  m_PrefabInstance: {fileID: 1767471857920881219}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2306269993624208880
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1460920669084749586}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.4546657, y: 3.2072175, z: 3.012509}
+  m_Center: {x: 0, y: 0, z: 0.50625414}
+--- !u!114 &4611039062184767151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1460920669084749586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 13
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &7714362397468499055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1460920669084749586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0858bbb1c9187244f90a078e7e562c5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <isInteractable>k__BackingField: 1
+  <requiredItem>k__BackingField: {fileID: 0}
+  disableInteractionWhileAnimating: 0
+  interactAnims: []
+  failedInteractAnims: []
+  noWasteChemicals:
+  - {fileID: 11400000, guid: 198a029689c2b784a9cb0ec58d4ae7b2, type: 2}
+  - {fileID: 11400000, guid: 7a554c879c50a2841a7f63833d186b48, type: 2}
+  - {fileID: 11400000, guid: e458eebf29b8f184fbbf7c3d2dab90af, type: 2}
+  - {fileID: 11400000, guid: 48cc7fbe605a6c94781c867b502f79d1, type: 2}
+  - {fileID: 11400000, guid: 82fe6464ac8bf0a4d8e985d570be8d81, type: 2}
+  - {fileID: 11400000, guid: 24fab9ac4bf49d043a3fdf65d4e60eeb, type: 2}
+  emptyBeaker: {fileID: 11400000, guid: 198a029689c2b784a9cb0ec58d4ae7b2, type: 2}
