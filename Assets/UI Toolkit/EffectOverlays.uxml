@@ -2,6 +2,6 @@
     <Style src="project://database/Assets/UI%20Toolkit/EffectOverlays.uss?fileID=7433441132597879392&amp;guid=3e282bd7bb07da745b80a4e89984ae1c&amp;type=3#EffectOverlays" />
     <ui:VisualElement name="Container" picking-mode="Ignore">
         <ui:VisualElement name="Frost" picking-mode="Ignore" />
-        <ui:VisualElement name="Spill" picking-mode="Ignore" />
+        <ui:VisualElement name="Spill" picking-mode="Ignore" style="background-image: url(&apos;project://database/Assets/Textures/UIpoison.png?fileID=21300000&amp;guid=9e761bbe5a127c74197c795931f3502c&amp;type=3#UIpoison&apos;);" />
     </ui:VisualElement>
 </ui:UXML>
