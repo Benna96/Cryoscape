@@ -16354,6 +16354,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5816789414911688132, guid: 86782382851c7a348ad4d3d3c050c866, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 15fdb8cf7d6120d4083ffe08682c9947, type: 2}
     - target: {fileID: 8775752544336536928, guid: 86782382851c7a348ad4d3d3c050c866, type: 3}
       propertyPath: animDuration
       value: 3.5
