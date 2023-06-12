@@ -162,7 +162,7 @@ Transform:
   m_GameObject: {fileID: 4888506178445336517}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: -0.02753695, y: 1.8541408, z: 1.000017}
-  m_LocalScale: {x: 1, y: 1, z: 0.11857194}
+  m_LocalScale: {x: 1, y: 1, z: 0.044273727}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4362787937040169022}
@@ -264,6 +264,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <isInteractable>k__BackingField: 1
   <requiredItem>k__BackingField: {fileID: 0}
+  disableInteractionWhileAnimating: 0
+  interactAnims: []
+  failedInteractAnims: []
   openableDoors:
   - {fileID: 8775752544336536928}
 --- !u!114 &8775752544336536928
