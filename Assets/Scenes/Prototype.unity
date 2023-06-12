@@ -7591,7 +7591,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTag: Player
   audioSource: {fileID: 2070807061}
-  fadeDuration: 6
+  fadeDuration: 30
 --- !u!1001 &1298385888
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9287,7 +9287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTag: Player
   audioSource: {fileID: 2011197893}
-  fadeDuration: 6
+  fadeDuration: 30
 --- !u!4 &1570483544 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b0c4fcd0c7a312f469e508badd092914, type: 3}
