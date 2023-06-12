@@ -19,10 +19,6 @@ PrefabInstance:
       propertyPath: disableInteractionWhileAnimating
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: -6246688384476823245, guid: a13643ba7db065e478b655c6572539cd, type: 3}
-      propertyPath: failedInteractAnims.Array.data[0]
-      value: 
-      objectReference: {fileID: 5667845345657640421}
     - target: {fileID: 2613707078404501712, guid: a13643ba7db065e478b655c6572539cd, type: 3}
       propertyPath: m_Enabled
       value: 1
