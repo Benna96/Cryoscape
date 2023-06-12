@@ -7,7 +7,6 @@ public class SimpleAnimUIOverlay : SimpleAnim
 
     protected override void AnimateAtPoint(float evaluatedPoint)
     {
-        audioSource.Play();
         UIManager.instance.SetOverlayEffectOpacity(overlay, evaluatedPoint);
         
     }

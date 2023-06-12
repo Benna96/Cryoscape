@@ -7049,7 +7049,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5480534326402938674, guid: f7d8103b3830a8747835252637dd330d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5480534326402938677, guid: f7d8103b3830a8747835252637dd330d, type: 3}
       propertyPath: m_RootOrder
@@ -17534,7 +17534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <isInteractable>k__BackingField: 1
-  <requiredItem>k__BackingField: {fileID: 0}
+  <requiredItem>k__BackingField: {fileID: 11400000, guid: bc99f3707bb99064ea0951d0ec00ebcf, type: 2}
   disableInteractionWhileAnimating: 0
   interactAnims:
   - {fileID: 3630705504805836501}
