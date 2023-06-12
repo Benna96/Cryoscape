@@ -16827,7 +16827,7 @@ PrefabInstance:
     - target: {fileID: 288589275436370202, guid: 86782382851c7a348ad4d3d3c050c866, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 2c1875c478e5da94395848fb5d0c701d, type: 2}
+      objectReference: {fileID: 2100000, guid: 0f4e2e29dc5589f4bbe9f7f39eca6c80, type: 2}
     - target: {fileID: 3662824131213371293, guid: 86782382851c7a348ad4d3d3c050c866, type: 3}
       propertyPath: openableDoors.Array.size
       value: 0
