@@ -8018,6 +8018,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 37999395}
     m_Modifications:
     - target: {fileID: 1580045508453858361, guid: 81c0b23d61aba2143948a8302fc1fd0b, type: 3}
+      propertyPath: _isHavingEffect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1580045508453858361, guid: 81c0b23d61aba2143948a8302fc1fd0b, type: 3}
       propertyPath: anims.Array.size
       value: 2
       objectReference: {fileID: 0}
