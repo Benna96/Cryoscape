@@ -228,5 +228,8 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
-    private void UpdateName() => itemName.text = itemNames[InventoryManager.instance.currentIndex];
+    private void UpdateName()
+        => itemName.text = InventoryManager.instance.currentIndex >= 0
+        ? itemNames[InventoryManager.instance.currentIndex]
+        : "";
 }
