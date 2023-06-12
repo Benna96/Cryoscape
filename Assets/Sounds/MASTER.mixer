@@ -54,6 +54,20 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!244 &-185935593638941359
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: b5ca8a8b041fa33458efffb6fd206a4d
+  m_EffectName: Attenuation
+  m_MixLevel: 856f5933572adda4bbbf32898cd12f5d
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!243 &-94923733390161850
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -95,6 +109,7 @@ AudioMixerController:
     - 57bbecb668e586e4cafef0ad8c9490b0
     - 8ae0461c566e8b345b04beb44f365cff
     - 29fd4ea45d39c774db7ddfa8e1a65a47
+    - aa02ad80cf0dad4428ec57a7679ddef7
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -110,6 +125,7 @@ AudioMixerGroupController:
   m_Children:
   - {fileID: -6211070828406585717}
   - {fileID: 8640673820587731067}
+  - {fileID: 1949770071442825250}
   - {fileID: -94923733390161850}
   m_Volume: 26a95e6dfa7a21f40adcbb82f433a2ba
   m_Pitch: 163ca514f06d31142b2b31747543a413
@@ -147,18 +163,40 @@ AudioMixerSnapshotController:
     564017b05d152fe438e37a3e35b482a9: 0.34
     1853a041d08fb4e488e5c21c3e54878c: 0.35799998
     a3fe0e6134bf5db4d80eee0ae113ed5b: 0
+    89fa4be1068f9b04bb29b06a8d599b1c: 0.9
     4fefc12235c6e964f99398eb008fdaff: 4.08
     b35a9622f16581045a85df056e1458b7: 1
     a587fc13f2aefc54f8422019e4a45f7b: 183
-    66c34354163748c4ba7e8f44b115cd73: -37.92048
+    66c34354163748c4ba7e8f44b115cd73: -27.94381
     d2cc8905a4fe89e49b47f673205b6e46: 1
     2b79e15505b17914b9411773d0d5e608: 20
     cfbb9ea6218b79f479cd5e291eca71c2: 22000
     a2806d084c8079546ad2db8dfdef1866: 0
-    26a95e6dfa7a21f40adcbb82f433a2ba: 5.545088
-    c7e1f2bfb621e3040ba9541faa02737f: -27.169525
+    ac46fba9d68ee1244b98a64d3fc4644e: 0.96
+    26a95e6dfa7a21f40adcbb82f433a2ba: 7.833429
+    e926aaedf9f19b346809a023270b1de0: -3.5922961
+    c7e1f2bfb621e3040ba9541faa02737f: -33.61167
     b5413ccfa3a374941adaaed8637af39c: -13.0627575
   m_TransitionOverrides: {}
+--- !u!243 &1949770071442825250
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: HubMusic
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: aa02ad80cf0dad4428ec57a7679ddef7
+  m_Children: []
+  m_Volume: e926aaedf9f19b346809a023270b1de0
+  m_Pitch: 89fa4be1068f9b04bb29b06a8d599b1c
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -185935593638941359}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!244 &3362457364485899273
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
