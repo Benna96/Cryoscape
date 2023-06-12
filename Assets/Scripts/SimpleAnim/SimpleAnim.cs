@@ -29,6 +29,8 @@ public abstract class SimpleAnim : MonoBehaviour
     [Tooltip("Toggle this on to automatically play the animation back and forth when entering play mode.")]
     [SerializeField] protected bool debugAutoPlay = false;
 
+    public bool initDone { get; protected set; } = false;
+
     private Coroutine activeAnimCoroutine;
     private float elapsedTime = 0f;
     private float amountToAnimateThisFrame = 0f;
@@ -39,6 +41,8 @@ public abstract class SimpleAnim : MonoBehaviour
             normalAnimCurve = new AnimationCurve(new(0f, 0f, 1f, 1f), new(1f, 1f, 1f, 1f));
         if (reversedAnimCurve.length < 2)
             reversedAnimCurve = normalAnimCurve;
+
+        initDone = true;
 
 #if UNITY_EDITOR
         StartCoroutine(AutoPlay());

@@ -17,6 +17,5 @@ public class SimpleAnimSliding : SimpleAnim
         targetPosition = transform.localPosition + distance * axisVector;
     }
 
-    protected override void AnimateAtPoint(float evaluatedPoint)
-        => transform.localPosition = Vector3.LerpUnclamped(origPosition, targetPosition, evaluatedPoint);
+    protected override void AnimateAtPoint(float evaluatedPoint) => transform.localPosition = Vector3.LerpUnclamped(origPosition, targetPosition, evaluatedPoint);
 }
