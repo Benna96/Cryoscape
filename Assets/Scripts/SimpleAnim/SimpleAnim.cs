@@ -98,7 +98,7 @@ public abstract class SimpleAnim : MonoBehaviour
         // 0.3 to 0: 0.3 - (0.3 * progress). - (0.3 * progress) can be expressed as ((0 - 0.3) * progress).
         // These two can be simplified to 0.3 + (((1 or 0) - 0.3) * progress).
         var curveToUse = reversed ? reversedAnimCurve : normalAnimCurve;
-        var amountAlreadyAnimated = amountToAnimateThisFrame;
+        var amountAlreadyAnimated = (amountToAnimateThisFrame == 1 && !reversed) ? 0 : amountToAnimateThisFrame;
         var amountToAnimateThisCoroutine = (reversed ? 0 : 1) - amountAlreadyAnimated;
 
         var alreadyElapsedTime = elapsedTime;
