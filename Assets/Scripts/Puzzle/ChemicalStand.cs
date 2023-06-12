@@ -54,6 +54,7 @@ public class ChemicalStand : Interactable
         => base.ShouldBeInteractable()
         && chemical.item == null
         && InventoryManager.instance != null
+        && InventoryManager.instance.currentItem != null
         && (requiredItem != null
             ? InventoryManager.instance.currentItem.id == requiredItem.id
             : InventoryManager.instance.currentItem is Item_Chemical);
