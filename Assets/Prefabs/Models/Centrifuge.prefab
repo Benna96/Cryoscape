@@ -144,7 +144,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5822254072684790057}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.67, y: 0.59, z: -0.44}
+  m_LocalPosition: {x: -0.67, y: 0.42, z: -0.44}
   m_LocalScale: {x: 1.9062492, y: 0.41920322, z: 1.9062492}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -163,7 +163,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e0ea5a3624c12840aea850f5ae246ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 100
+  rotationSpeed: 2
+  wobbleAmount: 0.1
+  wobbleSpeed: 1
 --- !u!33 &707739676269446886
 MeshFilter:
   m_ObjectHideFlags: 0
