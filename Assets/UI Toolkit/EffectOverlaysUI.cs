@@ -8,7 +8,8 @@ public class EffectOverlaysUI : MonoBehaviour
 {
     public enum Overlay
     {
-        Frost
+        Frost,
+        Spill
     }
 
     private Dictionary<Overlay, VisualElement> overlayElements = new();
@@ -18,6 +19,7 @@ public class EffectOverlaysUI : MonoBehaviour
         var root = GetComponent<UIDocument>().rootVisualElement;
 
         overlayElements.Add(Overlay.Frost, root.Q("Frost"));
+        overlayElements.Add(Overlay.Spill, root.Q("Spill"));
         foreach (var (key, value) in overlayElements)
             value.SetEnabled(false);
     }
