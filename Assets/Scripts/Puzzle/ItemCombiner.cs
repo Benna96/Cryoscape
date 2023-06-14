@@ -2,24 +2,25 @@
 using System.Linq;
 
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public class ChemicalMixer : MonoBehaviour
+public class ItemCombiner : MonoBehaviour
 {
-    [SerializeField] private ChemicalStand[] chemicalStands;
-    [SerializeField] private ChemicalStand resultStand;
+    [FormerlySerializedAs("chemicalStands")]
+    [SerializeField] private ItemHolder[] inputItemHolders;
+
+    [FormerlySerializedAs("resultStand")]
+    [SerializeField] private ItemHolder outputItemHolder;
+
     [SerializeField] private Activatable button;
 
-    [SerializeField] private Item_Chemical nonRecipeChemical;
+    [FormerlySerializedAs("nonRecipeChemical")]
+    [SerializeField] private Item nonRecipeFallback;
     [SerializeField] private Recipe[] recipes;
 
     // Debug only
     [SerializeField] private bool doAddItems;
     [SerializeField] private Item[] itemsToAddToInventory;
-
-    [Header("Old and unneeded")]
-
-    [Tooltip("To use for generating chemicals")]
-    [SerializeField] private GameObject generatedChemicalPrefab;
 
     [Serializable]
     public class Recipe
@@ -33,7 +34,7 @@ public class ChemicalMixer : MonoBehaviour
         button.PropertyChanged += Button_PropertyChanged;
         Array.ForEach(recipes, recipe => recipe.requiredIngredients = recipe.requiredIngredients.OrderBy(x => x.id).ToArray());
 
-        button.successConditions.Add(_ => resultStand.heldItem.item != null && chemicalStands.Where(x => x.heldItem.item != null).Count() >= 2);
+        button.successConditions.Add(_ => outputItemHolder.heldItem.item != null && inputItemHolders.Where(x => x.heldItem.item != null).Count() >= 2);
 
 
         void Button_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
@@ -55,9 +56,9 @@ public class ChemicalMixer : MonoBehaviour
 
     private void Mix()
     {
-        var ingredients = chemicalStands.Where(x => x.heldItem.item != null).Select(x => x.heldItem.item).OrderBy(x => x.id);
+        var ingredients = inputItemHolders.Where(x => x.heldItem.item != null).Select(x => x.heldItem.item).OrderBy(x => x.id);
         Recipe matchingRecipe = recipes.Where(x => Enumerable.SequenceEqual(x.requiredIngredients.OrderBy(x => x.id), ingredients)).FirstOrDefault();
 
-        resultStand.heldItem.item = matchingRecipe?.resultingItem ?? nonRecipeChemical;
+        outputItemHolder.heldItem.item = matchingRecipe?.resultingItem ?? nonRecipeFallback;
     }
 }
