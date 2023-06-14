@@ -1,14 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 
 using UnityEngine;
 
 /// <summary>
-/// Class for a lock that requires specific toggles to be on & others off
+/// Class for a lock that requires specific toggles to be on & others off, with the toggles being in the shape of a grid
 /// </summary>
-public class GridToggleLock : MonoBehaviour
+public class GridToggleLock : CombinationLock
 {
+    [Header("Grid Toggle Lock variables")]
+
     [Tooltip("Organize the toggles under row parents, supply the parent of the row objects here.")]
     [SerializeField] private GameObject parentOfRowsOfToggles;
 
@@ -17,13 +18,14 @@ public class GridToggleLock : MonoBehaviour
     [SerializeField] private Vector2Int[] correctTogglesAsRowColumnCoords;
 
     private Activatable[,] togglesGrid;
-    private bool isCorrectCombination = false;
 
     private void Awake()
     {
         FetchToggles();
         foreach (var toggle in togglesGrid)
             toggle.PropertyChanged += UpdateCombinationOnActiveChange;
+
+        LockStateChanged += GridToggleLock_LockStateChanged;
 
         void FetchToggles()
         {
@@ -49,22 +51,15 @@ public class GridToggleLock : MonoBehaviour
             if (e.PropertyName == nameof(Activatable.isActivated))
                 UpdateCombination();
         }
+
+        void GridToggleLock_LockStateChanged(CombinationLock sender, LockEventArgs e)
+        {
+            if (e.isLocked)
+                isHavingEffect = false;
+        }
     }
 
-    private void UpdateCombination()
-    {
-        bool wasCorrectCOmbination = isCorrectCombination;
-        isCorrectCombination = CheckCombination();
-
-        if (wasCorrectCOmbination == isCorrectCombination)
-            return;
-        else if (!wasCorrectCOmbination && isCorrectCombination)
-            Debug.Log("Correct combination!");
-        else if (wasCorrectCOmbination && !isCorrectCombination)
-            Debug.Log("You had the correct combination, but now it's wrong...");
-    }
-
-    private bool CheckCombination()
+    protected override bool CheckCombination()
     {
         for (int rowIndex = 0; rowIndex < togglesGrid.GetLength(0); rowIndex++)
             for (int columnIndex = 0; columnIndex < togglesGrid.GetLength(1); columnIndex++)
