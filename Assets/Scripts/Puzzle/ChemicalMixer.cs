@@ -33,7 +33,7 @@ public class ChemicalMixer : MonoBehaviour
         button.PropertyChanged += Button_PropertyChanged;
         Array.ForEach(recipes, recipe => recipe.requiredIngredients = recipe.requiredIngredients.OrderBy(x => x.id).ToArray());
 
-        button.successConditions.Add(_ => resultStand.chemical.item != null && chemicalStands.Where(x => x.chemical.item != null).Count() >= 2);
+        button.successConditions.Add(_ => resultStand.heldItem.item != null && chemicalStands.Where(x => x.heldItem.item != null).Count() >= 2);
 
 
         void Button_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
@@ -55,9 +55,9 @@ public class ChemicalMixer : MonoBehaviour
 
     private void Mix()
     {
-        var ingredients = chemicalStands.Where(x => x.chemical.item != null).Select(x => x.chemical.item).OrderBy(x => x.id);
+        var ingredients = chemicalStands.Where(x => x.heldItem.item != null).Select(x => x.heldItem.item).OrderBy(x => x.id);
         Recipe matchingRecipe = recipes.Where(x => Enumerable.SequenceEqual(x.requiredIngredients.OrderBy(x => x.id), ingredients)).FirstOrDefault();
 
-        resultStand.chemical.item = matchingRecipe?.resultingItem ?? nonRecipeChemical;
+        resultStand.heldItem.item = matchingRecipe?.resultingItem ?? nonRecipeChemical;
     }
 }
