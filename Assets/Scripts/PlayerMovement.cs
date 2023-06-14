@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     float crouchScaleY;
     bool crouched;
 
-    private Vector2 movementInput;
+    public Vector2 movementInput;
 
     private void Start() 
     {
