@@ -3,7 +3,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(InventoryItem))]
-public class ChemicalColorController : MonoBehaviour
+public class LiquidColorController : MonoBehaviour
 {
     [SerializeField] private MeshRenderer liquidRenderer;
 
@@ -12,8 +12,8 @@ public class ChemicalColorController : MonoBehaviour
     private void OnValidate()
     {
         Item item = GetComponent<InventoryItem>().item;
-        if (item != null && item is not Item_Chemical)
-            Debug.LogWarning($"Component {nameof(ChemicalColorController)} requires InventoryItem's item to be a chemical item");
+        if (item != null && item is not IColoredItem)
+            Debug.LogWarning($"{nameof(LiquidColorController)} will do nothing as long as InventoryItem isn't a colored item");
     }
 
     private void Awake()
@@ -34,8 +34,7 @@ public class ChemicalColorController : MonoBehaviour
 
     private void UpdateColor()
     {
-        var chemicalItem = GetComponent<InventoryItem>().item as Item_Chemical;
-        if (chemicalItem == null)
+        if (GetComponent<InventoryItem>().item is not IColoredItem chemicalItem)
             return;
 
         var color = chemicalItem.color;
