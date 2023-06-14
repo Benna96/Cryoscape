@@ -34,12 +34,14 @@ public class ItemCombiner : MonoBehaviour
         button.PropertyChanged += Button_PropertyChanged;
         Array.ForEach(recipes, recipe => recipe.requiredIngredients = recipe.requiredIngredients.OrderBy(x => x.id).ToArray());
 
-        button.successConditions.Add(_ => outputItemHolder.heldItem.item != null && inputItemHolders.Where(x => x.heldItem.item != null).Count() >= 2);
+        button.successConditions.Add(_ 
+            => outputItemHolder.heldItem.item != null
+            && inputItemHolders.Where(x => x.heldItem.item != null).Count() >= Mathf.Min(2, inputItemHolders.Count()));
 
 
         void Button_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            if (e.PropertyName == nameof(Activatable.isActivated) && !button.shouldFail)
+            if (e.PropertyName == nameof(Activatable.isActivated) && button.isActivated && !button.shouldFail)
                 Mix();
         }
     }
@@ -59,6 +61,6 @@ public class ItemCombiner : MonoBehaviour
         var ingredients = inputItemHolders.Where(x => x.heldItem.item != null).Select(x => x.heldItem.item).OrderBy(x => x.id);
         Recipe matchingRecipe = recipes.Where(x => Enumerable.SequenceEqual(x.requiredIngredients.OrderBy(x => x.id), ingredients)).FirstOrDefault();
 
-        outputItemHolder.heldItem.item = matchingRecipe?.resultingItem ?? nonRecipeFallback;
+        outputItemHolder.heldItem.item = matchingRecipe?.resultingItem ?? nonRecipeFallback ?? outputItemHolder.heldItem.item;
     }
 }
