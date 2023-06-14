@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.ComponentModel;
+using System.Linq;
 
 using UnityEngine;
 using UnityEngine.Serialization;
 
 public class ItemHolder : Interactable
 {
+    [Tooltip("Use this instead of required item if required item can be one of many")]
+    [field: SerializeField] public Item[] requiredItemOptions { get; protected set; }
+
     [field: FormerlySerializedAs("<chemical>k__BackingField")]
     [field: SerializeField] public InventoryItem heldItem { get; private set; }
 
@@ -15,11 +19,15 @@ public class ItemHolder : Interactable
 
         heldItem.OnInteractCompleted += DisableHeldItemsItem;
         heldItem.PropertyChanged += DisableOrEnableHeldItem;
+        successConditions.Add(RequiredItemOptionCondition);
 
         void DisableHeldItemsItem(Interactable sender, InteractEventArgs e)
         {
             if (e.successfulInteract)
+            {
                 heldItem.item = null;
+                Debug.Log("held item set to null");
+            }
         }
 
         void DisableOrEnableHeldItem(object sender, PropertyChangedEventArgs e)
@@ -28,7 +36,21 @@ public class ItemHolder : Interactable
             {
                 heldItem.gameObject.SetActive(heldItem.item != null);
                 UpdateIsInteractable();
+                Debug.Log("updated");
             }
+        }
+
+        bool RequiredItemOptionCondition(Interactable _)
+        {
+            if (requiredItemOptions.Length == 0)
+                return true;
+
+            return requiredItemOptions.Any(item => item.category switch
+            {
+                Item.Category.Normal => InventoryManager.instance.currentItem?.id == item.id,
+                Item.Category.Special => InventoryManager.instance.items.Where(inventoryItem => inventoryItem.id == item.id).Any(),
+                _ => false
+            });
         }
     }
 
@@ -40,10 +62,6 @@ public class ItemHolder : Interactable
     }
 
     protected override bool ShouldBeInteractable()
-    {
-        var foo = base.ShouldBeInteractable()
-            && heldItem.item == null;
-        Debug.Log(foo);
-        return foo;
-    }
+        => base.ShouldBeInteractable()
+        && heldItem.item == null;
 }
