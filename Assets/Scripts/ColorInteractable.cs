@@ -9,8 +9,6 @@ using ColorOption = ColorExtensions.ColorOption;
 
 public class ColorInteractable : Interactable, INotifyPropertyChanged
 {
-    public event PropertyChangedEventHandler PropertyChanged;
-
     [SerializeField] private SimpleAnimColor colorChangeAnim;
 
     [SerializeField] private ColorOption _currentColor;
@@ -20,7 +18,7 @@ public class ColorInteractable : Interactable, INotifyPropertyChanged
         private set
         {
             _currentColor = value;
-            ObservableHelper.OnPropertyChanged(PropertyChanged);
+            OnPropertyChanged();
         }
     }
 

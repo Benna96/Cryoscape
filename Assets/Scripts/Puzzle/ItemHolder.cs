@@ -20,15 +20,17 @@ public class ItemHolder : Interactable
 
         heldItem.OnInteractCompleted += DisableHeldItemsItem;
         heldItem.PropertyChanged += DisableOrEnableHeldItem;
-        successConditions.Add(RequiredItemOptionCondition);
+
+        isInteractableConditions.Add(_ => heldItem.item == null);
+        heldItem.PropertyChanged += (_, e) => { if (e.PropertyName == nameof(InventoryItem.item)) UpdateIsInteractable(); };
+        UpdateIsInteractable();
+
+        StartCoroutine(AddInventoryConditionStuff());
 
         void DisableHeldItemsItem(Interactable sender, InteractEventArgs e)
         {
             if (e.successfulInteract)
-            {
                 heldItem.item = null;
-                Debug.Log("held item set to null");
-            }
         }
 
         void DisableOrEnableHeldItem(object sender, PropertyChangedEventArgs e)
@@ -37,21 +39,28 @@ public class ItemHolder : Interactable
             {
                 heldItem.gameObject.SetActive(heldItem.item != null);
                 UpdateIsInteractable();
-                Debug.Log("updated");
             }
         }
 
-        bool RequiredItemOptionCondition(Interactable _)
+        IEnumerator AddInventoryConditionStuff()
         {
-            if (allowedItems.Length == 0)
-                return true;
+            yield return new WaitUntil(() => InventoryManager.instance != null);
 
-            return allowedItems.Any(item => item.category switch
+            successConditions.Add(AllowedItemsCondition);
+            UpdateShouldFail();
+
+            bool AllowedItemsCondition(Interactable _)
             {
-                Item.Category.Normal => InventoryManager.instance.currentItem?.id == item.id,
-                Item.Category.Special => InventoryManager.instance.items.Where(inventoryItem => inventoryItem.id == item.id).Any(),
-                _ => false
-            });
+                if (allowedItems.Length == 0)
+                    return true;
+
+                return allowedItems.Any(item => item.category switch
+                {
+                    Item.Category.Normal => InventoryManager.instance.currentItem?.id == item.id,
+                    Item.Category.Special => InventoryManager.instance.items.Where(inventoryItem => inventoryItem.id == item.id).Any(),
+                    _ => false
+                });
+            }
         }
     }
 
@@ -60,12 +69,5 @@ public class ItemHolder : Interactable
         heldItem.item = InventoryManager.instance.RemoveCurrentItem();
 
         yield return base.DoInteract();
-    }
-
-    protected override bool ShouldBeInteractable()
-    {
-        Debug.Log(heldItem);
-        return base.ShouldBeInteractable()
-            && heldItem.item == null;
     }
 }

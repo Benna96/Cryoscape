@@ -9,22 +9,30 @@ using UnityEngine.Serialization;
 
 public class Activatable : Interactable, INotifyPropertyChanged
 {
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    [FormerlySerializedAs("isActivated")]
-    [SerializeField] private bool _isActivated = false;
+    [SerializeField, FormerlySerializedAs("isActivated")]
+    private bool _isActivated = false;
     public bool isActivated
     {
         get => _isActivated;
         protected set
         {
             _isActivated = value;
-            ObservableHelper.OnPropertyChanged(PropertyChanged);
+            OnPropertyChanged();
         }
     }
 
     [Tooltip("If this is false, the object can only be activated once")]
-    [SerializeField] protected bool toggleable = false;
+    [SerializeField, FormerlySerializedAs("toggleable")]
+    private bool _toggleable = false;
+    protected bool toggleable
+    {
+        get => _toggleable;
+        set
+        {
+            _toggleable = value;
+            OnPropertyChanged();
+        }
+    }
 
     [SerializeField] protected bool activationConsumesRequiredItem = false;
 
@@ -36,14 +44,19 @@ public class Activatable : Interactable, INotifyPropertyChanged
     [SerializeField] protected SimpleAnim[] interactCompletedAnims;
 
     protected float interactCompletedDuration;
+
     protected override float applicableInteractDuration => shouldFail ? failedInteractDuration
-        : autoDeactivateTime < 0f ? interactDuration + interactCompletedDuration
-        : isActivated ? 2f * interactDuration + 2f * interactCompletedDuration + autoDeactivateTime
-        : 0f;
+            : autoDeactivateTime < 0f ? interactDuration + interactCompletedDuration
+            : isActivated ? 2f * interactDuration + 2f * interactCompletedDuration + autoDeactivateTime
+            : 0f;
 
     protected override void Awake()
     {
         base.Awake();
+
+        isInteractableConditions.Add(_ => !(isActivated && !toggleable));
+        PropertyChanged += (_, e) => { if (e.PropertyName == nameof(_isActivated) || e.PropertyName == nameof(toggleable)) UpdateIsInteractable(); };
+        UpdateIsInteractable();
 
         interactCompletedDuration = GetMaxAnimDuration(interactCompletedAnims);
 
@@ -64,10 +77,6 @@ public class Activatable : Interactable, INotifyPropertyChanged
         yield return StartCoroutine(!isActivated ? FailedActivate() : FailedDeactivate());
     }
 
-    protected override bool ShouldBeInteractable()
-        => base.ShouldBeInteractable()
-        && !(isActivated && !toggleable);
-
     protected virtual IEnumerator Activate()
     {
         Array.ForEach(interactAnims, Animate);
@@ -77,12 +86,12 @@ public class Activatable : Interactable, INotifyPropertyChanged
 
         Array.ForEach(interactCompletedAnims, Animate);
 
-            if (autoDeactivateTime >= 0)
-            {
+        if (autoDeactivateTime >= 0)
+        {
             yield return new WaitForSeconds(interactCompletedDuration);
-                yield return new WaitForSeconds(autoDeactivateTime);
-                Interact();
-            }
+            yield return new WaitForSeconds(autoDeactivateTime);
+            Interact();
+        }
 
         void Animate(SimpleAnim anim) => StartCoroutine(anim.AnimateNormal());
     }

@@ -15,18 +15,26 @@ public class ChemicalWaste : Interactable
     protected override void Awake()
     {
         base.Awake();
-        StartCoroutine(AddInventoryEventHandlers());
 
-        IEnumerator AddInventoryEventHandlers()
+        successConditions.Add(CurrentItemIsAllowedCondition);
+        StartCoroutine(UpdateShouldFailOnCurrentItemChanged());
+
+        bool CurrentItemIsAllowedCondition(Interactable _)
+            => InventoryManager.instance != null
+            && InventoryManager.instance.currentItem is Item_Chemical
+            && !noWasteChemicals.Contains(InventoryManager.instance.currentItem)
+            && InventoryManager.instance.currentItem != emptyBeaker;
+
+        IEnumerator UpdateShouldFailOnCurrentItemChanged()
         {
             yield return new WaitUntil(() => InventoryManager.instance != null);
-            UpdateIsInteractable();
 
             InventoryManager.instance.PropertyChanged += (_, e) =>
             {
                 if (e.PropertyName == nameof(InventoryManager.currentItem))
-                    UpdateIsInteractable();
+                    UpdateShouldFail();
             };
+            UpdateShouldFail();
         }
     }
 
@@ -35,11 +43,4 @@ public class ChemicalWaste : Interactable
         InventoryManager.instance.ReplaceCurrentItemWith(emptyBeaker);
         yield return StartCoroutine(base.DoInteract());
     }
-
-    protected override bool ShouldBeInteractable()
-        => base.ShouldBeInteractable()
-        && InventoryManager.instance != null
-        && InventoryManager.instance.currentItem is Item_Chemical
-        && !noWasteChemicals.Contains(InventoryManager.instance.currentItem)
-        && InventoryManager.instance.currentItem != emptyBeaker;
 }
