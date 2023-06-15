@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 
 ﻿using QuickOutline;
@@ -14,13 +15,17 @@ using UnityEngine.Serialization;
 /// </summary>
 [RequireComponent(typeof(Collider))]
 [RequireComponent(typeof(Outline))]
-public abstract class Interactable : MonoBehaviour
+public abstract class Interactable : MonoBehaviour, INotifyPropertyChanged
 {
     public delegate void InteractCompletedHandler(Interactable sender, InteractEventArgs e);
     public event InteractCompletedHandler OnInteractCompleted;
 
+    public event PropertyChangedEventHandler PropertyChanged;
+
     protected Outline outline;
-    [field: SerializeField] public bool isInteractable { get; protected set; } = true;
+
+    public List<Predicate<Interactable>> isInteractableConditions { get; private set; } = new();
+    [field: SerializeField] public bool isInteractable { get; private set; } = true;
 
     public List<Predicate<Interactable>> successConditions { get; private set; } = new();
     public bool shouldFail => successConditions.Any(condition => !condition(this));
@@ -40,15 +45,29 @@ public abstract class Interactable : MonoBehaviour
 
     protected float interactDuration;
     protected float failedInteractDuration;
-    protected virtual float applicableInteractDuration => shouldFail ? failedInteractDuration
-        : interactDuration;
 
-    private bool interactBlockedByAnimation;
+    protected virtual float applicableInteractDuration => shouldFail ? failedInteractDuration
+            : interactDuration;
+
+    private bool _interactBlockedByAnimation;
+    private bool interactBlockedByAnimation
+    {
+        get => _interactBlockedByAnimation;
+        set
+        {
+            _interactBlockedByAnimation = value;
+            ObservableHelper.OnPropertyChanged(PropertyChanged);
+            UpdateIsInteractable();
+        }
+    }
 
     protected virtual void Awake()
     {
         outline = GetComponent<Outline>();
         DisableOutline();
+
+        isInteractableConditions.Add(_ => !disableInteractionWhileAnimating || !interactBlockedByAnimation);
+        PropertyChanged += (_, e) => { if (e.PropertyName == nameof(interactBlockedByAnimation)) UpdateIsInteractable(); };
 
         successConditions.Add(RequiredItemCondition);
 
@@ -117,17 +136,15 @@ public abstract class Interactable : MonoBehaviour
         yield return new WaitForSeconds(failedInteractDuration);
     }
 
-    protected void UpdateIsInteractable() => isInteractable = ShouldBeInteractable();
-    protected virtual bool ShouldBeInteractable() => !interactBlockedByAnimation;
+    protected void UpdateIsInteractable() => isInteractable = isInteractableConditions.All(condition => condition(this));
 
     public IEnumerator MarkAsAnimatingFor(float seconds)
     {
         yield return StartCoroutine(CoroutineHelper.StartWaitEnd(
-            () => { interactBlockedByAnimation = true; UpdateIsInteractable(); },
-            () => { interactBlockedByAnimation = false; UpdateIsInteractable(); },
+            () => { interactBlockedByAnimation = true; },
+            () => { interactBlockedByAnimation = false; },
             seconds));
     }
-
 }
 
 public class InteractEventArgs : EventArgs

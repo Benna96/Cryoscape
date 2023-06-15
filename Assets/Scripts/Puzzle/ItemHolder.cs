@@ -20,6 +20,11 @@ public class ItemHolder : Interactable
 
         heldItem.OnInteractCompleted += DisableHeldItemsItem;
         heldItem.PropertyChanged += DisableOrEnableHeldItem;
+
+        isInteractableConditions.Add(_ => heldItem.item == null);
+        heldItem.PropertyChanged += (_, e) => { if (e.PropertyName == nameof(InventoryItem.item)) UpdateIsInteractable(); };
+        UpdateIsInteractable();
+
         successConditions.Add(RequiredItemOptionCondition);
 
         void DisableHeldItemsItem(Interactable sender, InteractEventArgs e)
@@ -60,12 +65,5 @@ public class ItemHolder : Interactable
         heldItem.item = InventoryManager.instance.RemoveCurrentItem();
 
         yield return base.DoInteract();
-    }
-
-    protected override bool ShouldBeInteractable()
-    {
-        Debug.Log(heldItem);
-        return base.ShouldBeInteractable()
-            && heldItem.item == null;
     }
 }
