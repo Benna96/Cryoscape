@@ -149,7 +149,11 @@ public abstract class Interactable : MonoBehaviour, INotifyPropertyChanged
     }
 
     public void UpdateIsInteractable() => isInteractable = isInteractableConditions.All(condition => condition(this));
-    public void UpdateShouldFail() => shouldFail = successConditions.Any(condition => !condition(this));
+    public void UpdateShouldFail()
+    {
+        shouldFail = successConditions.Any(condition => !condition(this));
+        outline.OutlineColor = shouldFail ? Color.red : Color.white;
+    }
 
     public IEnumerator MarkAsAnimatingFor(float seconds)
     {
