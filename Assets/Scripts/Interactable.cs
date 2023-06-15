@@ -162,7 +162,7 @@ public abstract class Interactable : MonoBehaviour, INotifyPropertyChanged
 
     public IEnumerator MarkAsAnimatingFor(float seconds)
     {
-        if (seconds == 0f)
+        if (seconds == 0f || !isActiveAndEnabled)
             yield break;
 
         if (markAsAnimatingForCoroutine != null)
