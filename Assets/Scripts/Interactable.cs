@@ -73,8 +73,7 @@ public abstract class Interactable : MonoBehaviour, INotifyPropertyChanged
         isInteractableConditions.Add(_ => !disableInteractionWhileAnimating || !interactBlockedByAnimation);
         PropertyChanged += (_, e) => { if (e.PropertyName == nameof(interactBlockedByAnimation)) UpdateIsInteractable(); };
 
-        successConditions.Add(RequiredItemCondition);
-        StartCoroutine(AddInventoryChangeListeners());
+        StartCoroutine(AddInventoryConditionStuff());
 
         interactDuration = GetMaxAnimDuration(interactAnims);
         failedInteractDuration = GetMaxAnimDuration(failedInteractAnims);
@@ -94,11 +93,15 @@ public abstract class Interactable : MonoBehaviour, INotifyPropertyChanged
             };
         }
 
-        IEnumerator AddInventoryChangeListeners()
+        IEnumerator AddInventoryConditionStuff()
         {
             yield return new WaitUntil(() => InventoryManager.instance != null);
+
+            successConditions.Add(RequiredItemCondition);
             InventoryManager.instance.PropertyChanged += (_, e) => { if (e.PropertyName == nameof(InventoryManager.currentItem)) UpdateShouldFail(); };
             (InventoryManager.instance.items as INotifyCollectionChanged).CollectionChanged += (_, _) => UpdateShouldFail();
+
+            UpdateShouldFail();
         }
 
         static float GetMaxAnimDuration(SimpleAnim[] anims)

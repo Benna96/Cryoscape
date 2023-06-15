@@ -16,8 +16,8 @@ public class ChemicalWaste : Interactable
     {
         base.Awake();
 
-        isInteractableConditions.Add(CurrentItemIsAllowedCondition);
-        StartCoroutine(UpdateIsInteractableOnCurrentItemChanged());
+        successConditions.Add(CurrentItemIsAllowedCondition);
+        StartCoroutine(UpdateShouldFailOnCurrentItemChanged());
 
         bool CurrentItemIsAllowedCondition(Interactable _)
             => InventoryManager.instance != null
@@ -25,16 +25,16 @@ public class ChemicalWaste : Interactable
             && !noWasteChemicals.Contains(InventoryManager.instance.currentItem)
             && InventoryManager.instance.currentItem != emptyBeaker;
 
-        IEnumerator UpdateIsInteractableOnCurrentItemChanged()
+        IEnumerator UpdateShouldFailOnCurrentItemChanged()
         {
             yield return new WaitUntil(() => InventoryManager.instance != null);
 
             InventoryManager.instance.PropertyChanged += (_, e) =>
             {
                 if (e.PropertyName == nameof(InventoryManager.currentItem))
-                    UpdateIsInteractable();
+                    UpdateShouldFail();
             };
-            UpdateIsInteractable();
+            UpdateShouldFail();
         }
     }
 
