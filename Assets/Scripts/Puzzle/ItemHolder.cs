@@ -7,8 +7,9 @@ using UnityEngine.Serialization;
 
 public class ItemHolder : Interactable
 {
-    [Tooltip("Use this instead of required item if required item can be one of many")]
-    [field: SerializeField] public Item[] requiredItemOptions { get; protected set; }
+    [Tooltip("Use this instead of required item if item can be one of many")]
+    [field: SerializeField, FormerlySerializedAs("requiredItemOptions")]
+    public Item[] allowedItems { get; protected set; }
 
     [field: FormerlySerializedAs("<chemical>k__BackingField")]
     [field: SerializeField] public InventoryItem heldItem { get; private set; }
@@ -42,10 +43,10 @@ public class ItemHolder : Interactable
 
         bool RequiredItemOptionCondition(Interactable _)
         {
-            if (requiredItemOptions.Length == 0)
+            if (allowedItems.Length == 0)
                 return true;
 
-            return requiredItemOptions.Any(item => item.category switch
+            return allowedItems.Any(item => item.category switch
             {
                 Item.Category.Normal => InventoryManager.instance.currentItem?.id == item.id,
                 Item.Category.Special => InventoryManager.instance.items.Where(inventoryItem => inventoryItem.id == item.id).Any(),
@@ -62,6 +63,9 @@ public class ItemHolder : Interactable
     }
 
     protected override bool ShouldBeInteractable()
-        => base.ShouldBeInteractable()
-        && heldItem.item == null;
+    {
+        Debug.Log(heldItem);
+        return base.ShouldBeInteractable()
+            && heldItem.item == null;
+    }
 }

@@ -88,10 +88,7 @@ public abstract class Interactable : MonoBehaviour
         StartCoroutine(InteractThenRaiseEvent());
 
         if (isInteractable && disableInteractionWhileAnimating)
-            StartCoroutine(CoroutineHelper.StartWaitEnd(
-                () => { interactBlockedByAnimation = true; UpdateIsInteractable(); },
-                () => { interactBlockedByAnimation = false; UpdateIsInteractable(); },
-                applicableInteractDuration));
+            StartCoroutine(MarkAsAnimatingFor(applicableInteractDuration));
 
         IEnumerator InteractThenRaiseEvent()
         {
@@ -122,6 +119,15 @@ public abstract class Interactable : MonoBehaviour
 
     protected void UpdateIsInteractable() => isInteractable = ShouldBeInteractable();
     protected virtual bool ShouldBeInteractable() => !interactBlockedByAnimation;
+
+    public IEnumerator MarkAsAnimatingFor(float seconds)
+    {
+        yield return StartCoroutine(CoroutineHelper.StartWaitEnd(
+            () => { interactBlockedByAnimation = true; UpdateIsInteractable(); },
+            () => { interactBlockedByAnimation = false; UpdateIsInteractable(); },
+            seconds));
+    }
+
 }
 
 public class InteractEventArgs : EventArgs
