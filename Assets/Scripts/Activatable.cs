@@ -9,8 +9,6 @@ using UnityEngine.Serialization;
 
 public class Activatable : Interactable, INotifyPropertyChanged
 {
-    public event PropertyChangedEventHandler PropertyChanged;
-
     [SerializeField, FormerlySerializedAs("isActivated")]
     private bool _isActivated = false;
     public bool isActivated
@@ -19,7 +17,7 @@ public class Activatable : Interactable, INotifyPropertyChanged
         protected set
         {
             _isActivated = value;
-            ObservableHelper.OnPropertyChanged(PropertyChanged);
+            OnPropertyChanged();
         }
     }
 
@@ -32,7 +30,7 @@ public class Activatable : Interactable, INotifyPropertyChanged
         set
         {
             _toggleable = value;
-            ObservableHelper.OnPropertyChanged(PropertyChanged);
+            OnPropertyChanged();
         }
     }
 

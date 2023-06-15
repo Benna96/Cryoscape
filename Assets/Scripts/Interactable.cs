@@ -56,10 +56,12 @@ public abstract class Interactable : MonoBehaviour, INotifyPropertyChanged
         set
         {
             _interactBlockedByAnimation = value;
-            ObservableHelper.OnPropertyChanged(PropertyChanged);
-            UpdateIsInteractable();
+            OnPropertyChanged();
         }
     }
+
+    protected void OnPropertyChanged([CallerMemberName] string name = null)
+        => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
 
     protected virtual void Awake()
     {

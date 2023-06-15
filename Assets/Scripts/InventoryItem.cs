@@ -6,9 +6,6 @@ using UnityEngine.Serialization;
 
 public class InventoryItem : Interactable, INotifyPropertyChanged
 {
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
     [FormerlySerializedAs("<item>k__BackingField")]
     [SerializeField] private Item _item;
      public Item item
@@ -17,7 +14,7 @@ public class InventoryItem : Interactable, INotifyPropertyChanged
         set
         {
             _item = value;
-            ObservableHelper.OnPropertyChanged(PropertyChanged);
+            OnPropertyChanged();
         }
     }
 
