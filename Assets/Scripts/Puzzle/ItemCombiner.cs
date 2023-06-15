@@ -46,6 +46,9 @@ public class ItemCombiner : MonoBehaviour
             button.successConditions.Add(_
                 => outputItemHolder.heldItem.item != null
                 && inputItemHolders.Where(x => x.heldItem.item != null).Count() >= Mathf.Min(2, inputItemHolders.Count()));
+
+            outputItemHolder.heldItem.PropertyChanged += (_, e) => { if (e.PropertyName == nameof(InventoryItem.item)) button.UpdateShouldFail(); };
+            Array.ForEach(inputItemHolders, holder => holder.heldItem.PropertyChanged += (_, e) => { if (e.PropertyName == nameof(InventoryItem.item)) button.UpdateShouldFail(); });
         }
 
         else if (inputItemHolders.Count() == 1)

@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 
 ﻿using QuickOutline;
 
@@ -28,7 +30,7 @@ public abstract class Interactable : MonoBehaviour, INotifyPropertyChanged
     [field: SerializeField] public bool isInteractable { get; private set; } = true;
 
     public List<Predicate<Interactable>> successConditions { get; private set; } = new();
-    public bool shouldFail => successConditions.Any(condition => !condition(this));
+    public bool shouldFail { get; private set; }
 
     [field: SerializeField] public Item requiredItem { get; protected set; } = null;
 
@@ -72,6 +74,7 @@ public abstract class Interactable : MonoBehaviour, INotifyPropertyChanged
         PropertyChanged += (_, e) => { if (e.PropertyName == nameof(interactBlockedByAnimation)) UpdateIsInteractable(); };
 
         successConditions.Add(RequiredItemCondition);
+        StartCoroutine(AddInventoryChangeListeners());
 
         interactDuration = GetMaxAnimDuration(interactAnims);
         failedInteractDuration = GetMaxAnimDuration(failedInteractAnims);
@@ -89,6 +92,13 @@ public abstract class Interactable : MonoBehaviour, INotifyPropertyChanged
                 Item.Category.Special => InventoryManager.instance.items.Where(inventoryItem => inventoryItem.id == requiredItem.id).Any(),
                 _ => false
             };
+        }
+
+        IEnumerator AddInventoryChangeListeners()
+        {
+            yield return new WaitUntil(() => InventoryManager.instance != null);
+            InventoryManager.instance.PropertyChanged += (_, e) => { if (e.PropertyName == nameof(InventoryManager.currentItem)) UpdateShouldFail(); };
+            (InventoryManager.instance.items as INotifyCollectionChanged).CollectionChanged += (_, _) => UpdateShouldFail();
         }
 
         static float GetMaxAnimDuration(SimpleAnim[] anims)
@@ -138,7 +148,8 @@ public abstract class Interactable : MonoBehaviour, INotifyPropertyChanged
         yield return new WaitForSeconds(failedInteractDuration);
     }
 
-    protected void UpdateIsInteractable() => isInteractable = isInteractableConditions.All(condition => condition(this));
+    public void UpdateIsInteractable() => isInteractable = isInteractableConditions.All(condition => condition(this));
+    public void UpdateShouldFail() => shouldFail = successConditions.Any(condition => !condition(this));
 
     public IEnumerator MarkAsAnimatingFor(float seconds)
     {
