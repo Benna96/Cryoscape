@@ -294,7 +294,10 @@ MonoBehaviour:
   disableInteractionWhileAnimating: 0
   interactAnims: []
   failedInteractAnims: []
-  <allowedItems>k__BackingField: []
+  <allowedItems>k__BackingField:
+  - {fileID: 11400000, guid: bad795799fd83784fa31d2131b02b335, type: 2}
+  - {fileID: 11400000, guid: 1aa0afe99d6b99f499f5131e40b2beb1, type: 2}
+  - {fileID: 11400000, guid: 94b50bf3973c21b4eb0d0ba6d6cf0b77, type: 2}
   <heldItem>k__BackingField: {fileID: 2715527887224659327}
 --- !u!4 &7077348859607464851 stripped
 Transform:

@@ -30,10 +30,7 @@ public class ItemHolder : Interactable
         void DisableHeldItemsItem(Interactable sender, InteractEventArgs e)
         {
             if (e.successfulInteract)
-            {
                 heldItem.item = null;
-                Debug.Log("held item set to null");
-            }
         }
 
         void DisableOrEnableHeldItem(object sender, PropertyChangedEventArgs e)

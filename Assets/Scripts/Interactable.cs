@@ -62,6 +62,8 @@ public abstract class Interactable : MonoBehaviour, INotifyPropertyChanged
         }
     }
 
+    private Coroutine markAsAnimatingForCoroutine;
+
     protected void OnPropertyChanged([CallerMemberName] string name = null)
         => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
 
@@ -160,10 +162,21 @@ public abstract class Interactable : MonoBehaviour, INotifyPropertyChanged
 
     public IEnumerator MarkAsAnimatingFor(float seconds)
     {
-        yield return StartCoroutine(CoroutineHelper.StartWaitEnd(
-            () => { interactBlockedByAnimation = true; },
-            () => { interactBlockedByAnimation = false; },
+        if (seconds == 0f)
+            yield break;
+
+        if (markAsAnimatingForCoroutine != null)
+        {
+            StopCoroutine(markAsAnimatingForCoroutine);
+            yield return null;
+        }
+
+        markAsAnimatingForCoroutine = StartCoroutine(CoroutineHelper.StartWaitEnd(
+            () => { interactBlockedByAnimation = true;},
+            () => { interactBlockedByAnimation = false;},
             seconds));
+        yield return markAsAnimatingForCoroutine;
+        markAsAnimatingForCoroutine = null;
     }
 }
 
