@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6576441460460735190}
   - component: {fileID: 6576441460460735187}
   m_Layer: 0
-  m_Name: Toxic Fumes
+  m_Name: ToxicFume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,9 +27,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6576441460460735188}
-  m_LocalRotation: {x: 0.67054665, y: -0.23793307, z: 0.2418253, w: 0.6597542}
+  m_LocalRotation: {x: 0.6705421, y: -0.23793682, z: 0.24182642, w: 0.659757}
   m_LocalPosition: {x: 18.8, y: 5.66, z: -82.14}
-  m_LocalScale: {x: 1.8680032, y: 0.50925076, z: 1.4259999}
+  m_LocalScale: {x: 1.0741765, y: 0.5092507, z: 1.0450155}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -53,7 +53,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a74faa3c2f4a3b4aa3326621fe68f4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveSpeed: 0.5
-  waveIntensity: 0.5
-  forwardSpeed: 0.2
+  waveSpeed: 0.3
+  waveIntensity: 0.2
+  forwardSpeed: 0.1
   forwardDistance: 1
