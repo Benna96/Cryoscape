@@ -107,10 +107,10 @@ public class InventoryManager : Singleton<InventoryManager>, INotifyPropertyChan
     public void SelectItem(Item.Category type, int index)
     {
         currentCategory = type;
-        currentIndex = Mathf.Clamp(index, 0, currentCategoryItems.Count - 1);
+        currentIndex = Mathf.Clamp(index, -1, currentCategoryItems.Count - 1);
     }
-    public void SelectNextItem() => currentIndex = Mathf.Clamp(currentIndex + 1, 0, currentCategoryItems.Count - 1);
-    public void SelectPreviousItem() => currentIndex = Mathf.Clamp(currentIndex - 1, 0, currentCategoryItems.Count - 1);
+    public void SelectNextItem() => currentIndex = Mathf.Clamp(currentIndex + 1, -1, currentCategoryItems.Count - 1);
+    public void SelectPreviousItem() => currentIndex = Mathf.Clamp(currentIndex - 1, -1, currentCategoryItems.Count - 1);
 
     private void UpdateCurrentItem()
     {
