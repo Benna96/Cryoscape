@@ -218,7 +218,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8775752544336536928, guid: 86782382851c7a348ad4d3d3c050c866, type: 3}
       propertyPath: debugAutoPlay
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8775752544336536928, guid: 86782382851c7a348ad4d3d3c050c866, type: 3}
       propertyPath: normalAnimCurve.m_Curve.Array.size
