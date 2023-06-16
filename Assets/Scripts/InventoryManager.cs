@@ -98,6 +98,14 @@ public class InventoryManager : Singleton<InventoryManager>, INotifyPropertyChan
         return oldItem;
     }
 
+    public void ReplaceItem(Item oldItem, Item newItem)
+    {
+        if (oldItem == currentItem)
+            ReplaceCurrentItemWith(newItem);
+        else
+            _items[_items.IndexOf(oldItem)] = newItem;
+    }
+
     public void ReplaceCurrentItemWith(Item newItem)
     {
         _items[currentIndexWithinWholeCollection] = newItem;

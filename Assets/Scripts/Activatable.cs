@@ -35,6 +35,7 @@ public class Activatable : Interactable, INotifyPropertyChanged
     }
 
     [SerializeField] protected bool activationConsumesRequiredItem = false;
+    [SerializeField] protected Item resultingItem = null;
 
     [Tooltip("Delay after activate anims have finished to automatically deactivate.\nLeave as -1 to not auto deactivate.")]
     [SerializeField] protected float autoDeactivateTime = -1;
@@ -82,6 +83,10 @@ public class Activatable : Interactable, INotifyPropertyChanged
         if (activationConsumesRequiredItem && requiredItem != null)
             InventoryManager.instance.RemoveItem(requiredItem);
         yield return new WaitForSeconds(interactDuration);
+
+        if (!activationConsumesRequiredItem && resultingItem != null && requiredItem != null)
+            InventoryManager.instance.ReplaceItem(requiredItem, resultingItem);
+
 
         Array.ForEach(interactCompletedAnims, Animate);
 
