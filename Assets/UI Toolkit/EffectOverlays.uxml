@@ -3,5 +3,6 @@
     <ui:VisualElement name="Container" picking-mode="Ignore">
         <ui:VisualElement name="Frost" picking-mode="Ignore" />
         <ui:VisualElement name="Spill" picking-mode="Ignore" />
+        <ui:VisualElement name="Light" picking-mode="Ignore" />
     </ui:VisualElement>
 </ui:UXML>
