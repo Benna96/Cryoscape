@@ -10,3 +10,4 @@
 
 #Frost { background-image: url("project:/Assets/Textures/UIfrost.png"); }
 #Spill { background-image: url("project:/Assets/Textures/UIpoison.png"); }
+#Light { background-image: url("project:/Assets/Textures/UIlight.png"); }
