@@ -1,28 +1,20 @@
-﻿using System.Collections;
+﻿using System.Linq;
 
 using UnityEngine;
 
-public class InteractableDoor : Interactable
+public class InteractableDoor : Activatable
 {
+    // Only left in for backwards compatibility, will be auto added to interactAnims
+    // FormlerlySerializedAs doesn't work, probably because interactAnims already existed
+    [HideInInspector]
     [SerializeField] private SimpleAnim[] openableDoors;
-    private bool isOpen;
 
     protected override void Awake()
     {
+        interactAnims = interactAnims.Concat(openableDoors).ToArray();
+        if (interactAnims.Length == 0)
+            interactAnims = new SimpleAnim[] { GetComponent<SimpleAnim>() };
+
         base.Awake();
-        if (openableDoors.Length == 0)
-            openableDoors = new SimpleAnim[] { GetComponent<SimpleAnim>() };
-    }
-
-    public override void Interact()
-    {
-        if (!isOpen)
-            foreach (var door in openableDoors)
-                StartCoroutine(door.AnimateNormal());
-        else
-            foreach (var door in openableDoors)
-                StartCoroutine(door.AnimateReversed());
-
-        isOpen = !isOpen;
     }
 }

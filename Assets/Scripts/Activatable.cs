@@ -23,7 +23,7 @@ public class Activatable : Interactable, INotifyPropertyChanged
 
     [Tooltip("If this is false, the object can only be activated once")]
     [SerializeField, FormerlySerializedAs("toggleable")]
-    private bool _toggleable = false;
+    private bool _toggleable = true;
     protected bool toggleable
     {
         get => _toggleable;
@@ -55,7 +55,7 @@ public class Activatable : Interactable, INotifyPropertyChanged
         base.Awake();
 
         isInteractableConditions.Add(_ => !(isActivated && !toggleable));
-        PropertyChanged += (_, e) => { if (e.PropertyName == nameof(_isActivated) || e.PropertyName == nameof(toggleable)) UpdateIsInteractable(); };
+        PropertyChanged += (_, e) => { if (e.PropertyName == nameof(isActivated) || e.PropertyName == nameof(toggleable)) UpdateIsInteractable(); };
         UpdateIsInteractable();
 
         interactCompletedDuration = GetMaxAnimDuration(interactCompletedAnims);
@@ -67,7 +67,6 @@ public class Activatable : Interactable, INotifyPropertyChanged
     protected override IEnumerator DoInteract()
     {
         isActivated = !isActivated;
-        UpdateIsInteractable();
 
         yield return StartCoroutine(isActivated ? Activate() : Deactivate());
     }
