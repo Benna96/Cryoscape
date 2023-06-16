@@ -301,7 +301,7 @@ PrefabInstance:
     - target: {fileID: -7292462134063240622, guid: 1245a9746b8d33f4ea89aa191926d082, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 10758, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: 2100000, guid: 7e1d24b87624c554db9c2f3f2038f0ce, type: 2}
     - target: {fileID: -6842059402726213344, guid: 1245a9746b8d33f4ea89aa191926d082, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -437,10 +437,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <isInteractable>k__BackingField: 1
   <requiredItem>k__BackingField: {fileID: 0}
+  <requiredActivatable>k__BackingField: {fileID: 0}
   disableInteractionWhileAnimating: 0
   interactAnims: []
   failedInteractAnims: []
-  <chemical>k__BackingField: {fileID: 3396765949250666046}
+  <allowedItems>k__BackingField: []
+  <heldItem>k__BackingField: {fileID: 3396765949250666046}
 --- !u!114 &9132356026354041567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -476,34 +478,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e12065df3bdbdf947b485e06cfd072db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chemicalStands:
+  inputItemHolders:
   - {fileID: 1909175234938179856}
   - {fileID: 6648846251775748381}
   - {fileID: 4980431313016040832}
-  resultStand: {fileID: 541451447088854330}
+  outputItemHolder: {fileID: 541451447088854330}
   button: {fileID: 8184732870764110756}
-  nonRecipeChemical: {fileID: 11400000, guid: 644d2e5316ca0f3429623938b661b4c6, type: 2}
+  combineAnims: []
+  nonRecipeFallback: {fileID: 11400000, guid: 644d2e5316ca0f3429623938b661b4c6, type: 2}
   recipes:
   - requiredIngredients:
     - {fileID: 11400000, guid: e458eebf29b8f184fbbf7c3d2dab90af, type: 2}
     - {fileID: 11400000, guid: 48cc7fbe605a6c94781c867b502f79d1, type: 2}
     - {fileID: 11400000, guid: 24fab9ac4bf49d043a3fdf65d4e60eeb, type: 2}
     resultingItem: {fileID: 11400000, guid: bc99f3707bb99064ea0951d0ec00ebcf, type: 2}
+    anims: []
   - requiredIngredients:
     - {fileID: 11400000, guid: 7a554c879c50a2841a7f63833d186b48, type: 2}
     - {fileID: 11400000, guid: e458eebf29b8f184fbbf7c3d2dab90af, type: 2}
     - {fileID: 11400000, guid: 24fab9ac4bf49d043a3fdf65d4e60eeb, type: 2}
     resultingItem: {fileID: 11400000, guid: 4ac2861662c182843990da5ebdb24be9, type: 2}
+    anims: []
   - requiredIngredients:
     - {fileID: 11400000, guid: 7a554c879c50a2841a7f63833d186b48, type: 2}
     - {fileID: 11400000, guid: 48cc7fbe605a6c94781c867b502f79d1, type: 2}
     - {fileID: 11400000, guid: 82fe6464ac8bf0a4d8e985d570be8d81, type: 2}
     resultingItem: {fileID: 11400000, guid: 7af0b0b0718ec994aaca42d6efb3d941, type: 2}
+    anims: []
   - requiredIngredients:
     - {fileID: 11400000, guid: e458eebf29b8f184fbbf7c3d2dab90af, type: 2}
     - {fileID: 11400000, guid: 82fe6464ac8bf0a4d8e985d570be8d81, type: 2}
     - {fileID: 11400000, guid: 24fab9ac4bf49d043a3fdf65d4e60eeb, type: 2}
     resultingItem: {fileID: 11400000, guid: e09a3152d31bfab40bdb134380a26959, type: 2}
+    anims: []
   doAddItems: 1
   itemsToAddToInventory:
   - {fileID: 11400000, guid: 198a029689c2b784a9cb0ec58d4ae7b2, type: 2}
@@ -512,7 +519,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 48cc7fbe605a6c94781c867b502f79d1, type: 2}
   - {fileID: 11400000, guid: 82fe6464ac8bf0a4d8e985d570be8d81, type: 2}
   - {fileID: 11400000, guid: 24fab9ac4bf49d043a3fdf65d4e60eeb, type: 2}
-  generatedChemicalPrefab: {fileID: 0}
 --- !u!4 &6619987595824263906 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1245a9746b8d33f4ea89aa191926d082, type: 3}
@@ -551,10 +557,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <isInteractable>k__BackingField: 1
   <requiredItem>k__BackingField: {fileID: 0}
+  <requiredActivatable>k__BackingField: {fileID: 0}
   disableInteractionWhileAnimating: 0
   interactAnims: []
   failedInteractAnims: []
-  <chemical>k__BackingField: {fileID: 1039858396179360173}
+  <allowedItems>k__BackingField: []
+  <heldItem>k__BackingField: {fileID: 1039858396179360173}
 --- !u!114 &7576345981592324850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -606,10 +614,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <isInteractable>k__BackingField: 1
   <requiredItem>k__BackingField: {fileID: 11400000, guid: 198a029689c2b784a9cb0ec58d4ae7b2, type: 2}
+  <requiredActivatable>k__BackingField: {fileID: 0}
   disableInteractionWhileAnimating: 0
   interactAnims: []
   failedInteractAnims: []
-  <chemical>k__BackingField: {fileID: 821270309872743039}
+  <allowedItems>k__BackingField: []
+  <heldItem>k__BackingField: {fileID: 821270309872743039}
 --- !u!114 &1124365624738832249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -679,10 +689,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <isInteractable>k__BackingField: 1
   <requiredItem>k__BackingField: {fileID: 0}
+  <requiredActivatable>k__BackingField: {fileID: 0}
   disableInteractionWhileAnimating: 0
   interactAnims: []
   failedInteractAnims: []
-  <chemical>k__BackingField: {fileID: 3201087671640053484}
+  <allowedItems>k__BackingField: []
+  <heldItem>k__BackingField: {fileID: 3201087671640053484}
 --- !u!1001 &6681544132952808329
 PrefabInstance:
   m_ObjectHideFlags: 0
