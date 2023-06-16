@@ -33,6 +33,7 @@ public abstract class Interactable : MonoBehaviour, INotifyPropertyChanged
     public bool shouldFail { get; private set; }
 
     [field: SerializeField] public Item requiredItem { get; protected set; } = null;
+    [field: SerializeField] public Activatable requiredActivatable { get; protected set; } = null;
 
     [Header("Animations")]
     [SerializeField] protected bool disableInteractionWhileAnimating = false;
@@ -76,6 +77,10 @@ public abstract class Interactable : MonoBehaviour, INotifyPropertyChanged
         PropertyChanged += (_, e) => { if (e.PropertyName == nameof(interactBlockedByAnimation)) UpdateIsInteractable(); };
 
         StartCoroutine(AddInventoryConditionStuff());
+
+        successConditions.Add(_ => requiredActivatable == null || requiredActivatable.isActivated);
+        if (requiredActivatable != null)
+            requiredActivatable.PropertyChanged += (_, e) => { if (e.PropertyName == nameof(Activatable.isActivated)) UpdateShouldFail(); };
 
         interactDuration = GetMaxAnimDuration(interactAnims);
         failedInteractDuration = GetMaxAnimDuration(failedInteractAnims);
