@@ -15,4 +15,4 @@ MonoBehaviour:
   internalName: Spacesuit_exitkey
   displayName: Station access card
   category: 1
-  inventoryIcon: {fileID: 2800000, guid: 2300549a70355d2499687ed927ccc9b8, type: 3}
+  inventoryIcon: {fileID: 2800000, guid: 38a998ad31b702344a9f7677061835c3, type: 3}

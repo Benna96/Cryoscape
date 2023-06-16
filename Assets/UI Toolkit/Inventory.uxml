@@ -23,6 +23,7 @@
             <ui:VisualElement name="Spacesuit_head" class="item" />
             <ui:VisualElement name="Spacesuit_gloves" class="item" />
             <ui:VisualElement name="Spacesuit_shoes" class="item" />
+            <ui:VisualElement name="Spacesuit_exitkey" class="item" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
