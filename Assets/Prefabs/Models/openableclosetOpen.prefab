@@ -253,10 +253,15 @@ MonoBehaviour:
   <isInteractable>k__BackingField: 1
   <requiredItem>k__BackingField: {fileID: 0}
   disableInteractionWhileAnimating: 0
-  interactAnims: []
-  failedInteractAnims: []
-  openableDoors:
+  interactAnims:
   - {fileID: 5632765568062478626}
+  failedInteractAnims: []
+  _isActivated: 0
+  _toggleable: 1
+  activationConsumesRequiredItem: 0
+  autoDeactivateTime: -1
+  interactCompletedAnims: []
+  openableDoors: []
 --- !u!114 &5632765568062478626
 MonoBehaviour:
   m_ObjectHideFlags: 0
