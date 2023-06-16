@@ -715,7 +715,7 @@ PrefabInstance:
     - target: {fileID: -2402564340197835968, guid: 8410eec7c0918884cbd6c21e8f7150e3, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 10758, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: 2100000, guid: 7e1d24b87624c554db9c2f3f2038f0ce, type: 2}
     - target: {fileID: 919132149155446097, guid: 8410eec7c0918884cbd6c21e8f7150e3, type: 3}
       propertyPath: m_Name
       value: fridge
