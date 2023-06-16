@@ -15,4 +15,4 @@ MonoBehaviour:
   internalName: LockerKeycard
   displayName: Scientist's card
   category: 0
-  inventoryIcon: {fileID: 3316425174430470091, guid: 0ce55564983dd6d419d5cff6999b46e5, type: 3}
+  inventoryIcon: {fileID: 2800000, guid: 8f0513458e0bcf548ad0bde6dad85b15, type: 3}
