@@ -3925,6 +3925,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <isInteractable>k__BackingField: 1
   <requiredItem>k__BackingField: {fileID: 11400000, guid: eab9cc3c5a756584d8bff6b0699ead14, type: 2}
+  <requiredActivatable>k__BackingField: {fileID: 0}
   disableInteractionWhileAnimating: 0
   interactAnims:
   - {fileID: 264861578}
@@ -7226,6 +7227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <isInteractable>k__BackingField: 1
   <requiredItem>k__BackingField: {fileID: 0}
+  <requiredActivatable>k__BackingField: {fileID: 0}
   disableInteractionWhileAnimating: 0
   interactAnims: []
   failedInteractAnims: []
@@ -8435,84 +8437,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5770298552998495965, guid: cc5b97085d102c84583309722b4e5611, type: 3}
   m_PrefabInstance: {fileID: 542628481}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &542780053 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3153902042976759217, guid: 7a50818c25b621a4da56c162d2de878f, type: 3}
-  m_PrefabInstance: {fileID: 6955830637847910702}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &542780061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 542780053}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a72d60e1d4709649b2a7901e84f077e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animDuration: 1.5
-  normalAnimCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reversedAnimCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  normalAnimAudio: {fileID: 0}
-  reversedAnimAudio: {fileID: 0}
-  debugAutoPlay: 0
-  axis: 2
-  angle: -120
---- !u!114 &542780062
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 542780053}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9d6032b9e006dc4f879094085eb0900, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <isInteractable>k__BackingField: 1
-  <requiredItem>k__BackingField: {fileID: 11400000, guid: 0cc2f684bbaac604798efbd7dbfcddf0, type: 2}
-  disableInteractionWhileAnimating: 0
-  interactAnims:
-  - {fileID: 542780061}
-  - {fileID: 1841719255}
-  failedInteractAnims: []
-  _isActivated: 0
-  _toggleable: 1
-  activationConsumesRequiredItem: 0
-  autoDeactivateTime: -1
-  interactCompletedAnims: []
-  openableDoors: []
 --- !u!1001 &546163565
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8825,6 +8749,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <isInteractable>k__BackingField: 1
   <requiredItem>k__BackingField: {fileID: 0}
+  <requiredActivatable>k__BackingField: {fileID: 0}
   disableInteractionWhileAnimating: 0
   interactAnims: []
   failedInteractAnims: []
@@ -20075,6 +20000,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <isInteractable>k__BackingField: 1
   <requiredItem>k__BackingField: {fileID: 11400000, guid: 94b50bf3973c21b4eb0d0ba6d6cf0b77, type: 2}
+  <requiredActivatable>k__BackingField: {fileID: 0}
   disableInteractionWhileAnimating: 0
   interactAnims:
   - {fileID: 1259858912}
@@ -23234,6 +23160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <isInteractable>k__BackingField: 1
   <requiredItem>k__BackingField: {fileID: 11400000, guid: f390c52c68c4d3c418d5b7d487281383, type: 2}
+  <requiredActivatable>k__BackingField: {fileID: 0}
   disableInteractionWhileAnimating: 0
   interactAnims:
   - {fileID: 1457819533}
@@ -27366,7 +27293,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 404906791}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: -133.569, z: 0}
 --- !u!64 &1673138030
 MeshCollider:
@@ -29601,6 +29528,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <isInteractable>k__BackingField: 1
   <requiredItem>k__BackingField: {fileID: 0}
+  <requiredActivatable>k__BackingField: {fileID: 0}
   disableInteractionWhileAnimating: 0
   interactAnims: []
   failedInteractAnims: []
@@ -30550,17 +30478,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4977540913207345095, guid: 05e5c2083be8c704e927e1cd25622132, type: 3}
   m_PrefabInstance: {fileID: 1833062398}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1841719255 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4513872042026062106, guid: 7a50818c25b621a4da56c162d2de878f, type: 3}
-  m_PrefabInstance: {fileID: 6955830637847910702}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce83a0a4fd4a1e4408c600dc1ae216f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1842906506
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32136,6 +32053,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <isInteractable>k__BackingField: 1
   <requiredItem>k__BackingField: {fileID: 0}
+  <requiredActivatable>k__BackingField: {fileID: 0}
   disableInteractionWhileAnimating: 0
   interactAnims: []
   failedInteractAnims: []
@@ -35276,6 +35194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <isInteractable>k__BackingField: 1
   <requiredItem>k__BackingField: {fileID: 11400000, guid: bc99f3707bb99064ea0951d0ec00ebcf, type: 2}
+  <requiredActivatable>k__BackingField: {fileID: 0}
   disableInteractionWhileAnimating: 0
   interactAnims:
   - {fileID: 3630705504805836501}
