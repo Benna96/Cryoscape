@@ -4391,6 +4391,7 @@ MonoBehaviour:
   _isActivated: 0
   _toggleable: 0
   activationConsumesRequiredItem: 1
+  resultingItem: {fileID: 0}
   autoDeactivateTime: -1
   interactCompletedAnims:
   - {fileID: 3081452365349235564}
@@ -21407,6 +21408,7 @@ MonoBehaviour:
   _isActivated: 0
   _toggleable: 0
   activationConsumesRequiredItem: 0
+  resultingItem: {fileID: 11400000, guid: bad795799fd83784fa31d2131b02b335, type: 2}
   autoDeactivateTime: -1
   interactCompletedAnims: []
 --- !u!64 &1259858915
@@ -24903,6 +24905,7 @@ MonoBehaviour:
   _isActivated: 0
   _toggleable: 0
   activationConsumesRequiredItem: 1
+  resultingItem: {fileID: 0}
   autoDeactivateTime: -1
   interactCompletedAnims:
   - {fileID: 3081452365349235564}
