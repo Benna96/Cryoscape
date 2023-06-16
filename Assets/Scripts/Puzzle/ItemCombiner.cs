@@ -99,7 +99,7 @@ public class ItemCombiner : MonoBehaviour
             outputItemHolder.heldItem.item = matchingRecipe?.resultingItem ?? nonRecipeFallback ?? outputItemHolder.heldItem.item;
             StartCoroutine(outputItemHolder.heldItem.MarkAsAnimatingFor(totalDuration));
 
-            Array.ForEach(combineAnims.Concat(matchingRecipe.anims).ToArray(), anim =>
+            Array.ForEach(combineAnims.Concat(matchingRecipe?.anims ?? Enumerable.Empty<SimpleAnim>()).ToArray(), anim =>
             {
                 if (anim.gameObject.activeInHierarchy)
                     StartCoroutine(anim.AnimateNormal());
