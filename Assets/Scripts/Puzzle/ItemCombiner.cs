@@ -15,6 +15,7 @@ public class ItemCombiner : MonoBehaviour
 
     [SerializeField] private Activatable button;
 
+    [Tooltip("Anims to play regardless of what is being combined. WIll be played at the same time as recipe specific anims.")]
     [SerializeField] private SimpleAnim[] combineAnims;
 
     [FormerlySerializedAs("nonRecipeChemical")]
@@ -34,6 +35,7 @@ public class ItemCombiner : MonoBehaviour
     {
         public Item[] requiredIngredients;
         public Item resultingItem;
+        public SimpleAnim[] anims;
     }
 
     private void Awake()
@@ -91,16 +93,18 @@ public class ItemCombiner : MonoBehaviour
 
             var ingredients = inputItemHolders.Where(x => x.heldItem.item != null).Select(x => x.heldItem.item).OrderBy(x => x.id);
             Recipe matchingRecipe = recipes.Where(x => Enumerable.SequenceEqual(x.requiredIngredients.OrderBy(x => x.id), ingredients)).FirstOrDefault();
+            float recipeDuration = (matchingRecipe?.anims.Length == 0 ? 0f : matchingRecipe?.anims.Select(x => x.AnimDuration).Max()) ?? 0f;
+            float totalDuration = Mathf.Max(combineDuration, recipeDuration);
 
             outputItemHolder.heldItem.item = matchingRecipe?.resultingItem ?? nonRecipeFallback ?? outputItemHolder.heldItem.item;
-            StartCoroutine(outputItemHolder.heldItem.MarkAsAnimatingFor(combineDuration));
+            StartCoroutine(outputItemHolder.heldItem.MarkAsAnimatingFor(totalDuration));
 
-            Array.ForEach(combineAnims, anim =>
+            Array.ForEach(combineAnims.Concat(matchingRecipe?.anims ?? Enumerable.Empty<SimpleAnim>()).ToArray(), anim =>
             {
                 if (anim.gameObject.activeInHierarchy)
                     StartCoroutine(anim.AnimateNormal());
             });
-            yield return new WaitForSeconds(combineDuration);
+            yield return new WaitForSeconds(totalDuration);
 
             isMixing = false;
         }

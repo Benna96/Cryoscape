@@ -66,6 +66,9 @@ public abstract class SimpleAnim : MonoBehaviour
     /// <returns></returns>
     public IEnumerator AnimateNormal()
     {
+        if (!initDone)
+            yield return new WaitUntil(() => initDone);
+
         if (normalAnimAudio != null)
             normalAnimAudio.Play();
 
@@ -82,6 +85,9 @@ public abstract class SimpleAnim : MonoBehaviour
     /// <returns></returns>
     public IEnumerator AnimateReversed()
     {
+        if (!initDone)
+            yield return new WaitUntil(() => initDone);
+
         if (reversedAnimAudio != null)
             reversedAnimAudio.Play();
 

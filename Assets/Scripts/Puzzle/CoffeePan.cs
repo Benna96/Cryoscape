@@ -2,6 +2,9 @@
 
 public class CoffeePan : InventoryItem
 {
+    [Header("Coffee pan control")]
+    [SerializeField] private bool doChangeMeshesOnItemChange = true;
+
     [Header("Coffee pan refs")]
     [SerializeField] private Item emptyPanRef;
     [SerializeField] private Item icePanRef;
@@ -27,7 +30,7 @@ public class CoffeePan : InventoryItem
 
     private void ActivateCorrectMeshes()
     {
-        if (item == null)
+        if (item == null || !doChangeMeshesOnItemChange)
             return;
 
         iceMeshParent.SetActive(item.id == icePanRef.id);

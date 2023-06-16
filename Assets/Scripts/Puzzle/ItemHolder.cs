@@ -37,8 +37,21 @@ public class ItemHolder : Interactable
         {
             if (e.PropertyName == nameof(InventoryItem.item))
             {
-                heldItem.gameObject.SetActive(heldItem.item != null);
+                if (heldItem.item == null)
+                    heldItem.gameObject.SetActive(false);
+                else
+                    StartCoroutine(HideSetActiveThenShow());
+
                 UpdateIsInteractable();
+
+                IEnumerator HideSetActiveThenShow() // Avoids simpleanim issues
+                {
+                    var renderers = heldItem.gameObject.GetComponents<Renderer>().Where(renderer => renderer.enabled).ToList();
+                    renderers.ForEach(renderer => renderer.enabled = false);
+                    heldItem.gameObject.SetActive(true);
+                    yield return null;
+                    renderers.ForEach(renderer => renderer.enabled = true);
+                }
             }
         }
 

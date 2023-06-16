@@ -494,10 +494,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <isInteractable>k__BackingField: 1
   <requiredItem>k__BackingField: {fileID: 0}
+  <requiredActivatable>k__BackingField: {fileID: 0}
   disableInteractionWhileAnimating: 1
   interactAnims: []
   failedInteractAnims: []
   _item: {fileID: 11400000, guid: bad795799fd83784fa31d2131b02b335, type: 2}
+  doChangeMeshesOnItemChange: 1
   emptyPanRef: {fileID: 11400000, guid: bad795799fd83784fa31d2131b02b335, type: 2}
   icePanRef: {fileID: 11400000, guid: 1aa0afe99d6b99f499f5131e40b2beb1, type: 2}
   hotWaterPanRef: {fileID: 11400000, guid: 94b50bf3973c21b4eb0d0ba6d6cf0b77, type: 2}
