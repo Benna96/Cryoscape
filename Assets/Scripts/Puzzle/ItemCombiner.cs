@@ -18,6 +18,9 @@ public class ItemCombiner : MonoBehaviour
     [Tooltip("Anims to play regardless of what is being combined. WIll be played at the same time as recipe specific anims.")]
     [SerializeField] private SimpleAnim[] combineAnims;
 
+    [Tooltip("Same as above, but for audio.")]
+    [SerializeField] private AudioSource[] combineAudio;
+
     [FormerlySerializedAs("nonRecipeChemical")]
     [SerializeField] private Item nonRecipeFallback;
     [SerializeField] private Recipe[] recipes;
@@ -105,7 +108,11 @@ public class ItemCombiner : MonoBehaviour
                 if (anim.gameObject.activeInHierarchy)
                     StartCoroutine(anim.AnimateNormal());
             });
-            Array.ForEach(matchingRecipe?.audio ?? Enumerable.Empty<AudioSource>().ToArray(), audio => { if (audio != null) audio.Play(); });
+            Array.ForEach(combineAudio.Concat(matchingRecipe?.audio ?? Enumerable.Empty<AudioSource>()).ToArray(), audio =>
+            {
+                if (audio != null)
+                    audio.Play();
+            });
 
             yield return new WaitForSeconds(totalDuration);
 
