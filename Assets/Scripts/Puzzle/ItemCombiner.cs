@@ -36,6 +36,7 @@ public class ItemCombiner : MonoBehaviour
         public Item[] requiredIngredients;
         public Item resultingItem;
         public SimpleAnim[] anims;
+        public AudioSource[] audio;
     }
 
     private void Awake()
@@ -104,6 +105,8 @@ public class ItemCombiner : MonoBehaviour
                 if (anim.gameObject.activeInHierarchy)
                     StartCoroutine(anim.AnimateNormal());
             });
+            Array.ForEach(matchingRecipe?.audio ?? Enumerable.Empty<AudioSource>().ToArray(), audio => { if (audio != null) audio.Play(); });
+
             yield return new WaitForSeconds(totalDuration);
 
             isMixing = false;
