@@ -26,9 +26,11 @@ public class InventoryManager : Singleton<InventoryManager>, INotifyPropertyChan
         get => _currentIndex;
         private set
         {
-            _currentIndex = value;
-            ObservableHelper.OnPropertyChanged(PropertyChanged);
+            _currentIndex = Mathf.Clamp(value, 0, currentCategoryItems.Count - 1);
+            if (currentCategoryItems.Count == 0)
+                _currentIndex = -1;
 
+            ObservableHelper.OnPropertyChanged(PropertyChanged);
             UpdateCurrentItem();
         }
     }
@@ -115,10 +117,10 @@ public class InventoryManager : Singleton<InventoryManager>, INotifyPropertyChan
     public void SelectItem(Item.Category type, int index)
     {
         currentCategory = type;
-        currentIndex = Mathf.Clamp(index, -1, currentCategoryItems.Count - 1);
+        currentIndex = index;
     }
-    public void SelectNextItem() => currentIndex = Mathf.Clamp(currentIndex + 1, -1, currentCategoryItems.Count - 1);
-    public void SelectPreviousItem() => currentIndex = Mathf.Clamp(currentIndex - 1, -1, currentCategoryItems.Count - 1);
+    public void SelectNextItem() => currentIndex++;
+    public void SelectPreviousItem() => currentIndex--;
 
     private void UpdateCurrentItem()
     {
