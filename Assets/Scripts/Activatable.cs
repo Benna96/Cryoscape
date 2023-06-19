@@ -80,6 +80,7 @@ public class Activatable : Interactable, INotifyPropertyChanged
     protected virtual IEnumerator Activate()
     {
         Array.ForEach(interactAnims, Animate);
+        Array.ForEach(interactAudios, audio => audio.Play());
         if (activationConsumesRequiredItem && requiredItem != null)
             InventoryManager.instance.RemoveItem(requiredItem);
         yield return new WaitForSeconds(interactDuration);
@@ -103,6 +104,7 @@ public class Activatable : Interactable, INotifyPropertyChanged
     protected virtual IEnumerator Deactivate()
     {
         Array.ForEach(interactAnims, Animate);
+        Array.ForEach(interactAudios, audio => audio.Play());
         Array.ForEach(interactCompletedAnims, Animate);
         yield return new WaitForSeconds(interactDuration);
 
@@ -112,6 +114,7 @@ public class Activatable : Interactable, INotifyPropertyChanged
     protected virtual IEnumerator FailedActivate()
     {
         Array.ForEach(failedInteractAnims, Animate);
+        Array.ForEach(failedInteractAudios, audio => audio.Play());
         yield break;
 
         void Animate(SimpleAnim anim) => StartCoroutine(anim.AnimateNormal());

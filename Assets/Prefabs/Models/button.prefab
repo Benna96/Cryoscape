@@ -98,15 +98,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <isInteractable>k__BackingField: 1
   <requiredItem>k__BackingField: {fileID: 0}
+  <requiredActivatable>k__BackingField: {fileID: 0}
   disableInteractionWhileAnimating: 0
   interactAnims:
   - {fileID: 4185582678650328966}
   - {fileID: 2228971735198330237}
+  interactAudios:
+  - {fileID: 2510239627931594801}
   failedInteractAnims:
   - {fileID: 2187904370473649926}
+  failedInteractAudios: []
   _isActivated: 0
-  toggleable: 1
+  _toggleable: 1
   activationConsumesRequiredItem: 0
+  resultingItem: {fileID: 0}
   autoDeactivateTime: -1
   interactCompletedAnims: []
 --- !u!114 &8889168789024849459
@@ -355,7 +360,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  normalAnimAudio: {fileID: 2510239627931594801}
+  normalAnimAudio: {fileID: 0}
   reversedAnimAudio: {fileID: 0}
   debugAutoPlay: 0
   startColor: {r: 1, g: 0.43867922, b: 0.43867922, a: 1}

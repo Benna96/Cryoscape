@@ -41,10 +41,12 @@ public abstract class Interactable : MonoBehaviour, INotifyPropertyChanged
     [FormerlySerializedAs("activateAnims")]
     [Tooltip("Anims to play when interacting")]
     [SerializeField] protected SimpleAnim[] interactAnims;
+    [SerializeField] protected AudioSource[] interactAudios;
 
     [FormerlySerializedAs("failedActivateAnims")]
     [Tooltip("Animations to play upon failed interact (not having required item or such)")]
     [SerializeField] protected SimpleAnim[] failedInteractAnims;
+    [SerializeField] protected AudioSource[] failedInteractAudios;
 
     protected float interactDuration;
     protected float failedInteractDuration;
@@ -149,12 +151,14 @@ public abstract class Interactable : MonoBehaviour, INotifyPropertyChanged
     protected virtual IEnumerator DoInteract()
     {
         Array.ForEach(interactAnims, anim => StartCoroutine(anim.AnimateNormal()));
+        Array.ForEach(interactAudios, audio => audio.Play());
         yield return new WaitForSeconds(interactDuration);
     }
 
     protected virtual IEnumerator DoFailedInteract()
     {
         Array.ForEach(failedInteractAnims, anim => StartCoroutine(anim.AnimateNormal()));
+        Array.ForEach(failedInteractAudios, audio => audio.Play());
         yield return new WaitForSeconds(failedInteractDuration);
     }
 
