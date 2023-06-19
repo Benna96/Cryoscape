@@ -724,10 +724,30 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 7e1d24b87624c554db9c2f3f2038f0ce, type: 2}
+    - target: {fileID: -2052594338913761796, guid: 8410eec7c0918884cbd6c21e8f7150e3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d2ab947f264c64d40a7e500013c51d94, type: 2}
+    - target: {fileID: -1788322544804093201, guid: 8410eec7c0918884cbd6c21e8f7150e3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7e1d24b87624c554db9c2f3f2038f0ce, type: 2}
     - target: {fileID: 919132149155446097, guid: 8410eec7c0918884cbd6c21e8f7150e3, type: 3}
       propertyPath: m_Name
       value: fridge
       objectReference: {fileID: 0}
+    - target: {fileID: 2575221471189144032, guid: 8410eec7c0918884cbd6c21e8f7150e3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8e1b7dfeafd4c3847b954c23055b7687, type: 2}
+    - target: {fileID: 7339921148908271436, guid: 8410eec7c0918884cbd6c21e8f7150e3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 31b8f589ec4223241a560957caa390f5, type: 2}
+    - target: {fileID: 8110103824972447030, guid: 8410eec7c0918884cbd6c21e8f7150e3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 98daa97b085b45240bf0320a13973bbe, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8410eec7c0918884cbd6c21e8f7150e3, type: 3}
 --- !u!1 &459210704332698967 stripped
@@ -787,7 +807,6 @@ MonoBehaviour:
   failedInteractAnims: []
   <allowedItems>k__BackingField: []
   <heldItem>k__BackingField: {fileID: 2779571728973270013}
-  hideThenShowWhenEnabling: 1
 --- !u!1 &3102879870958354500 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2719204189597091885, guid: 8410eec7c0918884cbd6c21e8f7150e3, type: 3}
@@ -827,7 +846,6 @@ MonoBehaviour:
   failedInteractAnims: []
   <allowedItems>k__BackingField: []
   <heldItem>k__BackingField: {fileID: 2779571728973270013}
-  hideThenShowWhenEnabling: 1
 --- !u!114 &3550554175946262493
 MonoBehaviour:
   m_ObjectHideFlags: 0

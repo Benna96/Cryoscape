@@ -226,10 +226,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100699551277054109, guid: 16c60916ea425c74fae8cf94e3ff1e6b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 672c60c80b8e67942a838b7cfb4fc2f1, type: 2}
     - target: {fileID: 919132149155446097, guid: 16c60916ea425c74fae8cf94e3ff1e6b, type: 3}
       propertyPath: m_Name
       value: coffeeMaker
       objectReference: {fileID: 0}
+    - target: {fileID: 936545214079807512, guid: 16c60916ea425c74fae8cf94e3ff1e6b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8e1b7dfeafd4c3847b954c23055b7687, type: 2}
     - target: {fileID: 4758248247477727611, guid: 16c60916ea425c74fae8cf94e3ff1e6b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
