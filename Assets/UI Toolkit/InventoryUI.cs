@@ -20,6 +20,7 @@ public class InventoryUI : MonoBehaviour
     private VisualElement itemNameContainer;
     private Label itemName;
 
+    private Label specialItemObtained;
     private Dictionary<Item, VisualElement> specialItemIcons = new();
     private bool setSpecialIconsFinished = false;
 
@@ -42,6 +43,8 @@ public class InventoryUI : MonoBehaviour
             items = itemsContainer.Children().Select(x => x.Q("ItemWrapper")).ToArray();
             itemIcons = items.Select(x => x.Q("Icon")).Select(x => (x, x[0])).ToArray();
 
+            specialItemObtained = root.Q("Special").Q<Label>();
+            specialItemObtained.SetEnabled(false);
             specialItemElements = root.Q("Special").Query(className: "item").ToList();
         }
 
@@ -69,7 +72,7 @@ public class InventoryUI : MonoBehaviour
 
                     specialItemIcons.Add(correspondingItem, specialItemElement);
                     specialItemElement.style.backgroundImage = correspondingItem.inventoryIcon;
-    }
+                }
 
                 setSpecialIconsFinished = true;
             }
@@ -192,7 +195,26 @@ public class InventoryUI : MonoBehaviour
                 {
                     foreach (Item addedItem in e.NewItems)
                         if (addedItem.category == Item.Category.Special && specialItemIcons.TryGetValue(addedItem, out var element))
+                        {
                             element.SetEnabled(true);
+                            StartCoroutine(CoroutineHelper.StartWaitEnd(
+                                () => element.AddToClassList("newlyobtained"),
+                                () => element.RemoveFromClassList("newlyobtained"),
+                                0.5f));
+                            StartCoroutine(ShowItemNamePopup());
+
+                            IEnumerator ShowItemNamePopup()
+                            {
+                                var textBak = specialItemObtained.text;
+                                specialItemObtained.text = Regex.Replace(specialItemObtained.text, @"<Item name>", addedItem.displayName);
+                                specialItemObtained.SetEnabled(true);
+                                yield return new WaitForSeconds(2f);
+
+                                specialItemObtained.SetEnabled(false);
+                                yield return new WaitUntil(() => specialItemObtained.resolvedStyle.opacity == 0f);
+                                specialItemObtained.text = textBak;
+                            }
+                        }
                 }
 
                 else if (e.Action == NotifyCollectionChangedAction.Remove)

@@ -1,3 +1,4 @@
+VisualElement {	color: rgb(255, 255, 255); }
 VisualElement.dontshow { display: none; }
 
 #HotbarContainer
@@ -51,7 +52,18 @@ VisualElement.dontshow { display: none; }
 	position: absolute;
 	width: 100%;
 	height: 100%;
+
+	align-items: center;
 }
+
+#Special > Label
+{
+	top: 35%;
+	font-size: 55px;
+	transition: linear 0.5s;
+}
+#Special > Label:enabled { opacity: 1; }
+#Special > Label:disabled { opacity: 0; }
 
 #Spacesuit
 {
@@ -67,8 +79,16 @@ VisualElement.dontshow { display: none; }
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	transition-duration: 1s;
-	transition-timing-function: ease-out-bounce;
+	top: 20px;
+	right: -20px;
+	transition: opacity ease-out-bounce 1s, scale linear 1s;
 }
 #Spacesuit > VisualElement:enabled { opacity: 1; }
 #Spacesuit > VisualElement:disabled { opacity: 0.05; }
+#Spacesuit > VisualElement.newlyobtained { scale: 2; }
+
+#Spacesuit_torso { transform-origin: 49.609375% 50.1953125%; }
+#Spacesuit_head { transform-origin: 49.4140625% 10.546875%; }
+#Spacesuit_gloves { transform-origin: 49.609375% 49.0234375%; }
+#Spacesuit_shoes { transform-origin: 49.4140625% 89.2578125%; }
+#Spacesuit_exitkey { transform-origin: 14.2578125% 16.9921875%; }
