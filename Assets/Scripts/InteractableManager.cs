@@ -5,7 +5,10 @@ using UnityEngine.InputSystem;
 
 public class InteractableManager : MonoBehaviour
 {
-    [SerializeField] private new Camera camera;
+#pragma warning disable CS0108 // Member hides inherited member; missing new keyword. If I add the keyword, Unity complains lol
+    [SerializeField] private Camera camera;
+#pragma warning restore CS0108 // Member hides inherited member; missing new keyword
+
     [SerializeField] private float maxInteractDistance;
 
     private Interactable _currentInteractable = null;
