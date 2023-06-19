@@ -67,6 +67,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.001495
       objectReference: {fileID: 0}
+    - target: {fileID: 6764464046976845798, guid: db7984badfdf45a449bae1517817c376, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: aabf1799839184249b755f8e855b12ee, type: 2}
     - target: {fileID: 7269958061170808906, guid: db7984badfdf45a449bae1517817c376, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -154,10 +158,13 @@ MonoBehaviour:
   disableInteractionWhileAnimating: 0
   interactAnims:
   - {fileID: 8353343038147044627}
+  interactAudios: []
   failedInteractAnims: []
+  failedInteractAudios: []
   _isActivated: 0
   _toggleable: 1
   activationConsumesRequiredItem: 0
+  resultingItem: {fileID: 0}
   autoDeactivateTime: -1
   interactCompletedAnims: []
   openableDoors: []
@@ -263,10 +270,13 @@ MonoBehaviour:
   disableInteractionWhileAnimating: 0
   interactAnims:
   - {fileID: 5556714826681776329}
+  interactAudios: []
   failedInteractAnims: []
+  failedInteractAudios: []
   _isActivated: 0
   _toggleable: 1
   activationConsumesRequiredItem: 0
+  resultingItem: {fileID: 0}
   autoDeactivateTime: -1
   interactCompletedAnims: []
 --- !u!114 &5556714826681776329 stripped
