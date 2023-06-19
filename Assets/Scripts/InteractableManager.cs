@@ -35,9 +35,10 @@ public class InteractableManager : MonoBehaviour
         var ray = camera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, camera.nearClipPlane));
         Debug.DrawRay(ray.origin, ray.direction * 1000, Color.yellow);
 
-        if (Physics.Raycast(ray, out var hit, maxInteractDistance)
+        if (Physics.Raycast(ray, out var hit)
             && hit.collider.gameObject.TryGetComponent<Interactable>(out var interactable)
-            && interactable.isInteractable)
+            && interactable.isInteractable
+            && Vector3.Distance(ray.origin, new(hit.point.x, ray.origin.y, hit.point.z)) <= maxInteractDistance)
             currentInteractable = interactable;
         else
             currentInteractable = null;
