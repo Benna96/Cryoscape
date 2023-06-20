@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private float crouchSpeed;
     float startScaleY;
     float crouchScaleY;
-    bool crouched;
+    bool crouched, sprinting;
 
     public Vector2 movementInput;
 
@@ -20,14 +20,20 @@ public class PlayerMovement : MonoBehaviour
         crouchScaleY = startScaleY / 2;
         crouchSpeed = movementSpeed / 2;
         crouched = false;
+        sprinting = false;
     }
     private void FixedUpdate()
     {
-        if (!crouched)
+        if (crouched)
         {
-            rigidBody.velocity = movementSpeed * ((modelTransform.forward * movementInput.y) + (modelTransform.right * movementInput.x));
+            rigidBody.velocity = crouchSpeed * ((modelTransform.forward * movementInput.y) + 
+                                    (modelTransform.right * movementInput.x));
+        } else if (sprinting) {
+            rigidBody.velocity = (2 * movementSpeed) * ((modelTransform.forward * movementInput.y) + 
+                                    (modelTransform.right * movementInput.x));
         } else {
-            rigidBody.velocity = crouchSpeed * ((modelTransform.forward * movementInput.y) + (modelTransform.right * movementInput.x));
+            rigidBody.velocity = movementSpeed * ((modelTransform.forward * movementInput.y) + 
+                                    (modelTransform.right * movementInput.x));
         }
     }
 
