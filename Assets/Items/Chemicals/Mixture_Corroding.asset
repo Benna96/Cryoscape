@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Mixture_Corroding
   m_EditorClassIdentifier: 
   internalName: 
-  displayName: Muted green mixture
+  displayName: Corrosive mixture
   category: 0
   inventoryIcon: {fileID: 2800000, guid: c11c8cc7e5d9eec45a534f2fa831ceb7, type: 3}
   <color>k__BackingField: {r: 0.33990574, g: 0.4528302, b: 0.33962265, a: 1}
