@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 4.4
+  m_AmbientIntensity: 0
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.048920073, g: 0.55608493, b: 0.9150943, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: a4be220830e90ea4eb88b48b7fd376ce, type: 2}
@@ -12724,19 +12724,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2428864305758592340, guid: 5604de54e8e8bd647940108f255a1544, type: 3}
       propertyPath: m_Size.x
-      value: 14.091095
+      value: 12.784252
       objectReference: {fileID: 0}
     - target: {fileID: 2428864305758592340, guid: 5604de54e8e8bd647940108f255a1544, type: 3}
       propertyPath: m_Size.z
-      value: 56.227295
+      value: 64.063545
       objectReference: {fileID: 0}
     - target: {fileID: 2428864305758592340, guid: 5604de54e8e8bd647940108f255a1544, type: 3}
       propertyPath: m_Center.x
-      value: 10.086315
+      value: 9.8369255
       objectReference: {fileID: 0}
     - target: {fileID: 2428864305758592340, guid: 5604de54e8e8bd647940108f255a1544, type: 3}
       propertyPath: m_Center.z
-      value: -7.03782
+      value: -3.1196258
       objectReference: {fileID: 0}
     - target: {fileID: 2428864305758592342, guid: 5604de54e8e8bd647940108f255a1544, type: 3}
       propertyPath: m_RootOrder
@@ -18843,6 +18843,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: 509b6dbb140f4de43860d1f45d61a562, type: 3}
+--- !u!1 &1128312136 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2428864305758592345, guid: 5604de54e8e8bd647940108f255a1544, type: 3}
+  m_PrefabInstance: {fileID: 1904156102}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1132128924
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33559,7 +33564,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2428864305758592342, guid: 5604de54e8e8bd647940108f255a1544, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 171.9
+      value: 127
       objectReference: {fileID: 0}
     - target: {fileID: 2428864305758592342, guid: 5604de54e8e8bd647940108f255a1544, type: 3}
       propertyPath: m_LocalPosition.y
@@ -33567,7 +33572,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2428864305758592342, guid: 5604de54e8e8bd647940108f255a1544, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -286.1
+      value: -243
       objectReference: {fileID: 0}
     - target: {fileID: 2428864305758592342, guid: 5604de54e8e8bd647940108f255a1544, type: 3}
       propertyPath: m_LocalRotation.w
@@ -33616,6 +33621,21 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2428864305758592342, guid: 5604de54e8e8bd647940108f255a1544, type: 3}
   m_PrefabInstance: {fileID: 1904156102}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1904156104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128312136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 727210d88f867be489d5fae06079cb2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTag: Player
+  audioSource: {fileID: 131165502}
+  fadeDuration: 10
 --- !u!1 &1904455348
 GameObject:
   m_ObjectHideFlags: 0
@@ -37100,16 +37120,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 661088988}
     m_Modifications:
     - target: {fileID: 2428864305758592340, guid: 5604de54e8e8bd647940108f255a1544, type: 3}
+      propertyPath: m_Size.x
+      value: 25.360563
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428864305758592340, guid: 5604de54e8e8bd647940108f255a1544, type: 3}
       propertyPath: m_Size.z
-      value: 59.19122
+      value: 29.82183
       objectReference: {fileID: 0}
     - target: {fileID: 2428864305758592340, guid: 5604de54e8e8bd647940108f255a1544, type: 3}
       propertyPath: m_Center.x
-      value: -11.330149
+      value: -5.070169
       objectReference: {fileID: 0}
     - target: {fileID: 2428864305758592340, guid: 5604de54e8e8bd647940108f255a1544, type: 3}
       propertyPath: m_Center.z
-      value: -12.155986
+      value: -10.672092
       objectReference: {fileID: 0}
     - target: {fileID: 2428864305758592342, guid: 5604de54e8e8bd647940108f255a1544, type: 3}
       propertyPath: m_RootOrder
@@ -37237,6 +37261,18 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 2070807061}
+    - target: {fileID: 2604722497603404697, guid: 75091956b82c321418cae57d9a314d7c, type: 3}
+      propertyPath: m_Size.x
+      value: 63.953148
+      objectReference: {fileID: 0}
+    - target: {fileID: 2604722497603404697, guid: 75091956b82c321418cae57d9a314d7c, type: 3}
+      propertyPath: m_Center.x
+      value: -1.1305732
+      objectReference: {fileID: 0}
+    - target: {fileID: 2604722497603404697, guid: 75091956b82c321418cae57d9a314d7c, type: 3}
+      propertyPath: m_Center.z
+      value: -14.321997
+      objectReference: {fileID: 0}
     - target: {fileID: 2604722497603404702, guid: 75091956b82c321418cae57d9a314d7c, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -37979,6 +38015,22 @@ PrefabInstance:
     - target: {fileID: 4007741009578655176, guid: 3fb79725f68da7647a1d890394091949, type: 3}
       propertyPath: m_Name
       value: SoundTrigger1Cryo
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007741009578655178, guid: 3fb79725f68da7647a1d890394091949, type: 3}
+      propertyPath: m_Size.x
+      value: 33.60725
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007741009578655178, guid: 3fb79725f68da7647a1d890394091949, type: 3}
+      propertyPath: m_Size.z
+      value: 54.9057
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007741009578655178, guid: 3fb79725f68da7647a1d890394091949, type: 3}
+      propertyPath: m_Center.x
+      value: -16.303505
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007741009578655178, guid: 3fb79725f68da7647a1d890394091949, type: 3}
+      propertyPath: m_Center.z
+      value: -32.451313
       objectReference: {fileID: 0}
     - target: {fileID: 4007741009578655179, guid: 3fb79725f68da7647a1d890394091949, type: 3}
       propertyPath: m_RootOrder
