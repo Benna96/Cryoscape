@@ -15,6 +15,6 @@ MonoBehaviour:
   internalName: 
   displayName: Chemical A
   category: 0
-  inventoryIcon: {fileID: 2800000, guid: c11c8cc7e5d9eec45a534f2fa831ceb7, type: 3}
+  inventoryIcon: {fileID: 2800000, guid: 223c57915ef876540a9ff0caa4d54199, type: 3}
   <color>k__BackingField: {r: 0, g: 0, b: 0, a: 1}
   <coloredInventoryIcon>k__BackingField: {fileID: 2800000, guid: 0fd6cd2c820df754db979ab33dea985e, type: 3}
