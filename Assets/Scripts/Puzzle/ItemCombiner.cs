@@ -67,7 +67,10 @@ public class ItemCombiner : MonoBehaviour
         void Button_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
             if (e.PropertyName == nameof(Activatable.isActivated) && button.isActivated && !button.shouldFail)
+            {
+                StartCoroutine(button.MarkAsAnimatingFor(combineDuration));
                 Combine();
+            }
         }
 
         void AutocombineSingleItem(object sender, System.ComponentModel.PropertyChangedEventArgs e)
