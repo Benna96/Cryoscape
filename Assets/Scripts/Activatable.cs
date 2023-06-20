@@ -95,7 +95,7 @@ public class Activatable : Interactable, INotifyPropertyChanged
         {
             yield return new WaitForSeconds(interactCompletedDuration);
             yield return new WaitForSeconds(autoDeactivateTime);
-            Interact();
+            StartCoroutine(DoInteract());
         }
 
         void Animate(SimpleAnim anim) => StartCoroutine(anim.AnimateNormal());

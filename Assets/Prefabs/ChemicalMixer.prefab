@@ -1582,7 +1582,12 @@ MonoBehaviour:
   interactAudios: []
   failedInteractAnims: []
   failedInteractAudios: []
-  <allowedItems>k__BackingField: []
+  <allowedItems>k__BackingField:
+  - {fileID: 11400000, guid: 7a554c879c50a2841a7f63833d186b48, type: 2}
+  - {fileID: 11400000, guid: e458eebf29b8f184fbbf7c3d2dab90af, type: 2}
+  - {fileID: 11400000, guid: 48cc7fbe605a6c94781c867b502f79d1, type: 2}
+  - {fileID: 11400000, guid: 82fe6464ac8bf0a4d8e985d570be8d81, type: 2}
+  - {fileID: 11400000, guid: 24fab9ac4bf49d043a3fdf65d4e60eeb, type: 2}
   <heldItem>k__BackingField: {fileID: 3396765949250666046}
   hideThenShowWhenEnabling: 0
 --- !u!114 &9132356026354041567
@@ -1968,7 +1973,12 @@ MonoBehaviour:
   interactAudios: []
   failedInteractAnims: []
   failedInteractAudios: []
-  <allowedItems>k__BackingField: []
+  <allowedItems>k__BackingField:
+  - {fileID: 11400000, guid: 7a554c879c50a2841a7f63833d186b48, type: 2}
+  - {fileID: 11400000, guid: e458eebf29b8f184fbbf7c3d2dab90af, type: 2}
+  - {fileID: 11400000, guid: 48cc7fbe605a6c94781c867b502f79d1, type: 2}
+  - {fileID: 11400000, guid: 82fe6464ac8bf0a4d8e985d570be8d81, type: 2}
+  - {fileID: 11400000, guid: 24fab9ac4bf49d043a3fdf65d4e60eeb, type: 2}
   <heldItem>k__BackingField: {fileID: 1039858396179360173}
   hideThenShowWhenEnabling: 0
 --- !u!114 &7576345981592324850
@@ -2187,7 +2197,12 @@ MonoBehaviour:
   interactAudios: []
   failedInteractAnims: []
   failedInteractAudios: []
-  <allowedItems>k__BackingField: []
+  <allowedItems>k__BackingField:
+  - {fileID: 11400000, guid: 7a554c879c50a2841a7f63833d186b48, type: 2}
+  - {fileID: 11400000, guid: e458eebf29b8f184fbbf7c3d2dab90af, type: 2}
+  - {fileID: 11400000, guid: 48cc7fbe605a6c94781c867b502f79d1, type: 2}
+  - {fileID: 11400000, guid: 82fe6464ac8bf0a4d8e985d570be8d81, type: 2}
+  - {fileID: 11400000, guid: 24fab9ac4bf49d043a3fdf65d4e60eeb, type: 2}
   <heldItem>k__BackingField: {fileID: 3201087671640053484}
   hideThenShowWhenEnabling: 0
 --- !u!23 &9208496529013071393 stripped

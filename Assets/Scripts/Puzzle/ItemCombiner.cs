@@ -50,7 +50,7 @@ public class ItemCombiner : MonoBehaviour
         {
             button.PropertyChanged += Button_PropertyChanged;
             button.successConditions.Add(_
-                => outputItemHolder.heldItem.item != null
+                => outputItemHolder.allowedItems.Append(outputItemHolder.requiredItem).Contains(outputItemHolder.heldItem.item)
                 && inputItemHolders.Where(x => x.heldItem.item != null).Count() >= Mathf.Min(2, inputItemHolders.Count()));
 
             outputItemHolder.heldItem.PropertyChanged += (_, e) => { if (e.PropertyName == nameof(InventoryItem.item)) button.UpdateShouldFail(); };
