@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9dd8e3b48ea8d044a91493409c83c790, type: 3}
-  m_Name: Chemical5
+  m_Name: ChemicalD
   m_EditorClassIdentifier: 
   internalName: 
-  displayName: Chemical 5
+  displayName: Chemical D
   category: 0
   inventoryIcon: {fileID: 2800000, guid: c11c8cc7e5d9eec45a534f2fa831ceb7, type: 3}
-  <color>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
+  <color>k__BackingField: {r: 0.75, g: 0.75, b: 0.75, a: 1}
   <coloredInventoryIcon>k__BackingField: {fileID: 2800000, guid: 0fd6cd2c820df754db979ab33dea985e, type: 3}
