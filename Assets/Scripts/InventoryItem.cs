@@ -37,5 +37,6 @@ public class InventoryItem : Interactable, INotifyPropertyChanged
     {
         yield return StartCoroutine(base.DoInteract());
         InventoryManager.instance.AddItem(item);
+        item = null;
     }
 }

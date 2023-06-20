@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
+using System.Linq;
 
 using UnityEngine;
 
@@ -7,7 +9,8 @@ public class LiquidColorController : MonoBehaviour
 {
     [SerializeField] private MeshRenderer liquidRenderer;
 
-    private Color color;
+    [Tooltip("If multiple. Old left in to not break stuff.")]
+    [SerializeField] private MeshRenderer[] liquidRenderers;
 
     private void OnValidate()
     {
@@ -34,10 +37,9 @@ public class LiquidColorController : MonoBehaviour
 
     private void UpdateColor()
     {
-        if (GetComponent<InventoryItem>().item is not IColoredItem chemicalItem)
-            return;
+        IColoredItem coloredItem = GetComponent<InventoryItem>().item as IColoredItem;
+        var color = coloredItem?.color ?? Color.clear;
 
-        var color = chemicalItem.color;
-        liquidRenderer.material.color = color;
+        Array.ForEach(liquidRenderers.Append(liquidRenderer).ToArray(), renderer => renderer.material.color = color);
     }
 }
