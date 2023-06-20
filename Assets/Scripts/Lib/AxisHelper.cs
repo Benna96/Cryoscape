@@ -11,4 +11,12 @@ public static class AxisHelper
         Axis.Z => Vector3.forward,
         _ => Vector3.zero
     };
+
+    public static Vector3 AsVector3Scale(this Axis axis, float scale) => axis switch
+    {
+        Axis.X => new(scale, 1f, 1f),
+        Axis.Y => new(1f, scale, 1f),
+        Axis.Z => new(1f, 1f, scale),
+        _ => new(1f, 1f, 1f)
+    };
 }

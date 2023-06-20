@@ -14,6 +14,8 @@ public class ItemHolder : Interactable
     [field: FormerlySerializedAs("<chemical>k__BackingField")]
     [field: SerializeField] public InventoryItem heldItem { get; private set; }
 
+    [SerializeField] private bool hideThenShowWhenEnabling = false;
+
     protected override void Awake()
     {
         base.Awake();
@@ -39,8 +41,10 @@ public class ItemHolder : Interactable
             {
                 if (heldItem.item == null)
                     heldItem.gameObject.SetActive(false);
-                else
+                else if (hideThenShowWhenEnabling)
                     StartCoroutine(HideSetActiveThenShow());
+                else
+                    heldItem.gameObject.SetActive(true);
 
                 UpdateIsInteractable();
 

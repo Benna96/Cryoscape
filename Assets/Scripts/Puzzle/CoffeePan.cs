@@ -4,6 +4,7 @@ public class CoffeePan : InventoryItem
 {
     [Header("Coffee pan control")]
     [SerializeField] private bool doChangeMeshesOnItemChange = true;
+    [SerializeField] private bool showAllMeshesWhenPreviousNotNull = false;
 
     [Header("Coffee pan refs")]
     [SerializeField] private Item emptyPanRef;
@@ -13,6 +14,13 @@ public class CoffeePan : InventoryItem
     [Header("Coffee pan meshes")]
     [SerializeField] private GameObject iceMeshParent;
     [SerializeField] private GameObject hotWaterMeshParent;
+
+    private Item oldItem;
+
+    private void OnValidate()
+    {
+        oldItem = item;
+    }
 
     protected override void Awake()
     {
@@ -30,10 +38,12 @@ public class CoffeePan : InventoryItem
 
     private void ActivateCorrectMeshes()
     {
-        if (item == null || !doChangeMeshesOnItemChange)
-            return;
+        if (item != null && doChangeMeshesOnItemChange)
+        {
+            iceMeshParent.SetActive(item.id == icePanRef.id || (showAllMeshesWhenPreviousNotNull && oldItem != null));
+            hotWaterMeshParent.SetActive(item.id == hotWaterPanRef.id || (showAllMeshesWhenPreviousNotNull && oldItem != null));
+        }
 
-        iceMeshParent.SetActive(item.id == icePanRef.id);
-        hotWaterMeshParent.SetActive(item.id == hotWaterPanRef.id);
+        oldItem = item;
     }
 }

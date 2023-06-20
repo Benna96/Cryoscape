@@ -95,6 +95,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7077348859607464851}
     m_Modifications:
+    - target: {fileID: 312785674194281601, guid: 30e20e07cb1f96044952d48a89ab37d5, type: 3}
+      propertyPath: doChangeMeshesOnItemChange
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 312785674194281601, guid: 30e20e07cb1f96044952d48a89ab37d5, type: 3}
+      propertyPath: changeMeshesThroughRenderes
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 312785674194281601, guid: 30e20e07cb1f96044952d48a89ab37d5, type: 3}
+      propertyPath: showAllMeshesWhenPreviousNotNull
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 312785674194281601, guid: 30e20e07cb1f96044952d48a89ab37d5, type: 3}
+      propertyPath: onlyChangesMeshesWhenPreviousWasNull
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1602986628965070759, guid: 30e20e07cb1f96044952d48a89ab37d5, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -139,9 +155,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2352467711974087809, guid: 30e20e07cb1f96044952d48a89ab37d5, type: 3}
+      propertyPath: animDuration
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5000001485374219469, guid: 30e20e07cb1f96044952d48a89ab37d5, type: 3}
       propertyPath: m_Name
       value: Coffeepan
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000001485374219469, guid: 30e20e07cb1f96044952d48a89ab37d5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30e20e07cb1f96044952d48a89ab37d5, type: 3}
@@ -167,6 +191,111 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81ef069818210da4d9657c902385ddc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &7282831590804681604 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4965661069163416186, guid: 30e20e07cb1f96044952d48a89ab37d5, type: 3}
+  m_PrefabInstance: {fileID: 2447779858841811454}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6510657333344742213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7282831590804681604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45aa307fb14c1784ba47526a2d7888d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animDuration: 3
+  normalAnimCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -1
+      outSlope: -1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -1
+      outSlope: -1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reversedAnimCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  normalAnimAudio: {fileID: 0}
+  reversedAnimAudio: {fileID: 0}
+  debugAutoPlay: 0
+  axis: 2
+  scaleMultiplier: 0
+--- !u!1 &8906130399724427456 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6512394973365592382, guid: 30e20e07cb1f96044952d48a89ab37d5, type: 3}
+  m_PrefabInstance: {fileID: 2447779858841811454}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &819506050520752621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8906130399724427456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 662bdc42c1397c341b867fc816452b8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animDuration: 3
+  normalAnimCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reversedAnimCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  normalAnimAudio: {fileID: 0}
+  reversedAnimAudio: {fileID: 0}
+  debugAutoPlay: 0
+  scaleMultiplier: 0
 --- !u!1001 &7331141349629385848
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -302,12 +431,15 @@ MonoBehaviour:
   <requiredActivatable>k__BackingField: {fileID: 0}
   disableInteractionWhileAnimating: 0
   interactAnims: []
+  interactAudios: []
   failedInteractAnims: []
+  failedInteractAudios: []
   <allowedItems>k__BackingField:
   - {fileID: 11400000, guid: bad795799fd83784fa31d2131b02b335, type: 2}
   - {fileID: 11400000, guid: 1aa0afe99d6b99f499f5131e40b2beb1, type: 2}
   - {fileID: 11400000, guid: 94b50bf3973c21b4eb0d0ba6d6cf0b77, type: 2}
   <heldItem>k__BackingField: {fileID: 2715527887224659327}
+  hideThenShowWhenEnabling: 0
 --- !u!4 &7077348859607464851 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 16c60916ea425c74fae8cf94e3ff1e6b, type: 3}
@@ -334,13 +466,17 @@ MonoBehaviour:
   - {fileID: 8912512268007243338}
   outputItemHolder: {fileID: 8912512268007243338}
   button: {fileID: 3948801126526063741}
-  combineAnims:
-  - {fileID: 98487910152906111}
+  combineAnims: []
+  combineAudio: []
   nonRecipeFallback: {fileID: 0}
   recipes:
   - requiredIngredients:
     - {fileID: 11400000, guid: 1aa0afe99d6b99f499f5131e40b2beb1, type: 2}
     resultingItem: {fileID: 11400000, guid: 94b50bf3973c21b4eb0d0ba6d6cf0b77, type: 2}
-    anims: []
+    anims:
+    - {fileID: 819506050520752621}
+    - {fileID: 6510657333344742213}
+    - {fileID: 98487910152906111}
+    audio: []
   doAddItems: 0
   itemsToAddToInventory: []
