@@ -13,6 +13,9 @@ public class InventoryItem : Interactable, INotifyPropertyChanged
         get => _item;
         set
         {
+            if (_item == value)
+                return;
+
             _item = value;
             OnPropertyChanged();
         }
