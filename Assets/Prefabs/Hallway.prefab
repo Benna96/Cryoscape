@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2054575898514094407}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 771550482752729631}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Hallway
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 771550482920666216}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Surfaces
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 771550483095400535}
   - component: {fileID: 771550483095400534}
   - component: {fileID: 771550483095400533}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Floor (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 771550484016619928}
   - component: {fileID: 771550484016619935}
   - component: {fileID: 771550484016619934}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -313,7 +313,7 @@ GameObject:
   - component: {fileID: 7107722577583096405}
   - component: {fileID: 5874600790960740665}
   - component: {fileID: 2381583372042253547}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Roof (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -411,7 +411,7 @@ GameObject:
   - component: {fileID: 8159312676083070564}
   - component: {fileID: 7925125476725143579}
   - component: {fileID: 7247281556030466061}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Roof (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -509,7 +509,7 @@ GameObject:
   - component: {fileID: 7564368730760570098}
   - component: {fileID: 3644797248360234700}
   - component: {fileID: 7700536990372728266}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Roof (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -607,7 +607,7 @@ GameObject:
   - component: {fileID: 6332494757462377790}
   - component: {fileID: 339370756675511333}
   - component: {fileID: 7864967649682336391}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Roof (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -756,6 +756,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall_hallway (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 9216956719620682163, guid: 5b1591adca5f820418b14c330aee57ec, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b1591adca5f820418b14c330aee57ec, type: 3}
 --- !u!4 &9086008891801781050 stripped
@@ -826,6 +830,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall_hallway
       objectReference: {fileID: 0}
+    - target: {fileID: 9216956719620682163, guid: 5b1591adca5f820418b14c330aee57ec, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b1591adca5f820418b14c330aee57ec, type: 3}
 --- !u!4 &9086008892285834639 stripped
@@ -840,6 +848,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 771550482752729631}
     m_Modifications:
+    - target: {fileID: 35299766728897431, guid: 9e3b0c77e7da9514cb0ef9e3ad9741d9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 390418750986094719, guid: 9e3b0c77e7da9514cb0ef9e3ad9741d9, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -888,9 +900,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 461042238928379065, guid: 9e3b0c77e7da9514cb0ef9e3ad9741d9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1376424945897324284, guid: 9e3b0c77e7da9514cb0ef9e3ad9741d9, type: 3}
+      propertyPath: m_Intensity
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1376424945897324284, guid: 9e3b0c77e7da9514cb0ef9e3ad9741d9, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1600733208971314981, guid: 9e3b0c77e7da9514cb0ef9e3ad9741d9, type: 3}
       propertyPath: m_Name
       value: rooflamp (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1600733208971314981, guid: 9e3b0c77e7da9514cb0ef9e3ad9741d9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3332040456451170265, guid: 9e3b0c77e7da9514cb0ef9e3ad9741d9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393125269900409981, guid: 9e3b0c77e7da9514cb0ef9e3ad9741d9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4982889123536394021, guid: 9e3b0c77e7da9514cb0ef9e3ad9741d9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036909549117631662, guid: 9e3b0c77e7da9514cb0ef9e3ad9741d9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7969482620719179190, guid: 9e3b0c77e7da9514cb0ef9e3ad9741d9, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e3b0c77e7da9514cb0ef9e3ad9741d9, type: 3}
@@ -906,6 +954,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 771550482752729631}
     m_Modifications:
+    - target: {fileID: 35299766728897431, guid: 9e3b0c77e7da9514cb0ef9e3ad9741d9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 390418750986094719, guid: 9e3b0c77e7da9514cb0ef9e3ad9741d9, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -954,9 +1006,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 461042238928379065, guid: 9e3b0c77e7da9514cb0ef9e3ad9741d9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1376424945897324284, guid: 9e3b0c77e7da9514cb0ef9e3ad9741d9, type: 3}
+      propertyPath: m_Intensity
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1376424945897324284, guid: 9e3b0c77e7da9514cb0ef9e3ad9741d9, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1600733208971314981, guid: 9e3b0c77e7da9514cb0ef9e3ad9741d9, type: 3}
       propertyPath: m_Name
       value: rooflamp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1600733208971314981, guid: 9e3b0c77e7da9514cb0ef9e3ad9741d9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3332040456451170265, guid: 9e3b0c77e7da9514cb0ef9e3ad9741d9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393125269900409981, guid: 9e3b0c77e7da9514cb0ef9e3ad9741d9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4982889123536394021, guid: 9e3b0c77e7da9514cb0ef9e3ad9741d9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036909549117631662, guid: 9e3b0c77e7da9514cb0ef9e3ad9741d9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7969482620719179190, guid: 9e3b0c77e7da9514cb0ef9e3ad9741d9, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e3b0c77e7da9514cb0ef9e3ad9741d9, type: 3}
