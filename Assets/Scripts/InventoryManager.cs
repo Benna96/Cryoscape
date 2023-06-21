@@ -16,7 +16,16 @@ public class InventoryManager : Singleton<InventoryManager>, INotifyPropertyChan
     public ReadOnlyObservableCollection<Item> items { get; private set; }
     private ObservableCollection<Item> _items = new();
 
-    public Item.Category currentCategory { get; private set; }
+    private Item.Category _currentCategory;
+    public Item.Category currentCategory
+    {
+        get => _currentCategory;
+        private set
+        {
+            _currentCategory = value;
+            UpdateCurrentIndexWithinWholeCollection();
+        }
+    }
 
     private List<Item> currentCategoryItems => GetItemsOfType(currentCategory);
 
@@ -31,20 +40,12 @@ public class InventoryManager : Singleton<InventoryManager>, INotifyPropertyChan
                 _currentIndex = -1;
 
             ObservableHelper.OnPropertyChanged(PropertyChanged);
+            UpdateCurrentIndexWithinWholeCollection();
             UpdateCurrentItem();
         }
     }
 
-    private int currentIndexWithinWholeCollection
-    {
-        get
-        {
-            int nthInstance = currentCategoryItems.IndicesOf(currentItem)
-                .ToList()
-                .IndexOf(currentIndex);
-            return _items.IndicesOf(currentItem).ElementAt(nthInstance);
-        }
-    }
+    private int currentIndexWithinWholeCollection { get; set; }
 
     private Item _currentItem;
     public Item currentItem
@@ -70,12 +71,13 @@ public class InventoryManager : Singleton<InventoryManager>, INotifyPropertyChan
 
     private void InventoryManager_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
     {
-        if (e.Action == NotifyCollectionChangedAction.Remove && e.OldItems.Contains(currentItem))
+        if (e.Action == NotifyCollectionChangedAction.Remove)
         {
-            if (currentIndex >= currentCategoryItems.Count)
-                currentIndex = currentCategoryItems.Count - 1;
-            else
-                UpdateCurrentItem();
+            if (e.OldItems.Count > 1)
+                throw new NotImplementedException("Removing more than 1 item at a time from inventory is currently not supported!");
+
+            else if (e.OldStartingIndex <= currentIndexWithinWholeCollection)
+                currentIndex--;
         }
     }
 
@@ -131,5 +133,21 @@ public class InventoryManager : Singleton<InventoryManager>, INotifyPropertyChan
 
         else
             currentItem = currentCategoryItems[currentIndex];
+    }
+
+    private void UpdateCurrentIndexWithinWholeCollection()
+    {
+        if (currentIndex == -1)
+        {
+            currentIndexWithinWholeCollection = -1;
+            return;
+        }
+
+        var item = currentCategoryItems[currentIndex];
+        int nthInstance = currentCategoryItems.IndicesOf(item)
+            .ToList()
+            .IndexOf(currentIndex);
+
+        currentIndexWithinWholeCollection = _items.IndicesOf(item).ElementAt(nthInstance);
     }
 }
