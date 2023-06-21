@@ -352,6 +352,7 @@ AudioMixerGroupController:
   - {fileID: -7250546934305418887}
   - {fileID: 4598518088929240214}
   - {fileID: -2305262874871380198}
+  - {fileID: 8554433310160829702}
   m_Volume: 66c34354163748c4ba7e8f44b115cd73
   m_Pitch: 7786f52d41b52f54c90635132391e381
   m_Send: 00000000000000000000000000000000
@@ -393,6 +394,7 @@ AudioMixerController:
     - 173e69626b6bdba46b263927aa11919e
     - 6d7ed9c71658b9d4194e24de8124102f
     - 30f906a756254a542b680d4bde61f79a
+    - 4e14eeef9a0ead24fbf39ff879693892
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 5609916086156941363}
@@ -541,6 +543,48 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!244 &2218565552795318909
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 167d0ec73aa04184fa51ed38d8f27358
+  m_EffectName: SFX Reverb
+  m_MixLevel: 26bcce62738702346808dcacccc39c19
+  m_Parameters:
+  - m_ParameterName: Dry Level
+    m_GUID: 5b847ef3016b4d34bba0aa7eaee00056
+  - m_ParameterName: Room
+    m_GUID: 65a0d3ed3bc143843a19f21ddd3fa154
+  - m_ParameterName: Room HF
+    m_GUID: 3301ae3cd51206f45aa5423b651e3d37
+  - m_ParameterName: Decay Time
+    m_GUID: c297142a8b9639847b97f858176e2e60
+  - m_ParameterName: Decay HF Ratio
+    m_GUID: 4fd52e37df8a1b242b7ae924f41f34c7
+  - m_ParameterName: Reflections
+    m_GUID: 69d595649f277bd4b8ec143edef85e76
+  - m_ParameterName: Reflect Delay
+    m_GUID: 654f16e9051fedf4cb2761babc631024
+  - m_ParameterName: Reverb
+    m_GUID: eb98f20e0af304440be0f555159f45b9
+  - m_ParameterName: Reverb Delay
+    m_GUID: 5c32595f19ff7b54380b6aa2c7ff8b8f
+  - m_ParameterName: Diffusion
+    m_GUID: e334bbb9a6cd50141b65a5117de06f1a
+  - m_ParameterName: Density
+    m_GUID: c44e9705558c2fc458ad30cd2f2a65d9
+  - m_ParameterName: HF Reference
+    m_GUID: 83649df3a7f3d8244b9bd00fee641443
+  - m_ParameterName: Room LF
+    m_GUID: 67c1c37377d975e488fa44713aba60a6
+  - m_ParameterName: LF Reference
+    m_GUID: 3e42d74bf39dd9443831daa3ccfe7539
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!244 &2244561390040876853
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -613,6 +657,20 @@ AudioMixerEffectController:
   m_EffectID: b82cedf2ca5aebb4a98e76ef4fb4460d
   m_EffectName: Attenuation
   m_MixLevel: d3765f12e662a45429bfc105c46085a2
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!244 &3889944938436540410
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: c7ae29e6c4dd6f24db69837b49665cdf
+  m_EffectName: Attenuation
+  m_MixLevel: cb0b6d06a44607e45bd448f4fb8724de
   m_Parameters: []
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
@@ -754,6 +812,7 @@ AudioMixerSnapshotController:
     d0ec3f98c11903542b433ebf8bf55399: 1220
     b3e30ec830a817548a86b319687037df: -964
     5cc25e0914eb96a40824e89b9918ff13: 2000
+    7216892934c92354382017f59ae65a1b: -13.637256
     3e325339330f5724cbba8860b244d647: -36
     ac46fba9d68ee1244b98a64d3fc4644e: 0.96
     6fdc2bbad08c924479df9e71943f9e78: 0.044
@@ -870,6 +929,26 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!243 &8554433310160829702
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: LockerDoor
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 4e14eeef9a0ead24fbf39ff879693892
+  m_Children: []
+  m_Volume: 7216892934c92354382017f59ae65a1b
+  m_Pitch: dd3b0707ca674c145b9667f313310c29
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 3889944938436540410}
+  - {fileID: 2218565552795318909}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!243 &8640673820587731067
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
