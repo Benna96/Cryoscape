@@ -6442,12 +6442,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2349497906223711618, guid: d0b89ef2f40d222459fdbd37a8c0dff5, type: 3}
       propertyPath: m_Volume
-      value: 0.512
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 2349497906223711618, guid: d0b89ef2f40d222459fdbd37a8c0dff5, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: e08a942c726a1914790c7d7c677ec892, type: 3}
+      objectReference: {fileID: 8300000, guid: 59c303c62ac17f34a81603b2399689cc, type: 3}
     - target: {fileID: 2349497906223711618, guid: d0b89ef2f40d222459fdbd37a8c0dff5, type: 3}
       propertyPath: DopplerLevel
       value: 0
@@ -6462,7 +6462,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2349497906223711618, guid: d0b89ef2f40d222459fdbd37a8c0dff5, type: 3}
       propertyPath: BypassReverbZones
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2349497906223711618, guid: d0b89ef2f40d222459fdbd37a8c0dff5, type: 3}
       propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].value
@@ -7166,6 +7166,10 @@ PrefabInstance:
     - target: {fileID: 3391815235685607581, guid: f797a05aa02295f4387464625050d12a, type: 3}
       propertyPath: m_Name
       value: SoundManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 3391815235685607583, guid: f797a05aa02295f4387464625050d12a, type: 3}
+      propertyPath: fadeDuration
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f797a05aa02295f4387464625050d12a, type: 3}
