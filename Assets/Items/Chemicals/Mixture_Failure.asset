@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Mixture_Failure
   m_EditorClassIdentifier: 
   internalName: 
-  displayName: Muted red mixture
+  displayName: Unidentified goop
   category: 0
   inventoryIcon: {fileID: 2800000, guid: c11c8cc7e5d9eec45a534f2fa831ceb7, type: 3}
-  <color>k__BackingField: {r: 0.6415094, g: 0.36009255, b: 0.36009255, a: 1}
+  modelMaterialTextureOverrides: []
+  <color>k__BackingField: {r: 0.38679248, g: 0.38679248, b: 0.38679248, a: 1}
   <coloredInventoryIcon>k__BackingField: {fileID: 2800000, guid: 0fd6cd2c820df754db979ab33dea985e, type: 3}

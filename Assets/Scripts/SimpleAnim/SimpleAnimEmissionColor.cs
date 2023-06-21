@@ -8,13 +8,17 @@ public class SimpleAnimEmissionColor : SimpleAnim
 
     [SerializeField] public Color endColor = Color.white;
 
+    [Tooltip("If using multiple animations, only leave this ticked on the \"default\" one")]
+    [SerializeField] public bool doSyncOnAwake = true;
+
     private MeshRenderer meshRenderer;
 
     private void Awake()
     {
         meshRenderer = GetComponent<MeshRenderer>();
         meshRenderer.material.EnableKeyword("_EMISSION");
-        SyncEmissionColor();
+        if (doSyncOnAwake)
+            SyncEmissionColor();
     }
 
     public void SyncEmissionColor() => meshRenderer.material.SetColor("_EmissionColor", startColor);

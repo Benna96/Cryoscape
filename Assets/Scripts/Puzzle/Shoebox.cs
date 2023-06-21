@@ -22,8 +22,8 @@ public class Shoebox : Interactable
 
     protected override IEnumerator DoInteract()
     {
-        yield return base.DoInteract();
         Array.ForEach(doorSlideAnims, anim => StartCoroutine(anim.AnimateReversed()));
+        yield return base.DoInteract();
         colorLock.isHavingEffect = true;
     }
 }

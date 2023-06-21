@@ -1,1 +1,6 @@
 @import url("unity-theme://default");
+
+VisualElement
+{
+    -unity-font-definition: url("project:/Assets/UI Toolkit/Fonts/conthrax-sb SDF.asset");
+}

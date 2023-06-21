@@ -16,5 +16,6 @@ MonoBehaviour:
   displayName: Corrosive mixture
   category: 0
   inventoryIcon: {fileID: 2800000, guid: c11c8cc7e5d9eec45a534f2fa831ceb7, type: 3}
-  <color>k__BackingField: {r: 0.33990574, g: 0.4528302, b: 0.33962265, a: 1}
+  modelMaterialTextureOverrides: []
+  <color>k__BackingField: {r: 0.2782549, g: 0.4509804, b: 0.2782549, a: 1}
   <coloredInventoryIcon>k__BackingField: {fileID: 2800000, guid: 0fd6cd2c820df754db979ab33dea985e, type: 3}

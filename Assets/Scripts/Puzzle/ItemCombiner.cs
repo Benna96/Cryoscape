@@ -104,7 +104,7 @@ public class ItemCombiner : MonoBehaviour
             float totalDuration = Mathf.Max(combineDuration, recipeDuration);
 
             outputItemHolder.heldItem.item = matchingRecipe?.resultingItem ?? nonRecipeFallback ?? outputItemHolder.heldItem.item;
-            StartCoroutine(outputItemHolder.heldItem.MarkAsAnimatingFor(totalDuration));
+            inputItemHolders.Append(outputItemHolder).Distinct().ToList().ForEach(itemHolder => StartCoroutine(itemHolder.heldItem.MarkAsAnimatingFor(totalDuration)));
 
             Array.ForEach(combineAnims.Concat(matchingRecipe?.anims ?? Enumerable.Empty<SimpleAnim>()).ToArray(), anim =>
             {
