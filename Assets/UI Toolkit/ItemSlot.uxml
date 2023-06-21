@@ -1,10 +1,9 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Style src="project://database/Assets/UI%20Toolkit/ItemSlot.uss?fileID=7433441132597879392&amp;guid=c0697f3c223b21e4eb3c4391a3d91e02&amp;type=3#ItemSlot" />
     <ui:VisualElement name="ItemWrapper" focusable="true">
-        <ui:VisualElement name="Background">
-            <ui:VisualElement name="ColoredIcon" />
-            <ui:VisualElement name="Icon" />
-        </ui:VisualElement>
+        <ui:VisualElement name="Background" />
+        <ui:VisualElement name="ColoredIcon" />
+        <ui:VisualElement name="Icon" />
         <ui:Label text="#" display-tooltip-when-elided="true" />
     </ui:VisualElement>
 </ui:UXML>

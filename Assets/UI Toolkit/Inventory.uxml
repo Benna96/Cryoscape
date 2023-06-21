@@ -2,6 +2,7 @@
     <ui:Template name="ItemSlot" src="project://database/Assets/UI%20Toolkit/ItemSlot.uxml?fileID=9197481963319205126&amp;guid=fcdfb9a3db0d8334dbe4d1a9ee76f006&amp;type=3#ItemSlot" />
     <Style src="project://database/Assets/UI%20Toolkit/Inventory.uss?fileID=7433441132597879392&amp;guid=83891726d6a481f49a4decb273eb0eac&amp;type=3#Inventory" />
     <ui:VisualElement name="HotbarContainer">
+        <ui:VisualElement name="Background" />
         <ui:VisualElement name="ItemsContainer" focusable="false">
             <ui:Instance template="ItemSlot" name="ItemSlot" />
             <ui:Instance template="ItemSlot" name="ItemSlot" />
