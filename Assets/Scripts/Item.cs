@@ -21,6 +21,13 @@ public class Item : ScriptableObject
     public Category category = Category.Normal;
     public Texture2D inventoryIcon;
 
+    public ModelMaterialTextureOverride[] modelMaterialTextureOverrides;
+    [Serializable] public class ModelMaterialTextureOverride
+    {
+        public Material modelMainMaterial;
+        public Texture modelMainTextureOverride;
+    }
+
     protected Item() : base()
     {
         id = Guid.NewGuid();
