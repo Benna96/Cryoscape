@@ -4,5 +4,7 @@
         <ui:VisualElement name="Frost" picking-mode="Ignore" />
         <ui:VisualElement name="Spill" picking-mode="Ignore" />
         <ui:VisualElement name="Light" picking-mode="Ignore" />
+        <ui:VisualElement name="Black" picking-mode="Ignore" />
+        <ui:VisualElement name="EndingConcept" picking-mode="Ignore" />
     </ui:VisualElement>
 </ui:UXML>
