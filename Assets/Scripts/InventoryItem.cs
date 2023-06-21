@@ -48,7 +48,7 @@ public class InventoryItem : Interactable, INotifyPropertyChanged
 
     protected void UpdateMaterialTextures()
     {
-        if (item == null)
+        if (item == null || item.modelMaterialTextureOverrides == null || item.modelMaterialTextureOverrides.Length == 0)
             return;
 
         foreach (var texOverride in item.modelMaterialTextureOverrides)
