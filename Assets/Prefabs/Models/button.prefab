@@ -84,54 +84,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -3838915367269032889, guid: a39f0db9945f9f84ab743575c136842e, type: 3}
---- !u!114 &-6246688384476823245
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5266858983627061256}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1b37fe3ce6daac4fbe05dbcca15a9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <isInteractable>k__BackingField: 1
-  <requiredItem>k__BackingField: {fileID: 0}
-  <requiredActivatable>k__BackingField: {fileID: 0}
-  disableInteractionWhileAnimating: 0
-  interactAnims:
-  - {fileID: 4185582678650328966}
-  - {fileID: 2228971735198330237}
-  interactAudios:
-  - {fileID: 2510239627931594801}
-  failedInteractAnims:
-  - {fileID: 2187904370473649926}
-  failedInteractAudios: []
-  _isActivated: 0
-  _toggleable: 1
-  activationConsumesRequiredItem: 0
-  resultingItem: {fileID: 0}
-  autoDeactivateTime: -1
-  interactCompletedAnims: []
---- !u!114 &8889168789024849459
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5266858983627061256}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 1
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 13.5
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
 --- !u!82 &2510239627931594801
 AudioSource:
   m_ObjectHideFlags: 0
@@ -141,7 +93,7 @@ AudioSource:
   m_GameObject: {fileID: 5266858983627061256}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 7174693041569527270, guid: 596f69e566e710547a9ae0261d43b49c, type: 2}
+  OutputAudioMixerGroup: {fileID: -2305262874871380198, guid: 596f69e566e710547a9ae0261d43b49c, type: 2}
   m_audioClip: {fileID: 8300000, guid: fcf88a6af3cb50041b9180f3936fefb3, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -228,6 +180,54 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-6246688384476823245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5266858983627061256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1b37fe3ce6daac4fbe05dbcca15a9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <isInteractable>k__BackingField: 1
+  <requiredItem>k__BackingField: {fileID: 0}
+  <requiredActivatable>k__BackingField: {fileID: 0}
+  disableInteractionWhileAnimating: 0
+  interactAnims:
+  - {fileID: 4185582678650328966}
+  - {fileID: 2228971735198330237}
+  interactAudios:
+  - {fileID: 2510239627931594801}
+  failedInteractAnims:
+  - {fileID: 2187904370473649926}
+  failedInteractAudios: []
+  _isActivated: 0
+  _toggleable: 1
+  activationConsumesRequiredItem: 0
+  resultingItem: {fileID: 0}
+  autoDeactivateTime: -1
+  interactCompletedAnims: []
+--- !u!114 &8889168789024849459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5266858983627061256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 13.5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8606350436551379801 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5568371526223589888, guid: 9d1820c5cd8ba964b91c3bf278a5d6c5, type: 3}
