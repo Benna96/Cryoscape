@@ -10,7 +10,9 @@ public class EffectOverlaysUI : MonoBehaviour
     {
         Frost,
         Spill,
-        Light
+        Light,
+        Black,
+        EndingConcept
     }
 
     private Dictionary<Overlay, VisualElement> overlayElements = new();
@@ -22,6 +24,8 @@ public class EffectOverlaysUI : MonoBehaviour
         overlayElements.Add(Overlay.Frost, root.Q("Frost"));
         overlayElements.Add(Overlay.Spill, root.Q("Spill"));
         overlayElements.Add(Overlay.Light, root.Q("Light"));
+        overlayElements.Add(Overlay.Black, root.Q("Black"));
+        overlayElements.Add(Overlay.EndingConcept, root.Q("EndingConcept"));
         foreach (var (key, value) in overlayElements)
             value.SetEnabled(false);
     }
