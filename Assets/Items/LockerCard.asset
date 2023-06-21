@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: LockerCard
   m_EditorClassIdentifier: 
   internalName: LockerKeycard
-  displayName: Scientist's card
+  displayName: Hanjie's card
   category: 0
   inventoryIcon: {fileID: 2800000, guid: 8f0513458e0bcf548ad0bde6dad85b15, type: 3}
