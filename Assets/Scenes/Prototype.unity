@@ -539,6 +539,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f44a8d46e9df6814b9fb050f3e76878b, type: 3}
+--- !u!82 &313246332 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 9078347861571040084, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
+  m_PrefabInstance: {fileID: 5209661080591891893}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &316281524 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5078918128364731388, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
+  m_PrefabInstance: {fileID: 5209661080591891893}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &328194513
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4654,6 +4664,11 @@ Transform:
   m_Father: {fileID: 328194514}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1855457049 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 318447200815844911, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
+  m_PrefabInstance: {fileID: 5209661080591891893}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1880274790 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2428864305758592342, guid: 5604de54e8e8bd647940108f255a1544, type: 3}
@@ -6656,6 +6671,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1141615752763787837, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
+      propertyPath: interactAudios.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1141615752763787837, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
+      propertyPath: interactAudios.Array.data[0]
+      value: 
+      objectReference: {fileID: 316281524}
     - target: {fileID: 2540738948808124852, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
       propertyPath: interactAudios.Array.size
       value: 1
@@ -6668,6 +6691,14 @@ PrefabInstance:
       propertyPath: animDuration
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 3769760405151220373, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
+      propertyPath: interactAudios.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3769760405151220373, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
+      propertyPath: interactAudios.Array.data[0]
+      value: 
+      objectReference: {fileID: 313246332}
     - target: {fileID: 3827405035180858324, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
       propertyPath: combineAudio.Array.data[0]
       value: 
@@ -6784,6 +6815,14 @@ PrefabInstance:
       propertyPath: interactAudios.Array.data[0]
       value: 
       objectReference: {fileID: 1948363907}
+    - target: {fileID: 5604587147062018030, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
+      propertyPath: interactAudios.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5604587147062018030, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
+      propertyPath: interactAudios.Array.data[0]
+      value: 
+      objectReference: {fileID: 1855457049}
     - target: {fileID: 6191915915187788058, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
       propertyPath: animDuration
       value: 0.1
