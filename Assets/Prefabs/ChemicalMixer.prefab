@@ -937,6 +937,10 @@ PrefabInstance:
       propertyPath: _item
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5116143466807482340, guid: e9a399ff586e82746a8f556cb1abb073, type: 3}
+      propertyPath: disableInteractionWhileAnimating
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6111799767184749173, guid: e9a399ff586e82746a8f556cb1abb073, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -1093,6 +1097,10 @@ PrefabInstance:
       propertyPath: _item
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5116143466807482340, guid: e9a399ff586e82746a8f556cb1abb073, type: 3}
+      propertyPath: disableInteractionWhileAnimating
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6111799767184749173, guid: e9a399ff586e82746a8f556cb1abb073, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -1248,6 +1256,10 @@ PrefabInstance:
     - target: {fileID: 5116143466807482340, guid: e9a399ff586e82746a8f556cb1abb073, type: 3}
       propertyPath: _item
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5116143466807482340, guid: e9a399ff586e82746a8f556cb1abb073, type: 3}
+      propertyPath: disableInteractionWhileAnimating
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6111799767184749173, guid: e9a399ff586e82746a8f556cb1abb073, type: 3}
       propertyPath: m_RootOrder
@@ -1623,6 +1635,10 @@ PrefabInstance:
     - target: {fileID: 6330970376909449718, guid: 804ec3cdf29be1943b757a1c23ab8fdd, type: 3}
       propertyPath: _item
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330970376909449718, guid: 804ec3cdf29be1943b757a1c23ab8fdd, type: 3}
+      propertyPath: disableInteractionWhileAnimating
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8477344595338822572, guid: 804ec3cdf29be1943b757a1c23ab8fdd, type: 3}
       propertyPath: liquidRenderers.Array.size
@@ -2741,6 +2757,10 @@ PrefabInstance:
       propertyPath: _item
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6330970376909449718, guid: 804ec3cdf29be1943b757a1c23ab8fdd, type: 3}
+      propertyPath: disableInteractionWhileAnimating
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8477344595338822572, guid: 804ec3cdf29be1943b757a1c23ab8fdd, type: 3}
       propertyPath: liquidRenderers.Array.size
       value: 1
@@ -2884,6 +2904,10 @@ PrefabInstance:
       propertyPath: _item
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6330970376909449718, guid: 804ec3cdf29be1943b757a1c23ab8fdd, type: 3}
+      propertyPath: disableInteractionWhileAnimating
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8477344595338822572, guid: 804ec3cdf29be1943b757a1c23ab8fdd, type: 3}
       propertyPath: liquidRenderers.Array.size
       value: 1
@@ -3016,6 +3040,10 @@ PrefabInstance:
     - target: {fileID: 6330970376909449718, guid: 804ec3cdf29be1943b757a1c23ab8fdd, type: 3}
       propertyPath: _item
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330970376909449718, guid: 804ec3cdf29be1943b757a1c23ab8fdd, type: 3}
+      propertyPath: disableInteractionWhileAnimating
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8477344595338822572, guid: 804ec3cdf29be1943b757a1c23ab8fdd, type: 3}
       propertyPath: liquidRenderers.Array.size
