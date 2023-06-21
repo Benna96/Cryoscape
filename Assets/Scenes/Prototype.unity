@@ -178,11 +178,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 143544480556447531, guid: f44a8d46e9df6814b9fb050f3e76878b, type: 3}
   m_PrefabInstance: {fileID: 853543780}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &131165502 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 143544480556447524, guid: f44a8d46e9df6814b9fb050f3e76878b, type: 3}
-  m_PrefabInstance: {fileID: 853543780}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &149477642
 GameObject:
   m_ObjectHideFlags: 0
@@ -2633,11 +2628,6 @@ MonoBehaviour:
   debugAutoPlay: 0
   startColor: {r: 0.48627454, g: 1, b: 0.7411765, a: 1}
   endColor: {r: 0.8000001, g: 0.08235294, b: 0.08235294, a: 1}
---- !u!1 &1128312136 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2428864305758592345, guid: 5604de54e8e8bd647940108f255a1544, type: 3}
-  m_PrefabInstance: {fileID: 1904156102}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1155489569
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4731,21 +4721,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2428864305758592342, guid: 5604de54e8e8bd647940108f255a1544, type: 3}
   m_PrefabInstance: {fileID: 1904156102}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1904156104
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1128312136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 727210d88f867be489d5fae06079cb2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerTag: Player
-  audioSource: {fileID: 131165502}
-  fadeDuration: 10
 --- !u!4 &1906917304 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 143544480556447531, guid: f44a8d46e9df6814b9fb050f3e76878b, type: 3}
