@@ -102,10 +102,26 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 35086cc4fc49c3e4eb8187ff142a14ee, type: 2}
+    - target: {fileID: 3922735115138878287, guid: db7984badfdf45a449bae1517817c376, type: 3}
+      propertyPath: interactAudios.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3922735115138878287, guid: db7984badfdf45a449bae1517817c376, type: 3}
+      propertyPath: interactAudios.Array.data[0]
+      value: 
+      objectReference: {fileID: 3926123747423286204}
     - target: {fileID: 5107302181239481907, guid: db7984badfdf45a449bae1517817c376, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6266107112403145659, guid: db7984badfdf45a449bae1517817c376, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126216421329843877, guid: db7984badfdf45a449bae1517817c376, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 957e5784bb0349e4293234c32e6039d1, type: 3}
     - target: {fileID: 7269958061170808906, guid: db7984badfdf45a449bae1517817c376, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -156,6 +172,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db7984badfdf45a449bae1517817c376, type: 3}
+--- !u!82 &3926123747423286204 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7126216421329843877, guid: db7984badfdf45a449bae1517817c376, type: 3}
+  m_PrefabInstance: {fileID: 6095917499680310553}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6441432534197289304 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1008133870177027137, guid: db7984badfdf45a449bae1517817c376, type: 3}

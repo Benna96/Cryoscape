@@ -63,6 +63,22 @@ PrefabInstance:
       propertyPath: angle
       value: -120
       objectReference: {fileID: 0}
+    - target: {fileID: 6266107112403145659, guid: db7984badfdf45a449bae1517817c376, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126216421329843877, guid: db7984badfdf45a449bae1517817c376, type: 3}
+      propertyPath: m_Volume
+      value: 0.504
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126216421329843877, guid: db7984badfdf45a449bae1517817c376, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 957e5784bb0349e4293234c32e6039d1, type: 3}
+    - target: {fileID: 7126216421329843877, guid: db7984badfdf45a449bae1517817c376, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 8554433310160829702, guid: 596f69e566e710547a9ae0261d43b49c, type: 2}
     - target: {fileID: 7269958061170808906, guid: db7984badfdf45a449bae1517817c376, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -142,7 +158,8 @@ MonoBehaviour:
   <requiredActivatable>k__BackingField: {fileID: 0}
   disableInteractionWhileAnimating: 0
   interactAnims: []
-  interactAudios: []
+  interactAudios:
+  - {fileID: 6202947300966557746}
   failedInteractAnims: []
   failedInteractAudios: []
   _isActivated: 0
@@ -151,6 +168,11 @@ MonoBehaviour:
   resultingItem: {fileID: 0}
   autoDeactivateTime: -1
   interactCompletedAnims: []
+--- !u!82 &6202947300966557746 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7126216421329843877, guid: db7984badfdf45a449bae1517817c376, type: 3}
+  m_PrefabInstance: {fileID: 3814588056959180439}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8762989759605608257
 PrefabInstance:
   m_ObjectHideFlags: 0
