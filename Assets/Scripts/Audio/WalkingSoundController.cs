@@ -3,15 +3,22 @@ using UnityEngine.InputSystem;
 
 public class WalkingSoundController : MonoBehaviour
 {
-    public AudioSource walkingAudioSource;
     public AudioClip walkingSound;
+    public AudioClip runningSound;
+
+    public GameObject walkingAudioSourceObject;
+    public GameObject runningAudioSourceObject;
 
     private PlayerMovement playerMovement;
+    private AudioSource walkingAudioSource;
+    private AudioSource runningAudioSource;
 
     private void Start()
     {
         playerMovement = GetComponent<PlayerMovement>();
-        // Initialize the audio source and any other necessary setup
+        walkingAudioSource = walkingAudioSourceObject.GetComponent<AudioSource>();
+        runningAudioSource = runningAudioSourceObject.GetComponent<AudioSource>();
+        // Initialize any other necessary setup
     }
 
     private void Update()
@@ -20,25 +27,37 @@ public class WalkingSoundController : MonoBehaviour
 
         if (movementInput != Vector2.zero)
         {
-            PlayWalkingSound();
+            PlayFootstepSound();
         }
         else
         {
-            StopWalkingSound();
+            StopFootstepSound();
         }
     }
 
-    public void PlayWalkingSound()
+    public void PlayFootstepSound()
     {
-        if (!walkingAudioSource.isPlaying)
+        if (playerMovement.sprinting)
         {
-            walkingAudioSource.clip = walkingSound;
-            walkingAudioSource.Play();
+            if (!runningAudioSource.isPlaying || runningAudioSource.clip != runningSound)
+            {
+                runningAudioSource.clip = runningSound;
+                runningAudioSource.Play();
+            }
+        }
+        else
+        {
+            if (!walkingAudioSource.isPlaying || walkingAudioSource.clip != walkingSound)
+            {
+                walkingAudioSource.clip = walkingSound;
+                walkingAudioSource.Play();
+            }
         }
     }
 
-    public void StopWalkingSound()
+    public void StopFootstepSound()
     {
         walkingAudioSource.Stop();
+        runningAudioSource.Stop();
     }
 }

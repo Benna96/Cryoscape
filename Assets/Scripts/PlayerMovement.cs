@@ -10,11 +10,12 @@ public class PlayerMovement : MonoBehaviour
     private float crouchSpeed;
     float startScaleY;
     float crouchScaleY;
-    bool crouched, sprinting;
+    public bool crouched { get; private set; }
+    public bool sprinting { get; private set; }
 
     public Vector2 movementInput;
 
-    private void Start() 
+    private void Start()
     {
         startScaleY = modelTransform.localScale.y;
         crouchScaleY = startScaleY / 2;
@@ -22,17 +23,22 @@ public class PlayerMovement : MonoBehaviour
         crouched = false;
         sprinting = false;
     }
+
     private void FixedUpdate()
     {
         if (crouched)
         {
-            rigidBody.velocity = crouchSpeed * ((modelTransform.forward * movementInput.y) + 
+            rigidBody.velocity = crouchSpeed * ((modelTransform.forward * movementInput.y) +
                                     (modelTransform.right * movementInput.x));
-        } else if (sprinting) {
-            rigidBody.velocity = (2 * movementSpeed) * ((modelTransform.forward * movementInput.y) + 
+        }
+        else if (sprinting)
+        {
+            rigidBody.velocity = (2 * movementSpeed) * ((modelTransform.forward * movementInput.y) +
                                     (modelTransform.right * movementInput.x));
-        } else {
-            rigidBody.velocity = movementSpeed * ((modelTransform.forward * movementInput.y) + 
+        }
+        else
+        {
+            rigidBody.velocity = movementSpeed * ((modelTransform.forward * movementInput.y) +
                                     (modelTransform.right * movementInput.x));
         }
     }
@@ -56,7 +62,9 @@ public class PlayerMovement : MonoBehaviour
             modelTransform.localScale = new Vector3(modelTransform.localScale.x, crouchScaleY, modelTransform.localScale.z);
             rigidBody.AddForce(Vector3.down * 20f, ForceMode.Impulse);
             crouched = true;
-        } else {
+        }
+        else
+        {
             sprinting = false; // No sprinting when coming out of crouch
 
             var castOrigin = actualModel.position; //+ new Vector3(0, crouchScaleY, 0);
@@ -69,7 +77,9 @@ public class PlayerMovement : MonoBehaviour
                     modelTransform.localScale = new Vector3(modelTransform.localScale.x, startScaleY, modelTransform.localScale.z);
                     crouched = false;
                 }
-            } else {
+            }
+            else
+            {
                 modelTransform.localScale = new Vector3(modelTransform.localScale.x, startScaleY, modelTransform.localScale.z);
                 crouched = false;
             }
@@ -82,6 +92,20 @@ public class PlayerMovement : MonoBehaviour
     public void Sprint(InputAction.CallbackContext context)
     {
         if (context.phase == InputActionPhase.Performed)
+        {
             sprinting = !sprinting;
+
+            WalkingSoundController soundController = GetComponent<WalkingSoundController>();
+            if (sprinting)
+            {
+                soundController.StopFootstepSound(); // Stop any existing footstep sound
+                soundController.PlayFootstepSound();
+            }
+            else
+            {
+                soundController.StopFootstepSound(); // Stop any existing footstep sound
+                soundController.PlayFootstepSound();
+            }
+        }
     }
 }
