@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (sprinting)
         {
-            rigidBody.velocity = (2 * movementSpeed) * ((modelTransform.forward * movementInput.y) +
+            rigidBody.velocity = (1.5f * movementSpeed) * ((modelTransform.forward * movementInput.y) +
                                     (modelTransform.right * movementInput.x));
         }
         else

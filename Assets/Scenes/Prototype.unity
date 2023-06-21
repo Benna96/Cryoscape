@@ -5758,6 +5758,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3351011626653363021, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
+      propertyPath: animDuration
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 3827405035180858324, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
       propertyPath: combineAudio.Array.data[0]
       value: 
@@ -5834,6 +5838,10 @@ PrefabInstance:
       propertyPath: interactAudios.Array.data[0]
       value: 
       objectReference: {fileID: 1948363907}
+    - target: {fileID: 6191915915187788058, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
+      propertyPath: animDuration
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
 --- !u!114 &5885273974431422779 stripped
