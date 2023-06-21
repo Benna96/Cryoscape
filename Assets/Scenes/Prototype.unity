@@ -1538,7 +1538,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 143544480556447524, guid: f44a8d46e9df6814b9fb050f3e76878b, type: 3}
       propertyPath: Loop
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 143544480556447524, guid: f44a8d46e9df6814b9fb050f3e76878b, type: 3}
       propertyPath: m_Volume
@@ -1555,10 +1555,6 @@ PrefabInstance:
     - target: {fileID: 143544480556447524, guid: f44a8d46e9df6814b9fb050f3e76878b, type: 3}
       propertyPath: BypassEffects
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 143544480556447524, guid: f44a8d46e9df6814b9fb050f3e76878b, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 143544480556447524, guid: f44a8d46e9df6814b9fb050f3e76878b, type: 3}
       propertyPath: OutputAudioMixerGroup
@@ -1625,6 +1621,11 @@ PrefabInstance:
 --- !u!4 &614773037 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 143544480556447531, guid: f44a8d46e9df6814b9fb050f3e76878b, type: 3}
+  m_PrefabInstance: {fileID: 614773036}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &614773038 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 143544480556447524, guid: f44a8d46e9df6814b9fb050f3e76878b, type: 3}
   m_PrefabInstance: {fileID: 614773036}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &626590479
@@ -7564,6 +7565,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1646949684}
     - target: {fileID: 5209661081729282901, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
+      propertyPath: alarmAudio
+      value: 
+      objectReference: {fileID: 614773038}
+    - target: {fileID: 5209661081729282901, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
       propertyPath: interactAnims.Array.size
       value: 11
       objectReference: {fileID: 0}
@@ -7619,6 +7624,10 @@ PrefabInstance:
       propertyPath: animDuration
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 6746704649618436069, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
+      propertyPath: alarmAudio
+      value: 
+      objectReference: {fileID: 614773038}
     - target: {fileID: 6746704649618436069, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
       propertyPath: anims.Array.size
       value: 11

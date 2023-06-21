@@ -18,15 +18,16 @@ public class Shoebox : Interactable
         {
             yield return new WaitUntil(() => Array.TrueForAll(doorSlideAnims, anim => anim.initDone));
             Array.ForEach(doorSlideAnims, anim => StartCoroutine(anim.AnimateNormal()));
-            if (alarmAudio != null)
-                alarmAudio.Play();
         }
     }
 
     protected override IEnumerator DoInteract()
     {
         Array.ForEach(doorSlideAnims, anim => StartCoroutine(anim.AnimateReversed()));
+        if (alarmAudio != null)
+            alarmAudio.Play();
         yield return base.DoInteract();
+
         colorLock.isHavingEffect = true;
     }
 }
