@@ -1558,12 +1558,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 143544480556447524, guid: f44a8d46e9df6814b9fb050f3e76878b, type: 3}
       propertyPath: m_PlayOnAwake
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 143544480556447524, guid: f44a8d46e9df6814b9fb050f3e76878b, type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
-      objectReference: {fileID: -94923733390161850, guid: 596f69e566e710547a9ae0261d43b49c, type: 2}
+      objectReference: {fileID: -1643149419112189080, guid: 596f69e566e710547a9ae0261d43b49c, type: 2}
     - target: {fileID: 143544480556447524, guid: f44a8d46e9df6814b9fb050f3e76878b, type: 3}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
       value: 0
