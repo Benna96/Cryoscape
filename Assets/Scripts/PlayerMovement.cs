@@ -44,7 +44,8 @@ public class PlayerMovement : MonoBehaviour
                                     (modelTransform.right * movementInput.x));
         }
 
-        rigidBody.velocity = new(wantedVelocity.x, rigidBody.velocity.y, wantedVelocity.z);
+        rigidBody.velocity = new(wantedVelocity.x, rigidBody.velocity.y, wantedVelocity.z); // Causes jumping to happen if colliders don't line up perfectly...
+        rigidBody.velocity = wantedVelocity; // So nvm, let's limit y too afterall
     }
 
     /// <summary>
