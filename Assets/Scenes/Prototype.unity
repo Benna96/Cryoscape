@@ -1755,7 +1755,7 @@ PrefabInstance:
     - target: {fileID: 143544480556447524, guid: f44a8d46e9df6814b9fb050f3e76878b, type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
-      objectReference: {fileID: -94923733390161850, guid: 596f69e566e710547a9ae0261d43b49c, type: 2}
+      objectReference: {fileID: -6331842104384904390, guid: 596f69e566e710547a9ae0261d43b49c, type: 2}
     - target: {fileID: 143544480556447524, guid: f44a8d46e9df6814b9fb050f3e76878b, type: 3}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
       value: 0
@@ -6691,6 +6691,10 @@ PrefabInstance:
       propertyPath: animDuration
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 3351011626653363021, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
+      propertyPath: normalAnimAudio
+      value: 
+      objectReference: {fileID: 1732300884}
     - target: {fileID: 3769760405151220373, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
       propertyPath: interactAudios.Array.size
       value: 1
