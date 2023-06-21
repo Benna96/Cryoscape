@@ -1676,6 +1676,7 @@ MonoBehaviour:
   debugAutoPlay: 0
   startColor: {r: 0.48627454, g: 1, b: 0.7411765, a: 1}
   endColor: {r: 0.8000001, g: 0.08235294, b: 0.08235294, a: 1}
+  doSyncOnAwake: 1
 --- !u!114 &637276730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1706,6 +1707,7 @@ MonoBehaviour:
   debugAutoPlay: 0
   startColor: {r: 0.8000001, g: 0.08235294, b: 0.08235294, a: 1}
   endColor: {r: 0.48627454, g: 1, b: 0.7411765, a: 1}
+  doSyncOnAwake: 0
 --- !u!1001 &639614842
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2522,6 +2524,7 @@ MonoBehaviour:
   debugAutoPlay: 0
   startColor: {r: 0.8000001, g: 0.08235294, b: 0.08235294, a: 1}
   endColor: {r: 0.48627454, g: 1, b: 0.7411765, a: 1}
+  doSyncOnAwake: 0
 --- !u!114 &864425177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2552,6 +2555,7 @@ MonoBehaviour:
   debugAutoPlay: 0
   startColor: {r: 0.48627454, g: 1, b: 0.7411765, a: 1}
   endColor: {r: 0.8000001, g: 0.08235294, b: 0.08235294, a: 1}
+  doSyncOnAwake: 1
 --- !u!1001 &866073233
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2927,6 +2931,7 @@ MonoBehaviour:
   debugAutoPlay: 0
   startColor: {r: 0.8000001, g: 0.08235294, b: 0.08235294, a: 1}
   endColor: {r: 0.48627454, g: 1, b: 0.7411765, a: 1}
+  doSyncOnAwake: 0
 --- !u!114 &1121202337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2957,6 +2962,7 @@ MonoBehaviour:
   debugAutoPlay: 0
   startColor: {r: 0.48627454, g: 1, b: 0.7411765, a: 1}
   endColor: {r: 0.8000001, g: 0.08235294, b: 0.08235294, a: 1}
+  doSyncOnAwake: 1
 --- !u!1001 &1155489569
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3435,6 +3441,7 @@ MonoBehaviour:
   debugAutoPlay: 0
   startColor: {r: 0.48627454, g: 1, b: 0.7411765, a: 1}
   endColor: {r: 0.8000001, g: 0.08235294, b: 0.08235294, a: 1}
+  doSyncOnAwake: 1
 --- !u!114 &1415567711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3465,6 +3472,7 @@ MonoBehaviour:
   debugAutoPlay: 0
   startColor: {r: 0.8000001, g: 0.08235294, b: 0.08235294, a: 1}
   endColor: {r: 0.48627454, g: 1, b: 0.7411765, a: 1}
+  doSyncOnAwake: 0
 --- !u!1001 &1424576437
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4636,6 +4644,7 @@ MonoBehaviour:
   debugAutoPlay: 0
   startColor: {r: 0.48627454, g: 1, b: 0.7411765, a: 1}
   endColor: {r: 0.8000001, g: 0.08235294, b: 0.08235294, a: 1}
+  doSyncOnAwake: 1
 --- !u!114 &1665043719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4666,6 +4675,7 @@ MonoBehaviour:
   debugAutoPlay: 0
   startColor: {r: 0.8000001, g: 0.08235294, b: 0.08235294, a: 1}
   endColor: {r: 0.48627454, g: 1, b: 0.7411765, a: 1}
+  doSyncOnAwake: 0
 --- !u!1 &1670395034 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8507093918799121952, guid: 2070a2a31b97b9e4495dd7ab0bafa498, type: 3}
@@ -5618,6 +5628,7 @@ MonoBehaviour:
   debugAutoPlay: 0
   startColor: {r: 0.48627454, g: 1, b: 0.7411765, a: 1}
   endColor: {r: 0.8000001, g: 0.08235294, b: 0.08235294, a: 1}
+  doSyncOnAwake: 1
 --- !u!114 &2111362483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5648,6 +5659,7 @@ MonoBehaviour:
   debugAutoPlay: 0
   startColor: {r: 0.8000001, g: 0.08235294, b: 0.08235294, a: 1}
   endColor: {r: 0.48627454, g: 1, b: 0.7411765, a: 1}
+  doSyncOnAwake: 0
 --- !u!1001 &2127882827
 PrefabInstance:
   m_ObjectHideFlags: 0
