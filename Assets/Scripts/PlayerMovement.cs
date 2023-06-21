@@ -26,21 +26,25 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Vector3 wantedVelocity;
+
         if (crouched)
         {
-            rigidBody.velocity = crouchSpeed * ((modelTransform.forward * movementInput.y) +
+            wantedVelocity = crouchSpeed * ((modelTransform.forward * movementInput.y) +
                                     (modelTransform.right * movementInput.x));
         }
         else if (sprinting)
         {
-            rigidBody.velocity = (1.5f * movementSpeed) * ((modelTransform.forward * movementInput.y) +
+            wantedVelocity = (1.5f * movementSpeed) * ((modelTransform.forward * movementInput.y) +
                                     (modelTransform.right * movementInput.x));
         }
         else
         {
-            rigidBody.velocity = movementSpeed * ((modelTransform.forward * movementInput.y) +
+            wantedVelocity = movementSpeed * ((modelTransform.forward * movementInput.y) +
                                     (modelTransform.right * movementInput.x));
         }
+
+        rigidBody.velocity = new(wantedVelocity.x, rigidBody.velocity.y, wantedVelocity.z);
     }
 
     /// <summary>
