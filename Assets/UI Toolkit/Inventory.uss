@@ -48,7 +48,7 @@ VisualElement {	color: rgb(255, 255, 255); }
 	margin: 0px;
 	padding: 0px;
 	color: white;
-	text-shadow: 0px 0px 5px darkcyan;
+	text-shadow: 0px 0px 4px darkcyan;
 	font-size: 32px;
 }
 
