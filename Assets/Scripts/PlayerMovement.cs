@@ -74,4 +74,13 @@ public class PlayerMovement : MonoBehaviour
         }
         Debug.Log("Pressed crouch button");
     }
+
+    /// <summary>
+    /// Called by Player Input
+    /// </summary>
+    public void Sprint(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Performed)
+            sprinting = !sprinting;
+    }
 }

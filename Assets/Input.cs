@@ -64,6 +64,15 @@ public partial class @Input: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""Sprint"",
+                    ""type"": ""Button"",
+                    ""id"": ""93123f83-80df-4736-8735-0aea5a3a3279"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""Interact"",
                     ""type"": ""Button"",
                     ""id"": ""667a53ea-e93b-4a20-8d30-6b02f3e55884"",
@@ -619,6 +628,17 @@ public partial class @Input: IInputActionCollection2, IDisposable
                     ""action"": ""Submit"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a1d10cc3-7e59-4bc6-b896-db6223a721aa"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -659,6 +679,7 @@ public partial class @Input: IInputActionCollection2, IDisposable
         m_Player_LookDelta = m_Player.FindAction("LookDelta", throwIfNotFound: true);
         m_Player_LookContinuous = m_Player.FindAction("LookContinuous", throwIfNotFound: true);
         m_Player_Crouch = m_Player.FindAction("Crouch", throwIfNotFound: true);
+        m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_Click = m_Player.FindAction("Click", throwIfNotFound: true);
         m_Player_Submit = m_Player.FindAction("Submit", throwIfNotFound: true);
@@ -738,6 +759,7 @@ public partial class @Input: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_LookDelta;
     private readonly InputAction m_Player_LookContinuous;
     private readonly InputAction m_Player_Crouch;
+    private readonly InputAction m_Player_Sprint;
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_Click;
     private readonly InputAction m_Player_Submit;
@@ -760,6 +782,7 @@ public partial class @Input: IInputActionCollection2, IDisposable
         public InputAction @LookDelta => m_Wrapper.m_Player_LookDelta;
         public InputAction @LookContinuous => m_Wrapper.m_Player_LookContinuous;
         public InputAction @Crouch => m_Wrapper.m_Player_Crouch;
+        public InputAction @Sprint => m_Wrapper.m_Player_Sprint;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @Click => m_Wrapper.m_Player_Click;
         public InputAction @Submit => m_Wrapper.m_Player_Submit;
@@ -795,6 +818,9 @@ public partial class @Input: IInputActionCollection2, IDisposable
             @Crouch.started += instance.OnCrouch;
             @Crouch.performed += instance.OnCrouch;
             @Crouch.canceled += instance.OnCrouch;
+            @Sprint.started += instance.OnSprint;
+            @Sprint.performed += instance.OnSprint;
+            @Sprint.canceled += instance.OnSprint;
             @Interact.started += instance.OnInteract;
             @Interact.performed += instance.OnInteract;
             @Interact.canceled += instance.OnInteract;
@@ -853,6 +879,9 @@ public partial class @Input: IInputActionCollection2, IDisposable
             @Crouch.started -= instance.OnCrouch;
             @Crouch.performed -= instance.OnCrouch;
             @Crouch.canceled -= instance.OnCrouch;
+            @Sprint.started -= instance.OnSprint;
+            @Sprint.performed -= instance.OnSprint;
+            @Sprint.canceled -= instance.OnSprint;
             @Interact.started -= instance.OnInteract;
             @Interact.performed -= instance.OnInteract;
             @Interact.canceled -= instance.OnInteract;
@@ -936,6 +965,7 @@ public partial class @Input: IInputActionCollection2, IDisposable
         void OnLookDelta(InputAction.CallbackContext context);
         void OnLookContinuous(InputAction.CallbackContext context);
         void OnCrouch(InputAction.CallbackContext context);
+        void OnSprint(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnClick(InputAction.CallbackContext context);
         void OnSubmit(InputAction.CallbackContext context);
