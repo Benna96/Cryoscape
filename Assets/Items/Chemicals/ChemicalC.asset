@@ -16,5 +16,8 @@ MonoBehaviour:
   displayName: Chemical C
   category: 0
   inventoryIcon: {fileID: 2800000, guid: 0242bcec05305cf4790da1b9a0e4b30f, type: 3}
+  modelMaterialTextureOverrides:
+  - modelMainMaterial: {fileID: 2100000, guid: 71fbbe043bdb3754ebdc968b3e06bb98, type: 2}
+    modelMainTextureOverride: {fileID: 2800000, guid: b8143f511dd641c488afb9bec0a8592a, type: 3}
   <color>k__BackingField: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  <coloredInventoryIcon>k__BackingField: {fileID: 2800000, guid: 0fd6cd2c820df754db979ab33dea985e, type: 3}
+  <coloredInventoryIcon>k__BackingField: {fileID: 0}
