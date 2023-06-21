@@ -57,6 +57,8 @@ public class PlayerMovement : MonoBehaviour
             rigidBody.AddForce(Vector3.down * 20f, ForceMode.Impulse);
             crouched = true;
         } else {
+            sprinting = false; // No sprinting when coming out of crouch
+
             var castOrigin = actualModel.position; //+ new Vector3(0, crouchScaleY, 0);
             float rayLength = 8f;
             if (Physics.Raycast(castOrigin, Vector3.up, out RaycastHit hit, rayLength))
@@ -72,7 +74,6 @@ public class PlayerMovement : MonoBehaviour
                 crouched = false;
             }
         }
-        Debug.Log("Pressed crouch button");
     }
 
     /// <summary>
