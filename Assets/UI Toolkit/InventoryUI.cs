@@ -41,7 +41,7 @@ public class InventoryUI : MonoBehaviour
 
             itemsContainer = root.Q("ItemsContainer");
             items = itemsContainer.Children().Select(x => x.Q("ItemWrapper")).ToArray();
-            itemIcons = items.Select(x => x.Q("Icon")).Select(x => (x, x[0])).ToArray();
+            itemIcons = items.Select(x => x.Q("Background")).Select(x => (x[1], x[0])).ToArray();
 
             specialItemObtained = root.Q("Special").Q<Label>();
             specialItemObtained.SetEnabled(false);
