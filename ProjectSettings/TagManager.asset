@@ -9,13 +9,13 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Lights
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - LabLights
+  - SideLayer
+  - LockerLights
+  - CafeteriaLights
   - 
   - 
   - 
