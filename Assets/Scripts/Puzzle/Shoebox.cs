@@ -6,6 +6,7 @@ using UnityEngine;
 public class Shoebox : Interactable
 {
     [SerializeField] private SimpleAnim[] doorSlideAnims;
+    [SerializeField] private AudioSource alarmAudio;
     [SerializeField] private ColorLock colorLock;
 
     protected override void Awake()
@@ -17,6 +18,8 @@ public class Shoebox : Interactable
         {
             yield return new WaitUntil(() => Array.TrueForAll(doorSlideAnims, anim => anim.initDone));
             Array.ForEach(doorSlideAnims, anim => StartCoroutine(anim.AnimateNormal()));
+            if (alarmAudio != null)
+                alarmAudio.Play();
         }
     }
 

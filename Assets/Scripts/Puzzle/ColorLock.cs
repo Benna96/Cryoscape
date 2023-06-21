@@ -7,6 +7,8 @@ using UnityEngine;
 
 public class ColorLock : MonoBehaviour
 {
+    [SerializeField] private AudioSource alarmAudio;
+
     [SerializeField] private ColorInteractable[] buttons;
     [SerializeField] private ColorExtensions.ColorOption[] correctCombination;
 
@@ -35,9 +37,17 @@ public class ColorLock : MonoBehaviour
             _isCorrectCombination = value;
 
             if (_isCorrectCombination)
+            {
                 Array.ForEach(anims, anim => StartCoroutine(anim.AnimateNormal()));
+                if (alarmAudio != null)
+                    alarmAudio.Stop();
+            }
             else
+            {
                 Array.ForEach(anims, anim => StartCoroutine(anim.AnimateReversed()));
+                if (alarmAudio != null)
+                    alarmAudio.Play();
+            }
         }
     }
 
