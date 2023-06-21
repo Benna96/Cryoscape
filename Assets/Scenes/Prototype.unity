@@ -331,6 +331,41 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 143544480556447524, guid: f44a8d46e9df6814b9fb050f3e76878b, type: 3}
   m_PrefabInstance: {fileID: 2127882827}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &267581709 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7809261703323091422, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
+  m_PrefabInstance: {fileID: 5209661080591891893}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &267581711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267581709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82561e0a8230c1d4b82d41f0ab888aa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animDuration: 0.5
+  normalAnimCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reversedAnimCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  normalAnimAudio: {fileID: 0}
+  reversedAnimAudio: {fileID: 0}
+  debugAutoPlay: 0
+  startColor: {r: 0.48627454, g: 1, b: 0.7411765, a: 1}
+  endColor: {r: 0.8018868, g: 0.08069295, b: 0.08069295, a: 1}
 --- !u!1 &285357956
 GameObject:
   m_ObjectHideFlags: 0
@@ -3615,6 +3650,41 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4007741009578655179, guid: 3fb79725f68da7647a1d890394091949, type: 3}
   m_PrefabInstance: {fileID: 4007741008150816585}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1625182051 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4523277417308308262, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
+  m_PrefabInstance: {fileID: 5209661080591891893}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1625182053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625182051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82561e0a8230c1d4b82d41f0ab888aa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animDuration: 0.5
+  normalAnimCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reversedAnimCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  normalAnimAudio: {fileID: 0}
+  reversedAnimAudio: {fileID: 0}
+  debugAutoPlay: 0
+  startColor: {r: 0.48627454, g: 1, b: 0.7411765, a: 1}
+  endColor: {r: 0.8018868, g: 0.08069295, b: 0.08069295, a: 1}
 --- !u!114 &1642246473 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2135398440384756178, guid: f7d8103b3830a8747835252637dd330d, type: 3}
@@ -4289,6 +4359,41 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 2349497906223711618, guid: d0b89ef2f40d222459fdbd37a8c0dff5, type: 3}
   m_PrefabInstance: {fileID: 2349497905923847239}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2025121511 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4631229309964518460, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
+  m_PrefabInstance: {fileID: 5209661080591891893}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2025121513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2025121511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82561e0a8230c1d4b82d41f0ab888aa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animDuration: 0.5
+  normalAnimCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reversedAnimCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  normalAnimAudio: {fileID: 0}
+  reversedAnimAudio: {fileID: 0}
+  debugAutoPlay: 0
+  startColor: {r: 0.48627454, g: 1, b: 0.7411765, a: 1}
+  endColor: {r: 0.8018868, g: 0.08069295, b: 0.08069295, a: 1}
 --- !u!1001 &2068882421
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5924,6 +6029,22 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1646949684}
     - target: {fileID: 5209661081729282901, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
+      propertyPath: interactAnims.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5209661081729282901, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
+      propertyPath: interactAnims.Array.data[2]
+      value: 
+      objectReference: {fileID: 2025121513}
+    - target: {fileID: 5209661081729282901, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
+      propertyPath: interactAnims.Array.data[3]
+      value: 
+      objectReference: {fileID: 1625182053}
+    - target: {fileID: 5209661081729282901, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
+      propertyPath: interactAnims.Array.data[4]
+      value: 
+      objectReference: {fileID: 267581711}
+    - target: {fileID: 5209661081729282901, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
       propertyPath: interactAudios.Array.data[0]
       value: 
       objectReference: {fileID: 1948363907}
@@ -5931,6 +6052,22 @@ PrefabInstance:
       propertyPath: animDuration
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 6746704649618436069, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
+      propertyPath: anims.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6746704649618436069, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
+      propertyPath: anims.Array.data[2]
+      value: 
+      objectReference: {fileID: 267581711}
+    - target: {fileID: 6746704649618436069, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
+      propertyPath: anims.Array.data[3]
+      value: 
+      objectReference: {fileID: 2025121513}
+    - target: {fileID: 6746704649618436069, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
+      propertyPath: anims.Array.data[4]
+      value: 
+      objectReference: {fileID: 1625182053}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
 --- !u!114 &5885273974431422779 stripped
