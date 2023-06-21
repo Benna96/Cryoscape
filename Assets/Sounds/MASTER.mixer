@@ -234,6 +234,48 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!244 &-4552961063520806247
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 2a12d71c8c7e1664b8476a701c5cc727
+  m_EffectName: SFX Reverb
+  m_MixLevel: af293cf588393164199b3c562446a820
+  m_Parameters:
+  - m_ParameterName: Dry Level
+    m_GUID: 77dd6c1d7ce60224aa656f14fb81866c
+  - m_ParameterName: Room
+    m_GUID: 6a221c8989d822f48a6f1914547d4ce2
+  - m_ParameterName: Room HF
+    m_GUID: 4e64b9bd406a53547aec5f7dac8f44f9
+  - m_ParameterName: Decay Time
+    m_GUID: eeca29e0aae1f364c8c4cf9517336cae
+  - m_ParameterName: Decay HF Ratio
+    m_GUID: 342776684d5e62542b14b0b12e70fabf
+  - m_ParameterName: Reflections
+    m_GUID: a8b5f5250b829b246a47f8f702c62d0c
+  - m_ParameterName: Reflect Delay
+    m_GUID: d989ff4745f196c4ca061656a0ab6bbd
+  - m_ParameterName: Reverb
+    m_GUID: b70f44daef6d3704c9b99ac9f8242fc8
+  - m_ParameterName: Reverb Delay
+    m_GUID: 53599f7a0a6302b4bb7a63e421234912
+  - m_ParameterName: Diffusion
+    m_GUID: 7d62f79ec386ce04db6bd2323a2a0070
+  - m_ParameterName: Density
+    m_GUID: a4dca77eb004f994eb47ef7cc45c5959
+  - m_ParameterName: HF Reference
+    m_GUID: 911d213a5b040324d9b24fc82efac492
+  - m_ParameterName: Room LF
+    m_GUID: a80dac05fa2409f43a4146131cf49f15
+  - m_ParameterName: LF Reference
+    m_GUID: 579ad67b237100b4b9a14b89e14f8a6d
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!244 &-2583763019822104259
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -311,6 +353,7 @@ AudioMixerGroupController:
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: 4431744590813562066}
+  - {fileID: -4552961063520806247}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
@@ -944,7 +987,7 @@ AudioMixerSnapshotController:
     5829602424998a443867198e911f1763: 0.16999999
     3bb21424e71e58642a6e49771675deaa: -6818
     cca9554416c1b83408e119128942a93b: 0.081
-    66c34354163748c4ba7e8f44b115cd73: -16.93917
+    66c34354163748c4ba7e8f44b115cd73: -3.3259156
     07bbe894c2165094090e8a43519a6057: 0.2
     8230c5f4cec3a88419018a992b09750b: 0.05
     c2cb5af4f5ab0d245b088f5195cd85f1: 0.05
@@ -969,11 +1012,13 @@ AudioMixerSnapshotController:
     78b8ee5873dec254e82979ef2ff4b250: 1.2
     f530219821dcbcd489d59f3a523672d1: -2209
     d0ec3f98c11903542b433ebf8bf55399: 1220
+    9b368bc85db23f2458ec6e9ce6775136: -6.133707
     b3e30ec830a817548a86b319687037df: -964
-    08469109fcf665c4284cf220c2e2db7c: -1.5191216
+    08469109fcf665c4284cf220c2e2db7c: -6.5566154
     5cc25e0914eb96a40824e89b9918ff13: 2000
     7216892934c92354382017f59ae65a1b: -6.133707
     3e325339330f5724cbba8860b244d647: -36
+    6a221c8989d822f48a6f1914547d4ce2: -9986.96
     ac46fba9d68ee1244b98a64d3fc4644e: 0.96
     3dbfc70acad004540aa14a4dcde5aa7d: 5
     78b3503abe174494da30b9d9253bc659: 1.7477665
@@ -982,18 +1027,20 @@ AudioMixerSnapshotController:
     46a07ffa48b372e4981e10e5d995a93a: 0.051
     ff31573bd11ac2b46aaac57f4e21a6dc: 5121.3164
     bc85e34bac49cb34d89839d22107694d: 0
-    f18e806bec6c4bf45a6c153750f1f036: 0.13552453
+    f18e806bec6c4bf45a6c153750f1f036: -1.761302
     5e1a087bdce45c442a5205a890348d6f: 0.13
     440f03cb114fcd04aae96940cd68e032: 22000
     1a3c04cb4fe7dc44e814111e7bdcf679: 0.81
     a0da13fb49e3ffd40be42795e7321d31: 20543
     6bae884c403b14a42b7fac72ad17cb45: -183
     f7f6e05c242316645989ae3be188ae47: -1687
+    1038997ceb14afc4b8db8f5a59922bcd: -32.77572
     feb469dca7e708c4cb44dab518983fcb: 12
     b9253d4d366a4a94ea8410b523af0a72: 2000
     0779196dfe885d143b0db9c0b3fcf89e: 0.2
-    26a95e6dfa7a21f40adcbb82f433a2ba: -0.10231405
+    26a95e6dfa7a21f40adcbb82f433a2ba: 0.8160306
     2d0dc8bdaacde464aaa1674026af558b: -6939
+    4e64b9bd406a53547aec5f7dac8f44f9: 0
     e926aaedf9f19b346809a023270b1de0: 3.5924017
     7a1b992e277f54e4b93b1930b3d2f714: 2893
     16c05b6e92ffd4946b5c439b8830ce42: 2000
