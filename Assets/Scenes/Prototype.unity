@@ -364,8 +364,8 @@ MonoBehaviour:
   normalAnimAudio: {fileID: 0}
   reversedAnimAudio: {fileID: 0}
   debugAutoPlay: 0
-  startColor: {r: 0.48627454, g: 1, b: 0.7411765, a: 1}
-  endColor: {r: 0.8018868, g: 0.08069295, b: 0.08069295, a: 1}
+  startColor: {r: 0.8000001, g: 0.08235294, b: 0.08235294, a: 1}
+  endColor: {r: 0.48627454, g: 1, b: 0.7411765, a: 1}
 --- !u!114 &267581714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -394,8 +394,8 @@ MonoBehaviour:
   normalAnimAudio: {fileID: 0}
   reversedAnimAudio: {fileID: 0}
   debugAutoPlay: 0
-  startColor: {r: 0.8000001, g: 0.08235294, b: 0.08235294, a: 1}
-  endColor: {r: 0.48627454, g: 1, b: 0.7411765, a: 1}
+  startColor: {r: 0.48627454, g: 1, b: 0.7411765, a: 1}
+  endColor: {r: 0.8000001, g: 0.08235294, b: 0.08235294, a: 1}
 --- !u!1 &285357956
 GameObject:
   m_ObjectHideFlags: 0
@@ -3713,8 +3713,8 @@ MonoBehaviour:
   normalAnimAudio: {fileID: 0}
   reversedAnimAudio: {fileID: 0}
   debugAutoPlay: 0
-  startColor: {r: 0.48627454, g: 1, b: 0.7411765, a: 1}
-  endColor: {r: 0.8018868, g: 0.08069295, b: 0.08069295, a: 1}
+  startColor: {r: 0.8000001, g: 0.08235294, b: 0.08235294, a: 1}
+  endColor: {r: 0.48627454, g: 1, b: 0.7411765, a: 1}
 --- !u!114 &1625182056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3743,8 +3743,8 @@ MonoBehaviour:
   normalAnimAudio: {fileID: 0}
   reversedAnimAudio: {fileID: 0}
   debugAutoPlay: 0
-  startColor: {r: 0.8000001, g: 0.08235294, b: 0.08235294, a: 1}
-  endColor: {r: 0.48627454, g: 1, b: 0.7411765, a: 1}
+  startColor: {r: 0.48627454, g: 1, b: 0.7411765, a: 1}
+  endColor: {r: 0.8000001, g: 0.08235294, b: 0.08235294, a: 1}
 --- !u!114 &1642246473 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2135398440384756178, guid: f7d8103b3830a8747835252637dd330d, type: 3}
@@ -4452,8 +4452,8 @@ MonoBehaviour:
   normalAnimAudio: {fileID: 0}
   reversedAnimAudio: {fileID: 0}
   debugAutoPlay: 0
-  startColor: {r: 0.48627454, g: 1, b: 0.7411765, a: 1}
-  endColor: {r: 0.8018868, g: 0.08069295, b: 0.08069295, a: 1}
+  startColor: {r: 0.8000001, g: 0.08235294, b: 0.08235294, a: 1}
+  endColor: {r: 0.48627454, g: 1, b: 0.7411765, a: 1}
 --- !u!114 &2025121516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4482,8 +4482,8 @@ MonoBehaviour:
   normalAnimAudio: {fileID: 0}
   reversedAnimAudio: {fileID: 0}
   debugAutoPlay: 0
-  startColor: {r: 0.8000001, g: 0.08235294, b: 0.08235294, a: 1}
-  endColor: {r: 0.48627454, g: 1, b: 0.7411765, a: 1}
+  startColor: {r: 0.48627454, g: 1, b: 0.7411765, a: 1}
+  endColor: {r: 0.8000001, g: 0.08235294, b: 0.08235294, a: 1}
 --- !u!1001 &2068882421
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6133,15 +6133,15 @@ PrefabInstance:
     - target: {fileID: 5209661081729282901, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
       propertyPath: interactAnims.Array.data[2]
       value: 
-      objectReference: {fileID: 2025121513}
+      objectReference: {fileID: 2025121516}
     - target: {fileID: 5209661081729282901, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
       propertyPath: interactAnims.Array.data[3]
       value: 
-      objectReference: {fileID: 1625182053}
+      objectReference: {fileID: 1625182056}
     - target: {fileID: 5209661081729282901, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
       propertyPath: interactAnims.Array.data[4]
       value: 
-      objectReference: {fileID: 267581711}
+      objectReference: {fileID: 267581714}
     - target: {fileID: 5209661081729282901, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
       propertyPath: interactAudios.Array.data[0]
       value: 
@@ -6157,15 +6157,63 @@ PrefabInstance:
     - target: {fileID: 6746704649618436069, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
       propertyPath: anims.Array.data[2]
       value: 
-      objectReference: {fileID: 267581714}
+      objectReference: {fileID: 267581711}
     - target: {fileID: 6746704649618436069, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
       propertyPath: anims.Array.data[3]
       value: 
-      objectReference: {fileID: 2025121516}
+      objectReference: {fileID: 2025121513}
     - target: {fileID: 6746704649618436069, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
       propertyPath: anims.Array.data[4]
       value: 
-      objectReference: {fileID: 1625182056}
+      objectReference: {fileID: 1625182053}
+    - target: {fileID: 7293351892532719247, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.56279933
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293351892532719247, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.66890174
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293351892532719247, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 12.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293351892532719247, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293351892532719247, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -21.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293351892532719247, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.104125656
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293351892532719247, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.98787475
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293351892532719247, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.092004485
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293351892532719247, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0692574
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293351892532719247, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 167.381
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293351892532719247, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 6.925995
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293351892532719247, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -9.875
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14e01f4e47e3ebf47a0ffab854e53197, type: 3}
 --- !u!114 &5885273974431422779 stripped
