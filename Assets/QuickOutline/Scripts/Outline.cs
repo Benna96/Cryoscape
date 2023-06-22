@@ -221,6 +221,10 @@ namespace QuickOutline {
     }
   
     List<Vector3> SmoothNormals(Mesh mesh) {
+
+      if (!mesh.isReadable) {
+        throw new Exception($"Mesh {mesh} somewhere under gameobject {gameObject} is not readable!");
+      }
   
       // Group vertices by location
       var groups = mesh.vertices.Select((vertex, index) => new KeyValuePair<Vector3, int>(vertex, index)).GroupBy(pair => pair.Key);
